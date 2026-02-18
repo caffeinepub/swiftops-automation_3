@@ -1,0 +1,133 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Replace Client and Pricing sections with Elite Client Profiles and AI Performance Intelligence",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Remove TestimonialsSection component and all references from App.tsx",
+      "acceptanceCriteria": [
+        "TestimonialsSection component is no longer imported or rendered in App.tsx",
+        "No empty gaps or broken spacing remains after removal",
+        "Smooth scroll flow is maintained between adjacent sections"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Remove the import statement for TestimonialsSection and remove the <TestimonialsSection /> component render call from the component tree. Ensure no extra whitespace or gaps remain after removal."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create EliteClientProfilesSection component with 3 premium profile cards featuring executive testimonials",
+      "acceptanceCriteria": [
+        "Section displays 3 profile cards horizontally on desktop",
+        "Cards stack vertically on mobile devices",
+        "Each card contains all required elements: circular photo, name, position, company type, testimonial",
+        "Cards have neon border glow matching the existing cyan neon theme",
+        "Hover animations include lift effect and increased glow intensity",
+        "Glassmorphism or gradient dark background is applied to cards",
+        "Professional, executive-level visual style is maintained"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/EliteClientProfilesSection.tsx",
+          "operation": "create",
+          "description": "Create a new component with section title 'Elite Client Profiles'. Implement 3 profile cards with the following data: (1) FinTech executive with frontend/public/assets/generated/profile-executive-1.dim_200x200.png, (2) SaaS executive with frontend/public/assets/generated/profile-executive-2.dim_200x200.png, (3) Enterprise AI executive with frontend/public/assets/generated/profile-executive-3.dim_200x200.png. Each card includes circular profile image, full name, position, company type, and 2-3 line testimonial. Apply responsive grid layout (horizontal on desktop, stacked on mobile), neon cyan border glow matching existing theme, glassmorphism dark background, and hover animations with lift and increased glow effects. Use intersection observer for fade-in animations similar to existing sections."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Remove PricingSection component and all references from App.tsx",
+      "acceptanceCriteria": [
+        "PricingSection component is no longer imported or rendered in App.tsx",
+        "No pricing cards, toggles, or buttons remain",
+        "Adjacent sections maintain proper spacing",
+        "No visual layout shift occurs after removal"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Remove the import statement for PricingSection and remove the <PricingSection /> component render call from the component tree. Maintain spacing consistency with adjacent sections to prevent layout shift."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create AIPerformanceSection component with 4 animated metric counters in 2-column grid",
+      "acceptanceCriteria": [
+        "Section displays heading and subtitle as specified",
+        "4 metrics are displayed in a 2-column grid on desktop",
+        "Metrics stack vertically on mobile devices",
+        "Each metric shows large animated number with neon accent and label underneath",
+        "Counter animation triggers on scroll using existing animation patterns",
+        "All metric values and labels match the exact specifications provided"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AIPerformanceSection.tsx",
+          "operation": "create",
+          "description": "Create a new component with heading 'AI-Driven Performance Intelligence' and subtitle 'Real-time automation metrics powered by intelligent systems.' Implement a 2-column grid layout (desktop) that stacks on mobile, displaying 4 animated metric counters: (1) 'Workflow Automation Rate: 87% Tasks Automated', (2) 'Operational Processing Speed: 6.4x Faster Execution', (3) 'AI Decision Accuracy: 98.7% Model Precision', (4) 'Manual Intervention Reduced: -72% Human Dependency'. Each metric displays a large animated number with neon cyan highlight accent and supporting label underneath. Use the existing useCounterAnimation hook for smooth upward counting animation triggered on scroll with fade effects, following the pattern used in StatsSection. Use intersection observer for visibility detection."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add authority testimonial block within AIPerformanceSection below metrics grid",
+      "acceptanceCriteria": [
+        "Testimonial block appears below the metrics grid",
+        "Quote and attribution text match exactly as specified",
+        "Text is center-aligned with italic styling",
+        "Neon glow accent line is applied to the block",
+        "Styling maintains professional corporate tone consistent with existing design"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AIPerformanceSection.tsx",
+          "operation": "modify",
+          "description": "Add a testimonial block positioned below the metrics grid within the same component. Display the quote: 'SwiftOps AI automation reduced operational delays by 43% within 90 days.' with attribution '— Operations Director, FinTech Company'. Apply center alignment, italic styling for the quote text, and a soft neon cyan glow accent line (top or bottom border) matching the existing design system. Maintain professional corporate tone with appropriate spacing and typography."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Integrate generated Connected Workflow image with subtle animations into AIPerformanceSection",
+      "acceptanceCriteria": [
+        "Generated workflow image is rendered as a static asset from frontend/public/assets/generated",
+        "Image includes CSS animations for flowing light effects and pulsing nodes",
+        "Gradient overlay animation is applied without performance degradation",
+        "Image is fully responsive across all screen sizes",
+        "On mobile, image appears below the metrics grid",
+        "Visual style matches the existing dark neon theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AIPerformanceSection.tsx",
+          "operation": "modify",
+          "description": "Integrate the generated workflow image from frontend/public/assets/generated/workflow-connected.dim_1200x600.png as a static asset within the AIPerformanceSection component. Position it appropriately in the layout (below metrics on mobile, integrated visually on desktop). Apply CSS animations including flowing light lines (keyframe animation with translateX or opacity), pulsing node effects (scale + opacity pulse), and soft moving gradient overlay (background gradient with animation). Ensure the image is fully responsive using appropriate sizing and object-fit properties. Match the dark neon brand aesthetic with cyan accents. Optimize animations to avoid performance degradation using transform and opacity properties only."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Render new sections in App.tsx replacing the removed TestimonialsSection and PricingSection",
+      "acceptanceCriteria": [
+        "EliteClientProfilesSection replaces TestimonialsSection in the component tree",
+        "AIPerformanceSection replaces PricingSection in the component tree",
+        "Section order and scroll flow remain consistent with existing layout",
+        "Navigation links and scroll behavior continue to work correctly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import the new EliteClientProfilesSection and AIPerformanceSection components. Render <EliteClientProfilesSection /> at the position previously occupied by TestimonialsSection (after IntegrationsSection). Render <AIPerformanceSection /> at the position previously occupied by PricingSection (after StatsSection or HowItWorksSection). Maintain the existing section order and ensure smooth scroll navigation remains functional with proper section IDs if needed for navigation anchors."
+        }
+      ]
+    }
+  ]
+}
