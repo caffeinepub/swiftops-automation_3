@@ -1,16 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Convert the eagle logo to a circular design with futuristic animation effects and remove the email address from the header navigation.
+**Goal:** Replace the eagle logo with a high-detail futuristic robotic eagle head and add premium cinematic activation and hover animations.
 
 **Planned changes:**
-- Transform eagle logo background from square to perfect circle with neon cyan glow and futuristic styling
-- Add soft neon ring glow with optional rotating/breathing animation around the circular logo
-- Update logo animation to circular sequence: energy ring forms, neon outline draws, robotic scan, eagle activates, eyes power on, pulse stabilization
-- Ensure circular logo remains perfectly round and proportionally scaled across all screen sizes
-- Remove Gmail address (zeeshan.automation06@gmail.com) and email icon from header navigation
-- Automatically realign header elements (logo, navigation menu, contact buttons) after email removal
-- Fix header alignment for desktop, tablet, and mobile views
-- Preserve existing neon styling, spacing, and professional futuristic appearance
+- Generate a new futuristic robotic eagle head logo with metallic structure, mechanical feathers, glowing neon cyan energy lines, and circuit patterns
+- Replace current eagle logo in EagleLogo component with the new robotic design
+- Add cinematic 2-4 second activation animation sequence (gradual appearance, neon line activation, AI boot-up eyes, energy scan, subtle glow pulse)
+- Implement hover interaction with slight glow increase and gentle floating motion
+- Optimize animations for mobile devices with automatic weight reduction while maintaining logo sharpness and centering
 
-**User-visible outcome:** The eagle logo displays as a circular design with elegant neon glow and smooth futuristic animation effects. The header navigation is cleaner without the email address, with all remaining elements properly aligned and balanced across all devices.
+**User-visible outcome:** Users will see a premium futuristic robotic eagle logo with a cinematic boot-up animation on page load and subtle interactive hover effects that work smoothly across all devices.

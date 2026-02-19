@@ -10,26 +10,24 @@ export function EagleLogo({ variant = 'icon', size = 512, className = '' }: Eagl
   const imgRef = useRef<HTMLImageElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [animationComplete, setAnimationComplete] = useState(false);
 
   useEffect(() => {
-    // Check if animation has already played
-    const animationPlayed = sessionStorage.getItem('eagle-logo-animated');
-    if (animationPlayed) {
-      setHasAnimated(true);
+    const img = imgRef.current;
+    if (!img) return;
+
+    // Trigger fade-in animation on mount
+    if (img.complete) {
       setIsLoaded(true);
+      // Mark animation as complete after the full sequence (3.2s)
+      setTimeout(() => setAnimationComplete(true), 3200);
     }
   }, []);
 
   const handleImageLoad = () => {
     setIsLoaded(true);
-    if (!hasAnimated) {
-      // Mark animation as played after it completes (3.5 seconds)
-      setTimeout(() => {
-        sessionStorage.setItem('eagle-logo-animated', 'true');
-        setHasAnimated(true);
-      }, 3500);
-    }
+    // Mark animation as complete after the full sequence (3.2s)
+    setTimeout(() => setAnimationComplete(true), 3200);
   };
 
   return (
@@ -39,76 +37,83 @@ export function EagleLogo({ variant = 'icon', size = 512, className = '' }: Eagl
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Rotating neon ring glow - outer layer */}
+      {/* Radial neon glow background with pulse animation */}
       <div
-        className={`absolute inset-0 pointer-events-none rounded-full ${
-          isLoaded && !hasAnimated ? 'animate-circular-ring-form' : isLoaded ? 'animate-breathing-glow' : 'opacity-0'
+        className={`absolute inset-0 pointer-events-none ${
+          animationComplete ? 'animate-pulse-glow-bg' : ''
         }`}
         style={{
-          background: 'radial-gradient(circle, transparent 60%, rgba(0, 229, 255, 0.3) 70%, rgba(0, 229, 255, 0.5) 75%, transparent 80%)',
-          filter: 'blur(8px)',
-          transform: isHovered ? 'scale(1.1)' : 'scale(1)',
-          transition: 'transform 0.3s ease',
+          background: 'radial-gradient(circle, rgba(0, 229, 255, 0.4) 0%, rgba(0, 229, 255, 0.2) 40%, transparent 70%)',
+          filter: 'blur(20px)',
+          opacity: isLoaded ? 1 : 0,
+          animation: isLoaded && !animationComplete ? 'robotic-bg-activate 1s ease-out forwards' : undefined,
         }}
       />
 
-      {/* Circular container with dark background and neon glow */}
-      <div
-        className={`absolute inset-0 rounded-full overflow-hidden ${
-          isLoaded && !hasAnimated ? 'animate-circle-energy-form' : isLoaded ? '' : 'opacity-0 scale-90'
+      <img
+        ref={imgRef}
+        src="/assets/generated/robotic-eagle-logo.dim_512x512.png"
+        alt="SwiftOps Robotic Eagle Logo"
+        onLoad={handleImageLoad}
+        className={`w-full h-full object-contain relative z-10 ${
+          isHovered && animationComplete ? 'animate-eagle-float' : ''
         }`}
         style={{
-          background: 'radial-gradient(circle, rgba(17, 24, 39, 0.95) 0%, rgba(11, 15, 26, 0.98) 100%)',
-          border: '2px solid rgba(0, 229, 255, 0.6)',
-          boxShadow: isHovered
-            ? '0 0 30px rgba(0, 229, 255, 0.8), 0 0 50px rgba(0, 229, 255, 0.4), inset 0 0 20px rgba(0, 229, 255, 0.15)'
-            : '0 0 20px rgba(0, 229, 255, 0.6), 0 0 35px rgba(0, 229, 255, 0.3), inset 0 0 15px rgba(0, 229, 255, 0.1)',
-          transition: 'box-shadow 0.3s ease, transform 0.3s ease',
-          aspectRatio: '1 / 1',
-          willChange: hasAnimated ? 'auto' : 'transform, opacity',
+          opacity: isLoaded ? 1 : 0,
+          filter: isHovered
+            ? 'drop-shadow(0 0 3px rgba(0, 229, 255, 1)) drop-shadow(0 0 6px rgba(0, 229, 255, 0.9)) drop-shadow(0 0 12px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 20px rgba(0, 229, 255, 0.5))'
+            : 'drop-shadow(0 0 2px rgba(0, 229, 255, 0.9)) drop-shadow(0 0 4px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 8px rgba(0, 229, 255, 0.5)) drop-shadow(0 0 12px rgba(0, 229, 255, 0.3))',
+          animation: isLoaded && !animationComplete ? 'robotic-eagle-reveal 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards' : undefined,
+          transition: animationComplete ? 'filter 0.3s ease' : 'none',
         }}
-      >
-        {/* Robotic scan effect overlay */}
-        {isLoaded && !hasAnimated && (
-          <div
-            className="absolute inset-0 pointer-events-none animate-robotic-scan"
-            style={{
-              background: 'linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.4) 50%, transparent 100%)',
-              width: '30%',
-            }}
-          />
-        )}
+      />
 
-        {/* Eagle image centered in circle */}
-        <div className="absolute inset-0 flex items-center justify-center p-[10%]">
-          <img
-            ref={imgRef}
-            src="/assets/generated/robotic-eagle-logo.dim_512x512.png"
-            alt="SwiftOps Eagle Logo"
-            onLoad={handleImageLoad}
-            className={`w-full h-full object-contain relative z-10 ${
-              isLoaded && !hasAnimated ? 'animate-eagle-activate' : isLoaded ? 'opacity-100' : 'opacity-0'
-            } ${isHovered ? 'scale-105' : ''}`}
-            style={{
-              filter: isHovered
-                ? 'drop-shadow(0 0 3px rgba(0, 229, 255, 1)) drop-shadow(0 0 6px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 12px rgba(0, 229, 255, 0.6))'
-                : 'drop-shadow(0 0 2px rgba(0, 229, 255, 0.9)) drop-shadow(0 0 4px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 8px rgba(0, 229, 255, 0.5))',
-              transition: 'transform 0.3s ease, filter 0.3s ease',
-              willChange: hasAnimated ? 'auto' : 'transform, opacity',
-            }}
-          />
-        </div>
-      </div>
+      {/* Neon line activation overlay */}
+      {isLoaded && !animationComplete && (
+        <div
+          className="absolute inset-0 pointer-events-none z-20"
+          style={{
+            background: 'linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.6) 50%, transparent 100%)',
+            animation: 'neon-line-activate 1s ease-out 0.5s forwards',
+            opacity: 0,
+          }}
+        />
+      )}
 
-      {/* Continuous soft pulse glow stabilization */}
+      {/* AI boot sequence eyes glow */}
+      {isLoaded && !animationComplete && (
+        <div
+          className="absolute inset-0 pointer-events-none z-20"
+          style={{
+            background: 'radial-gradient(circle at 45% 40%, rgba(0, 229, 255, 0.8) 0%, transparent 15%), radial-gradient(circle at 55% 40%, rgba(0, 229, 255, 0.8) 0%, transparent 15%)',
+            animation: 'eye-glow-boot 0.5s ease-out 1.5s forwards',
+            opacity: 0,
+          }}
+        />
+      )}
+
+      {/* Energy scan sweep */}
+      {isLoaded && !animationComplete && (
+        <div
+          className="absolute inset-0 pointer-events-none z-20"
+          style={{
+            background: 'linear-gradient(180deg, transparent 0%, rgba(0, 229, 255, 0.4) 50%, transparent 100%)',
+            animation: 'energy-scan-sweep 0.8s ease-in-out 2s forwards',
+            opacity: 0,
+          }}
+        />
+      )}
+
+      {/* Continuous pulse glow effect (after animation) */}
       <div
-        className={`absolute inset-0 pointer-events-none rounded-full ${
-          isLoaded && hasAnimated ? 'animate-pulse-stabilize' : 'opacity-0'
+        className={`absolute inset-0 pointer-events-none ${
+          animationComplete ? 'animate-pulse-glow' : ''
         }`}
         style={{
           background: 'radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%)',
-          opacity: isHovered ? 0.9 : 0.5,
+          opacity: isHovered ? 0.9 : animationComplete ? 0.5 : 0,
           transition: 'opacity 0.3s ease',
+          animation: isLoaded && !animationComplete ? 'final-glow-pulse 0.4s ease-out 2.8s forwards' : undefined,
         }}
       />
     </div>
