@@ -1,131 +1,123 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Replace Client and Pricing sections with Elite Client Profiles and AI Performance Intelligence",
+  "title": "Premium Eagle Logo Replacement, Animation, and Header Alignment Fixes",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Remove TestimonialsSection component and all references from App.tsx",
+      "summary": "Replace existing SwiftOps logo with premium futuristic eagle head logo featuring geometric design, sharp angular edges, neon cyan glow, and high-contrast white with cyan accents",
       "acceptanceCriteria": [
-        "TestimonialsSection component is no longer imported or rendered in App.tsx",
-        "No empty gaps or broken spacing remains after removal",
-        "Smooth scroll flow is maintained between adjacent sections"
+        "Old logo is completely removed from all components",
+        "New eagle head logo has geometric, angular design with sharp edges",
+        "Logo features neon cyan glow effects matching the website's color scheme",
+        "Logo uses high-contrast white with neon cyan accent colors",
+        "Design is aggressive yet clean, avoiding cartoon/mascot aesthetics",
+        "Logo is rendered in SVG format for scalability"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Remove the import statement for TestimonialsSection and remove the <TestimonialsSection /> component render call from the component tree. Ensure no extra whitespace or gaps remain after removal."
+          "description": "Replace the existing logo SVG implementation with the new premium eagle head design. Import and integrate the generated eagle logo image from frontend/public/assets/generated/eagle-logo.dim_512x512.png. Ensure the component supports both icon and full variants, maintains neon cyan glow effects, hover animations, and pulsing radial background. Preserve all existing props (variant, size) and styling capabilities while using the new geometric eagle head design."
+        },
+        {
+          "path": "frontend/src/components/EagleClickAnimation.tsx",
+          "operation": "modify",
+          "description": "Update the full-screen eagle animation component to use the new premium eagle head logo asset from frontend/public/assets/generated/eagle-logo.dim_512x512.png. Maintain all existing animation stages (fade, draw, expand, particles, pulse, scale, fadeout) and ensure the geometric eagle design renders correctly throughout the animation sequence. Preserve the isActive prop trigger and onComplete callback functionality."
+        },
+        {
+          "path": "frontend/src/components/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Verify that the EagleLogo component integration in the hero section displays the new premium eagle head logo correctly. Ensure the animated eagle logo, floating particles, and CTA buttons work seamlessly with the updated logo design. No structural changes needed, only visual verification that the new logo integrates properly with existing parallax and animation effects."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Create EliteClientProfilesSection component with 3 premium profile cards featuring executive testimonials",
+      "summary": "Add smooth 2-4 second entrance animation to eagle logo on page load with fade-in, scale-in, and glow pulse effects using smooth easing",
       "acceptanceCriteria": [
-        "Section displays 3 profile cards horizontally on desktop",
-        "Cards stack vertically on mobile devices",
-        "Each card contains all required elements: circular photo, name, position, company type, testimonial",
-        "Cards have neon border glow matching the existing cyan neon theme",
-        "Hover animations include lift effect and increased glow intensity",
-        "Glassmorphism or gradient dark background is applied to cards",
-        "Professional, executive-level visual style is maintained"
+        "Logo animation duration is between 2-4 seconds",
+        "Animation includes fade-in, scale-in, and glow pulse effects",
+        "Animation uses smooth easing functions for premium feel",
+        "Animation triggers automatically on page load",
+        "Animation runs only once per session/page load",
+        "Logo remains visible immediately after animation completes",
+        "Animation performs smoothly on both desktop and mobile devices",
+        "No janky frames or performance issues during animation"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/EliteClientProfilesSection.tsx",
-          "operation": "create",
-          "description": "Create a new component with section title 'Elite Client Profiles'. Implement 3 profile cards with the following data: (1) FinTech executive with frontend/public/assets/generated/profile-executive-1.dim_200x200.png, (2) SaaS executive with frontend/public/assets/generated/profile-executive-2.dim_200x200.png, (3) Enterprise AI executive with frontend/public/assets/generated/profile-executive-3.dim_200x200.png. Each card includes circular profile image, full name, position, company type, and 2-3 line testimonial. Apply responsive grid layout (horizontal on desktop, stacked on mobile), neon cyan border glow matching existing theme, glassmorphism dark background, and hover animations with lift and increased glow effects. Use intersection observer for fade-in animations similar to existing sections."
+          "path": "frontend/src/components/EagleLogo.tsx",
+          "operation": "modify",
+          "description": "Add a one-time entrance animation that triggers on component mount. Implement CSS animations or Framer Motion with 2-4 second duration including fade-in (opacity 0 to 1), scale-in (transform scale 0.8 to 1), and glow pulse effects. Use cubic-bezier easing for smooth premium feel. Track animation state (using localStorage or sessionStorage) to ensure it runs only once per page load/session. After animation completes, logo should remain visible at full opacity and normal scale. Optimize animation performance using CSS transforms and opacity for GPU acceleration."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add CSS keyframe animations for the eagle logo entrance effect including fade-in, scale-in, and glow-pulse animations with smooth easing functions (cubic-bezier). Define animation classes that can be applied to the logo for the 2-4 second entrance sequence. Ensure animations use transform and opacity properties for optimal performance and avoid layout thrashing."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Remove PricingSection component and all references from App.tsx",
+      "summary": "Fix header alignment of contact email to display fully in single line without wrapping, with proper vertical alignment and consistent spacing across all viewports",
       "acceptanceCriteria": [
-        "PricingSection component is no longer imported or rendered in App.tsx",
-        "No pricing cards, toggles, or buttons remain",
-        "Adjacent sections maintain proper spacing",
-        "No visual layout shift occurs after removal"
+        "Email address displays on a single line on all screen sizes",
+        "No text wrapping or line breaks occur on mobile, tablet, or desktop",
+        "Email is vertically aligned with other navbar items",
+        "Consistent spacing maintained between logo, navigation menu, and email",
+        "Layout remains functional and readable on mobile (320px+), tablet (768px+), and desktop (1024px+) viewports",
+        "Email text does not overflow or get cut off"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/Navbar.tsx",
           "operation": "modify",
-          "description": "Remove the import statement for PricingSection and remove the <PricingSection /> component render call from the component tree. Maintain spacing consistency with adjacent sections to prevent layout shift."
+          "description": "Fix the contact email (zeeshan.automation06@gmail.com) alignment and display issues. Apply CSS properties to prevent text wrapping: white-space: nowrap, overflow: hidden if needed with ellipsis on very small screens, or use responsive font sizing. Ensure vertical alignment with other navbar items using flexbox align-items: center. On mobile viewports, consider adjusting layout to prevent overflow (e.g., moving email to a separate row or hamburger menu if space is constrained). Maintain consistent padding and spacing between logo, navigation links, and contact details across all breakpoints (mobile 320px+, tablet 768px+, desktop 1024px+)."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Create AIPerformanceSection component with 4 animated metric counters in 2-column grid",
+      "summary": "Optimize header layout for responsive design ensuring perfect alignment, no overlapping elements, consistent spacing, and professional appearance across all devices",
       "acceptanceCriteria": [
-        "Section displays heading and subtitle as specified",
-        "4 metrics are displayed in a 2-column grid on desktop",
-        "Metrics stack vertically on mobile devices",
-        "Each metric shows large animated number with neon accent and label underneath",
-        "Counter animation triggers on scroll using existing animation patterns",
-        "All metric values and labels match the exact specifications provided"
+        "Header elements do not overlap on any screen size",
+        "Padding and spacing remain consistent across breakpoints",
+        "Layout adapts gracefully from mobile to desktop",
+        "Visual hierarchy is maintained on all devices",
+        "Professional appearance is preserved across all viewports",
+        "Touch targets are appropriately sized for mobile interaction"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/AIPerformanceSection.tsx",
-          "operation": "create",
-          "description": "Create a new component with heading 'AI-Driven Performance Intelligence' and subtitle 'Real-time automation metrics powered by intelligent systems.' Implement a 2-column grid layout (desktop) that stacks on mobile, displaying 4 animated metric counters: (1) 'Workflow Automation Rate: 87% Tasks Automated', (2) 'Operational Processing Speed: 6.4x Faster Execution', (3) 'AI Decision Accuracy: 98.7% Model Precision', (4) 'Manual Intervention Reduced: -72% Human Dependency'. Each metric displays a large animated number with neon cyan highlight accent and supporting label underneath. Use the existing useCounterAnimation hook for smooth upward counting animation triggered on scroll with fade effects, following the pattern used in StatsSection. Use intersection observer for visibility detection."
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "modify",
+          "description": "Implement comprehensive responsive design optimizations for the header. Use CSS Grid or Flexbox with appropriate breakpoints to prevent overlapping elements. Define consistent padding and spacing variables for mobile (320px+), tablet (768px+), and desktop (1024px+) viewports. Ensure touch targets are at least 44x44px for mobile usability. Add media queries to adjust layout flow on smaller screens (e.g., stacking elements or using hamburger menu if needed). Maintain the professional SaaS/AI startup visual hierarchy and neon cyan theme across all breakpoints. Test and verify no overlapping occurs between logo, navigation menu, and contact email at any viewport size."
         }
       ]
     },
     {
       "id": "REQ-5",
-      "summary": "Add authority testimonial block within AIPerformanceSection below metrics grid",
+      "summary": "Optimize performance by compressing logo asset, ensuring animation does not delay rendering, and maintaining smooth scrolling and navigation",
       "acceptanceCriteria": [
-        "Testimonial block appears below the metrics grid",
-        "Quote and attribution text match exactly as specified",
-        "Text is center-aligned with italic styling",
-        "Neon glow accent line is applied to the block",
-        "Styling maintains professional corporate tone consistent with existing design"
+        "Logo file size is optimized (compressed without quality loss)",
+        "Logo animation does not block initial page render",
+        "Page loads quickly with optimized logo asset",
+        "Smooth scrolling performance is maintained",
+        "Navigation interactions remain responsive",
+        "No frame drops or stuttering during scrolling or navigation",
+        "Core Web Vitals (LCP, FID, CLS) remain healthy"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/AIPerformanceSection.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Add a testimonial block positioned below the metrics grid within the same component. Display the quote: 'SwiftOps AI automation reduced operational delays by 43% within 90 days.' with attribution '— Operations Director, FinTech Company'. Apply center alignment, italic styling for the quote text, and a soft neon cyan glow accent line (top or bottom border) matching the existing design system. Maintain professional corporate tone with appropriate spacing and typography."
-        }
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "summary": "Integrate generated Connected Workflow image with subtle animations into AIPerformanceSection",
-      "acceptanceCriteria": [
-        "Generated workflow image is rendered as a static asset from frontend/public/assets/generated",
-        "Image includes CSS animations for flowing light effects and pulsing nodes",
-        "Gradient overlay animation is applied without performance degradation",
-        "Image is fully responsive across all screen sizes",
-        "On mobile, image appears below the metrics grid",
-        "Visual style matches the existing dark neon theme"
-      ],
-      "file_operations": [
+          "description": "Optimize logo loading and animation performance. Ensure the eagle logo image from frontend/public/assets/generated/eagle-logo.dim_512x512.png is properly optimized (it should already be compressed by the image generation system). Use lazy loading attributes or React.lazy if appropriate. Implement the entrance animation using CSS transforms and opacity for GPU acceleration to avoid blocking the main thread. Consider using will-change CSS property sparingly for animation optimization. Ensure animation does not delay initial page render by starting after component mount. Verify no layout shifts (CLS) occur during logo loading or animation."
+        },
         {
-          "path": "frontend/src/components/AIPerformanceSection.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Integrate the generated workflow image from frontend/public/assets/generated/workflow-connected.dim_1200x600.png as a static asset within the AIPerformanceSection component. Position it appropriately in the layout (below metrics on mobile, integrated visually on desktop). Apply CSS animations including flowing light lines (keyframe animation with translateX or opacity), pulsing node effects (scale + opacity pulse), and soft moving gradient overlay (background gradient with animation). Ensure the image is fully responsive using appropriate sizing and object-fit properties. Match the dark neon brand aesthetic with cyan accents. Optimize animations to avoid performance degradation using transform and opacity properties only."
-        }
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "summary": "Render new sections in App.tsx replacing the removed TestimonialsSection and PricingSection",
-      "acceptanceCriteria": [
-        "EliteClientProfilesSection replaces TestimonialsSection in the component tree",
-        "AIPerformanceSection replaces PricingSection in the component tree",
-        "Section order and scroll flow remain consistent with existing layout",
-        "Navigation links and scroll behavior continue to work correctly"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import the new EliteClientProfilesSection and AIPerformanceSection components. Render <EliteClientProfilesSection /> at the position previously occupied by TestimonialsSection (after IntegrationsSection). Render <AIPerformanceSection /> at the position previously occupied by PricingSection (after StatsSection or HowItWorksSection). Maintain the existing section order and ensure smooth scroll navigation remains functional with proper section IDs if needed for navigation anchors."
+          "description": "Add performance-optimized CSS for logo animations using transform and opacity properties only (GPU-accelerated). Consider adding will-change: transform, opacity to elements that will animate, but remove it after animation completes to avoid memory issues. Ensure smooth scrolling is maintained by avoiding expensive CSS properties in animations (no box-shadow changes during animation, use filter: drop-shadow instead if needed). Verify that global styles do not interfere with scroll performance."
         }
       ]
     }

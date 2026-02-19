@@ -10,16 +10,27 @@ export function EagleLogo({ variant = 'icon', size = 512, className = '' }: Eagl
   const imgRef = useRef<HTMLImageElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    const img = imgRef.current;
-    if (!img) return;
-
-    // Trigger fade-in animation on mount
-    if (img.complete) {
+    // Check if animation has already played
+    const animationPlayed = sessionStorage.getItem('eagle-logo-animated');
+    if (animationPlayed) {
+      setHasAnimated(true);
       setIsLoaded(true);
     }
   }, []);
+
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+    if (!hasAnimated) {
+      // Mark animation as played after it completes (3 seconds)
+      setTimeout(() => {
+        sessionStorage.setItem('eagle-logo-animated', 'true');
+        setHasAnimated(true);
+      }, 3000);
+    }
+  };
 
   return (
     <div
@@ -41,14 +52,16 @@ export function EagleLogo({ variant = 'icon', size = 512, className = '' }: Eagl
         ref={imgRef}
         src="/assets/generated/eagle-logo.dim_512x512.png"
         alt="SwiftOps Eagle Logo"
-        onLoad={() => setIsLoaded(true)}
-        className={`w-full h-full object-contain transition-all duration-700 relative z-10 ${
-          isLoaded ? 'animate-eagle-appear-up' : 'opacity-0'
+        onLoad={handleImageLoad}
+        className={`w-full h-full object-contain relative z-10 ${
+          isLoaded && !hasAnimated ? 'animate-eagle-entrance' : isLoaded ? 'opacity-100' : 'opacity-0'
         } ${isHovered ? 'scale-105' : ''}`}
         style={{
           filter: isHovered
             ? 'drop-shadow(0 0 2px rgba(0, 229, 255, 1)) drop-shadow(0 0 4px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 8px rgba(0, 229, 255, 0.6)) drop-shadow(0 0 16px rgba(0, 229, 255, 0.4))'
             : 'drop-shadow(0 0 1px rgba(0, 229, 255, 0.9)) drop-shadow(0 0 2px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 4px rgba(0, 229, 255, 0.5)) drop-shadow(0 0 8px rgba(0, 229, 255, 0.3))',
+          transition: 'transform 0.3s ease, filter 0.3s ease',
+          willChange: hasAnimated ? 'auto' : 'transform, opacity',
         }}
       />
 

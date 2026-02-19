@@ -233,13 +233,15 @@
 
   /* Shadow Effects */
   .shadow-neon-glow {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 0 40px rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.5);
   }
 
-  .shadow-neon-glow-sm {
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), 0 0 20px rgba(0, 229, 255, 0.05);
+  .shadow-neon-glow-strong {
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.5), 0 8px 24px rgba(0, 0, 0, 0.6);
   }
+}
 
+@layer components {
   /* Grid Background */
   .grid-background {
     background-image: linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
@@ -248,43 +250,23 @@
     animation: grid-move 20s linear infinite;
   }
 
-  /* Particles */
+  /* Particles Container */
   .particles-container {
     pointer-events: none;
   }
 
   .particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 2px;
+    height: 2px;
     background: #00e5ff;
     border-radius: 50%;
     box-shadow: 0 0 10px #00e5ff;
-    animation: float-particle 10s infinite ease-in-out;
-  }
-
-  /* Network Lines */
-  .network-line {
-    animation: pulse-line 2s infinite ease-in-out;
-  }
-
-  /* Workflow Image Styling */
-  .workflow-image {
-    animation: workflow-glow 4s ease-in-out infinite;
+    animation: float-particle linear infinite;
   }
 }
 
-/* Animations */
-@keyframes neon-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(0, 229, 255, 0.9), 0 0 60px rgba(0, 229, 255, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.3);
-  }
-}
-
+/* Keyframe Animations */
 @keyframes grid-move {
   0% {
     background-position: 0 0;
@@ -295,25 +277,135 @@
 }
 
 @keyframes float-particle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(calc(var(--random-x, 0) * 50px));
+    opacity: 0;
+  }
+}
+
+/* Eagle Logo Entrance Animation - 3 seconds with smooth easing */
+@keyframes eagle-entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: drop-shadow(0 0 0px rgba(0, 229, 255, 0));
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 40px rgba(0, 229, 255, 0.4));
+  }
+  60% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px rgba(0, 229, 255, 1)) drop-shadow(0 0 60px rgba(0, 229, 255, 0.6));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 1px rgba(0, 229, 255, 0.9)) drop-shadow(0 0 2px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 4px rgba(0, 229, 255, 0.5)) drop-shadow(0 0 8px rgba(0, 229, 255, 0.3));
+  }
+}
+
+.animate-eagle-entrance {
+  animation: eagle-entrance 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Existing animations */
+@keyframes fade-in-slide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-slide {
+  animation: fade-in-slide 0.8s ease-out forwards;
+}
+
+@keyframes pulse-glow {
   0%,
   100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0.3;
+    opacity: 0.5;
   }
   50% {
-    transform: translateY(-100px) translateX(50px);
     opacity: 1;
   }
 }
 
-@keyframes pulse-line {
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-bg {
   0%,
   100% {
-    opacity: 0.3;
+    opacity: 0.6;
+    transform: scale(1);
   }
   50% {
     opacity: 1;
+    transform: scale(1.1);
   }
+}
+
+.animate-pulse-glow-bg {
+  animation: pulse-glow-bg 4s ease-in-out infinite;
+}
+
+@keyframes pulse-node {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-node {
+  animation: pulse-node 2s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 229, 255, 1), 0 0 60px rgba(0, 229, 255, 0.6), inset 0 0 20px rgba(0, 229, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.1);
+  }
+}
+
+@keyframes workflow-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.8));
+  }
+}
+
+.animate-workflow-glow {
+  animation: workflow-glow 3s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -324,6 +416,10 @@
   50% {
     transform: translateY(-20px);
   }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float-node {
@@ -338,195 +434,149 @@
   }
 }
 
-@keyframes fade-in-slide {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes eagle-appear {
-  from {
-    opacity: 0;
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-@keyframes eagle-appear-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.1);
-  }
-}
-
-@keyframes pulse-glow-bg {
-  0%,
-  100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.15);
-  }
-}
-
-@keyframes pulse-node {
-  0%,
-  100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.3);
-  }
-}
-
-@keyframes pulse-button {
-  0%,
-  100% {
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), 0 0 20px rgba(0, 229, 255, 0.05);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 30px rgba(0, 229, 255, 0.1);
-  }
-}
-
-@keyframes workflow-glow {
-  0%,
-  100% {
-    filter: brightness(1) contrast(1);
-  }
-  50% {
-    filter: brightness(1.05) contrast(1.05);
-  }
-}
-
-@keyframes glow-underline {
-  0%,
-  100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
 .animate-float-node {
   animation: float-node 4s ease-in-out infinite;
 }
 
-.animate-fade-in-slide {
-  animation: fade-in-slide 0.6s ease-out forwards;
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
-}
-
-.animate-eagle-appear {
-  animation: eagle-appear 1.5s ease-out forwards;
-}
-
-.animate-eagle-appear-up {
-  animation: eagle-appear-up 1.2s ease-out forwards;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2.5s ease-in-out infinite;
-}
-
-.animate-pulse-glow-bg {
-  animation: pulse-glow-bg 3s ease-in-out infinite;
-}
-
-.animate-pulse-node {
-  animation: pulse-node 2s ease-in-out infinite;
-}
-
-.animate-pulse-button {
-  animation: pulse-button 2s ease-in-out infinite;
-}
-
-.animate-glow-underline {
-  animation: glow-underline 2s ease-in-out infinite;
-}
-
-/* Ripple Effect */
-@keyframes ripple {
+/* Eagle Click Animation Keyframes */
+@keyframes draw-stroke {
+  from {
+    stroke-dashoffset: 1000;
+  }
   to {
-    transform: scale(4);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes wing-expand-left {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-16px) scale(1);
+  }
+}
+
+.animate-wing-expand-left {
+  animation: wing-expand-left 1s ease-out forwards;
+}
+
+@keyframes wing-expand-right {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(0) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(16px) scale(1);
+  }
+}
+
+.animate-wing-expand-right {
+  animation: wing-expand-right 1s ease-out forwards;
+}
+
+@keyframes particle-burst {
+  0% {
+    transform: translate(-50%, -50%) translateX(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(calc(cos(var(--angle)) * 100px)) translateY(calc(sin(var(--angle)) * 100px));
     opacity: 0;
   }
 }
 
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(0, 229, 255, 0.6);
-  animation: ripple 0.6s ease-out;
-  pointer-events: none;
+.animate-particle-burst {
+  animation: particle-burst 0.8s ease-out forwards;
 }
 
-/* Responsive optimizations */
+@keyframes light-streak {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 96px;
+  }
+}
+
+.animate-light-streak {
+  animation: light-streak 0.6s ease-out forwards;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 0.6s ease-out forwards;
+}
+
+/* Network Line Animation */
+.network-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw-line 3s ease-in-out infinite;
+}
+
+@keyframes draw-line {
+  0%,
+  100% {
+    stroke-dashoffset: 200;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Mobile Optimizations */
 @media (max-width: 768px) {
-  .particle {
-    width: 2px;
-    height: 2px;
+  .neon-button {
+    @apply px-4 py-2 text-xs;
   }
 
-  .grid-background {
-    background-size: 30px 30px;
+  .neon-button-primary {
+    @apply px-6 py-3 text-sm;
+  }
+
+  .glass-card {
+    backdrop-filter: blur(12px);
+  }
+
+  /* Reduce animation complexity on mobile for performance */
+  .animate-pulse-glow,
+  .animate-pulse-glow-bg {
+    animation-duration: 4s;
+  }
+
+  .particle {
+    display: none;
   }
 }
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+/* Tablet Optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .neon-button {
+    @apply px-5 py-2.5 text-sm;
   }
 }
