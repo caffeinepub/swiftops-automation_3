@@ -60,6 +60,7 @@ export function ContactSection() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
+            const isEmail = method.label === 'Email';
             const content = (
               <div
                 className={`glass-card p-6 space-y-4 hover:scale-105 hover:-translate-y-1 transition-all duration-300 group ${
@@ -83,9 +84,15 @@ export function ContactSection() {
                       }`}
                     />
                   </div>
-                  <div className="flex-1 text-left">
+                  <div className="flex-1 text-left min-w-0">
                     <div className="text-sm text-white/60 font-inter">{method.label}</div>
-                    <div className="text-white font-inter font-semibold break-all">
+                    <div
+                      className={`text-white font-inter font-semibold ${
+                        isEmail
+                          ? 'whitespace-nowrap overflow-hidden text-ellipsis text-sm sm:text-base md:text-lg'
+                          : 'break-all'
+                      }`}
+                    >
                       {method.value}
                     </div>
                   </div>

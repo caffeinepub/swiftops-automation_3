@@ -53,62 +53,70 @@ export function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <EagleLogo variant="icon" size={40} />
-            <div className="flex flex-col">
-              <span className="text-xl font-orbitron font-bold tracking-wider text-white">
-                SWIFTOPS
-              </span>
-              <span className="text-xs font-orbitron text-neon-cyan tracking-widest">
-                AUTOMATION
-              </span>
+        <div className="container mx-auto px-4 py-3 md:py-4">
+          <div className="flex items-center justify-between gap-4">
+            {/* Logo and Brand */}
+            <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
+              <EagleLogo variant="icon" size={40} />
+              <div className="flex flex-col">
+                <span className="text-lg md:text-xl font-orbitron font-bold tracking-wider text-white leading-tight">
+                  SWIFTOPS
+                </span>
+                <span className="text-[10px] md:text-xs font-orbitron text-neon-cyan tracking-widest leading-tight">
+                  AUTOMATION
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div className="hidden md:flex items-center gap-8">
-            <a
-              href="#hero"
-              onClick={(e) => handleNavClick(e, '#hero')}
-              className={`neon-button-link ${
-                activeSection === '#hero' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
-              }`}
-            >
-              Home
-            </a>
-            <a
-              href="#services"
-              onClick={(e) => handleNavClick(e, '#services')}
-              className={`neon-button-link ${
-                activeSection === '#services' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
-              }`}
-            >
-              Services
-            </a>
-            <a
-              href="#pricing"
-              onClick={(e) => handleNavClick(e, '#pricing')}
-              className={`neon-button-link ${
-                activeSection === '#pricing' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
-              }`}
-            >
-              Pricing
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
-              className={`neon-button-link ${
-                activeSection === '#contact' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
-              }`}
-            >
-              Contact
-            </a>
-            <button
-              onClick={handleGetStartedClick}
-              className="neon-button relative overflow-hidden"
-            >
-              Get Started
-            </button>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+              <a
+                href="#hero"
+                onClick={(e) => handleNavClick(e, '#hero')}
+                className={`neon-button-link whitespace-nowrap ${
+                  activeSection === '#hero' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
+                }`}
+              >
+                Home
+              </a>
+              <a
+                href="#services"
+                onClick={(e) => handleNavClick(e, '#services')}
+                className={`neon-button-link whitespace-nowrap ${
+                  activeSection === '#services' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
+                }`}
+              >
+                Services
+              </a>
+              <a
+                href="#pricing"
+                onClick={(e) => handleNavClick(e, '#pricing')}
+                className={`neon-button-link whitespace-nowrap ${
+                  activeSection === '#pricing' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
+                }`}
+              >
+                Pricing
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, '#contact')}
+                className={`neon-button-link whitespace-nowrap ${
+                  activeSection === '#contact' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
+                }`}
+              >
+                Contact
+              </a>
+            </div>
+
+            {/* Get Started CTA Button */}
+            <div className="flex items-center">
+              <button
+                onClick={handleGetStartedClick}
+                className="hidden lg:block neon-button relative overflow-hidden whitespace-nowrap px-4 xl:px-6"
+              >
+                Get Started
+              </button>
+            </div>
           </div>
         </div>
       </nav>

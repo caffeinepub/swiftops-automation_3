@@ -1,13 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Replace the eagle logo with a high-detail futuristic robotic eagle head and add premium cinematic activation and hover animations.
+**Goal:** Increase the Gmail contact card size while keeping the email address on a single line.
 
 **Planned changes:**
-- Generate a new futuristic robotic eagle head logo with metallic structure, mechanical feathers, glowing neon cyan energy lines, and circuit patterns
-- Replace current eagle logo in EagleLogo component with the new robotic design
-- Add cinematic 2-4 second activation animation sequence (gradual appearance, neon line activation, AI boot-up eyes, energy scan, subtle glow pulse)
-- Implement hover interaction with slight glow increase and gentle floating motion
-- Optimize animations for mobile devices with automatic weight reduction while maintaining logo sharpness and centering
+- Increase font size and dimensions of the Gmail contact card in the ContactSection component
+- Ensure the email address displays on one line without wrapping or overflow
+- Maintain proper spacing and alignment with other contact cards
 
-**User-visible outcome:** Users will see a premium futuristic robotic eagle logo with a cinematic boot-up animation on page load and subtle interactive hover effects that work smoothly across all devices.
+**User-visible outcome:** The Gmail contact card displays larger and more prominently while the email address remains cleanly formatted on a single line.

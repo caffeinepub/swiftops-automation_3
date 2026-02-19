@@ -62,9 +62,9 @@ export function EagleClickAnimation({ isActive, onComplete }: EagleClickAnimatio
       {/* Eagle logo animation */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative w-64 h-64 md:w-96 md:h-96">
-          {/* Main eagle image */}
+          {/* Main eagle image - using new eagle head logo */}
           <img
-            src="/assets/generated/eagle-logo.dim_512x512.png"
+            src="/assets/generated/eagle-head-logo.dim_400x400.png"
             alt="Eagle Animation"
             className={`w-full h-full object-contain transition-all duration-700 ${
               stage === 'draw' || stage === 'expand' || stage === 'particles' || stage === 'pulse' || stage === 'scale'

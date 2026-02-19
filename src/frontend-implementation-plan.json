@@ -1,110 +1,22 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Replace eagle logo with high-detail futuristic robotic eagle head and premium animations",
+  "title": "Increase Gmail contact card size while maintaining single-line layout",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Generate a high-detail futuristic robotic eagle head image with metallic robotic structure, AI machine-style face panels, mechanical feather segments, sharp aggressive beak design, glowing neon cyan energy lines, subtle circuit patterns or tech engravings, futuristic armor plating look, symmetrical professional design, and premium startup branding quality",
+      "summary": "Increase the font size and overall dimensions of the Gmail contact card while ensuring the email address fits on one line without wrapping or overflow",
       "acceptanceCriteria": [
-        "Logo displays metallic robotic structure with mechanical feather segments",
-        "Includes glowing neon cyan energy lines matching website theme",
-        "Features subtle circuit patterns or tech engravings",
-        "Has sharp aggressive beak design with futuristic armor plating",
-        "Design is symmetrical and professional",
-        "Avoids cartoon style, flat vector, clipart appearance, and over-complex noisy details"
+        "The Gmail contact card displays with increased font size compared to current implementation",
+        "The email address remains on a single line without text wrapping",
+        "The card maintains proper spacing and alignment with other contact cards",
+        "Text does not overflow the card boundaries"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/EagleLogo.tsx",
+          "path": "frontend/src/components/ContactSection.tsx",
           "operation": "modify",
-          "description": "Update the eagle logo image source to use the newly generated robotic eagle head image at frontend/public/assets/generated/robotic-eagle-logo.dim_512x512.png, ensuring the image integrates with existing neon glow effects and maintains strong visibility on dark background"
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Replace the current eagle logo image in EagleLogo.tsx component with the newly generated futuristic robotic eagle head",
-      "acceptanceCriteria": [
-        "New robotic eagle logo replaces current eagle in EagleLogo component",
-        "Logo maintains compatibility with existing neon glow effects",
-        "Logo remains sharp and visible on dark background",
-        "Logo blends naturally with header/navbar styling"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/EagleLogo.tsx",
-          "operation": "modify",
-          "description": "Replace the current eagle logo image reference with frontend/public/assets/generated/robotic-eagle-logo.dim_512x512.png while preserving all existing neon glow effects, hover animations, and dark background compatibility in the component structure"
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Add a cinematic robotic activation animation sequence (2-4 seconds) to the eagle logo with staged reveal effects including gradual appearance, neon line activation, AI boot sequence eyes, energy scan, and final glow pulse",
-      "acceptanceCriteria": [
-        "Animation sequence runs for 2-4 seconds with smooth cinematic easing",
-        "Eagle head appears gradually from dark background",
-        "Neon cyan lines activate progressively across the logo",
-        "Eyes glow with an AI boot-up sequence effect",
-        "Soft energy scan animation passes across the logo surface",
-        "Animation concludes with a subtle glow pulse",
-        "No sudden pop-in or jarring transitions"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/EagleLogo.tsx",
-          "operation": "modify",
-          "description": "Implement a cinematic robotic activation animation with the following stages: (1) eagle head fade-in from dark background over 0.5s, (2) progressive neon cyan line activation across the logo over 1s, (3) AI boot sequence eye glow effect over 0.5s, (4) soft energy scan sweep across logo surface over 0.8s, (5) final subtle glow pulse over 0.4s; use smooth cubic-bezier easing for professional tech-brand feel and avoid sudden pop-in effects"
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add CSS keyframe animations for the robotic activation sequence including fade-in, neon-line-activate, eye-glow-boot, energy-scan-sweep, and glow-pulse animations with cinematic easing functions to support the eagle logo activation effect"
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Implement hover interaction animation on the eagle logo that increases glow intensity slightly and adds a very small floating motion",
-      "acceptanceCriteria": [
-        "Glow intensity increases subtly on hover",
-        "Logo displays gentle floating motion on hover",
-        "Animation maintains professional appearance without being excessive",
-        "Hover effects work smoothly across desktop browsers"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/EagleLogo.tsx",
-          "operation": "modify",
-          "description": "Add hover state interaction that increases the existing neon glow intensity by 20-30% and applies a subtle vertical floating motion (translateY oscillation of 2-4px) using smooth transitions to maintain clean professional appearance"
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add CSS keyframe animation for gentle floating motion (subtle translateY oscillation) and enhanced glow intensity classes to support the eagle logo hover interaction effects"
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Optimize eagle logo animations for mobile devices by automatically reducing animation weight while maintaining logo sharpness and centered positioning across all device sizes",
-      "acceptanceCriteria": [
-        "Logo animations run smoothly on mobile devices without performance issues",
-        "Animation complexity is automatically reduced on smaller screens",
-        "Logo remains sharp and high-quality across all device sizes",
-        "Logo maintains centered positioning on mobile, tablet, and desktop views"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/EagleLogo.tsx",
-          "operation": "modify",
-          "description": "Implement responsive animation optimization using CSS media queries and prefers-reduced-motion to automatically reduce animation complexity on mobile devices (simplify or disable energy scan and floating effects below 768px breakpoint) while maintaining sharp image rendering and centered positioning across all viewport sizes"
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add media query rules for mobile devices (max-width: 768px) and prefers-reduced-motion to reduce animation duration, disable complex effects, and ensure the robotic eagle logo remains performant and centered on smaller screens"
+          "description": "Modify the Gmail contact card element (identified by XPath /html[1]/body[1]/div[1]/main[1]/section[9]/div[1]/div[2]/a[4]/div[1]/div[1]/div[2]/div[2]) to increase font size and card dimensions. Adjust the text sizing classes while maintaining single-line display using appropriate CSS properties (text-overflow: ellipsis, white-space: nowrap, overflow: hidden). Preserve existing glassmorphism styling, hover effects, and responsive behavior. Ensure the card remains aligned with other contact cards (Name, Phone, WhatsApp, Instagram) in the section."
         }
       ]
     }

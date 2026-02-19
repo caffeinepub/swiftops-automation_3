@@ -233,13 +233,15 @@
 
   /* Shadow Effects */
   .shadow-neon-glow {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 0 40px rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.5);
   }
 
-  .shadow-neon-glow-sm {
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), 0 0 20px rgba(0, 229, 255, 0.05);
+  .shadow-neon-glow-strong {
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.5), 0 8px 24px rgba(0, 0, 0, 0.6);
   }
+}
 
+@layer components {
   /* Grid Background */
   .grid-background {
     background-image: linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
@@ -248,43 +250,23 @@
     animation: grid-move 20s linear infinite;
   }
 
-  /* Particles */
+  /* Particles Container */
   .particles-container {
     pointer-events: none;
   }
 
   .particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 2px;
+    height: 2px;
     background: #00e5ff;
     border-radius: 50%;
     box-shadow: 0 0 10px #00e5ff;
-    animation: float-particle 10s infinite ease-in-out;
-  }
-
-  /* Network Lines */
-  .network-line {
-    animation: pulse-line 2s infinite ease-in-out;
-  }
-
-  /* Workflow Image Styling */
-  .workflow-image {
-    animation: workflow-glow 4s ease-in-out infinite;
+    animation: float-particle linear infinite;
   }
 }
 
-/* Animations */
-@keyframes neon-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(0, 229, 255, 0.9), 0 0 60px rgba(0, 229, 255, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.3);
-  }
-}
-
+/* Keyframe Animations */
 @keyframes grid-move {
   0% {
     background-position: 0 0;
@@ -295,375 +277,275 @@
 }
 
 @keyframes float-particle {
-  0%,
-  100% {
+  0% {
     transform: translateY(0) translateX(0);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateY(-100px) translateX(50px);
-    opacity: 1;
-  }
-}
-
-@keyframes pulse-line {
-  0%,
-  100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes float-node {
-  0%,
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-15px) scale(1.2);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in-slide {
-  from {
     opacity: 0;
-    transform: translateY(30px);
   }
-  to {
+  10% {
     opacity: 1;
-    transform: translateY(0);
   }
-}
-
-@keyframes fade-in-up {
-  from {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(calc(var(--random-x, 0) * 50px));
     opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
-@keyframes eagle-appear {
-  from {
-    opacity: 0;
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
+/* New Eagle Head Logo Animations */
 
-@keyframes eagle-appear-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.1);
-  }
-}
-
-@keyframes pulse-glow-bg {
-  0%,
-  100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.15);
-  }
-}
-
-@keyframes pulse-node {
-  0%,
-  100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.3);
-  }
-}
-
-@keyframes pulse-button {
-  0%,
-  100% {
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), 0 0 20px rgba(0, 229, 255, 0.05);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 30px rgba(0, 229, 255, 0.1);
-  }
-}
-
-@keyframes workflow-glow {
-  0%,
-  100% {
-    filter: brightness(1) contrast(1);
-  }
-  50% {
-    filter: brightness(1.05) contrast(1.05);
-  }
-}
-
-@keyframes glow-underline {
-  0%,
-  100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* Robotic Eagle Activation Animations */
-@keyframes robotic-eagle-reveal {
+/* Smooth glow fade-in animation (0.5-1s) */
+@keyframes logo-glow-fade-in {
   0% {
     opacity: 0;
-    transform: scale(0.95);
-  }
-  15% {
-    opacity: 1;
-    transform: scale(1);
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 0px rgba(0, 229, 255, 0));
   }
   100% {
     opacity: 1;
     transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.6));
   }
 }
 
-@keyframes robotic-bg-activate {
+.animate-logo-glow-fade-in {
+  animation: logo-glow-fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Subtle pulse shimmer effect (continuous) */
+@keyframes logo-pulse-shimmer {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-logo-pulse-shimmer {
+  animation: logo-pulse-shimmer 3s ease-in-out infinite;
+}
+
+/* Legacy Circular Eagle Logo Animations - kept for backward compatibility */
+
+/* Stage 1: Circular energy ring forms (0-0.5s) */
+@keyframes circle-energy-form {
   0% {
     opacity: 0;
     transform: scale(0.8);
+    box-shadow: 0 0 0px rgba(0, 229, 255, 0);
   }
   100% {
     opacity: 1;
     transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 35px rgba(0, 229, 255, 0.3), inset 0 0 15px rgba(0, 229, 255, 0.1);
   }
 }
 
-@keyframes neon-line-activate {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
+.animate-circle-energy-form {
+  animation: circle-energy-form 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes eye-glow-boot {
+/* Stage 2: Circular ring glow forms (0-0.8s) */
+@keyframes circular-ring-form {
   0% {
     opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes energy-scan-sweep {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  50% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-}
-
-@keyframes final-glow-pulse {
-  0% {
-    opacity: 0;
+    transform: scale(0.7) rotate(0deg);
   }
   50% {
     opacity: 0.8;
   }
   100% {
-    opacity: 0.5;
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
   }
 }
 
-@keyframes eagle-float {
-  0%,
+.animate-circular-ring-form {
+  animation: circular-ring-form 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stage 3: Robotic scan passes across (1.2-2s) */
+@keyframes robotic-scan {
+  0% {
+    left: -30%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
   100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-node {
-  animation: float-node 4s ease-in-out infinite;
-}
-
-.animate-fade-in-slide {
-  animation: fade-in-slide 0.6s ease-out forwards;
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
-}
-
-.animate-eagle-appear {
-  animation: eagle-appear 1.5s ease-out forwards;
-}
-
-.animate-eagle-appear-up {
-  animation: eagle-appear-up 1.2s ease-out forwards;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2.5s ease-in-out infinite;
-}
-
-.animate-pulse-glow-bg {
-  animation: pulse-glow-bg 3s ease-in-out infinite;
-}
-
-.animate-pulse-node {
-  animation: pulse-node 2s ease-in-out infinite;
-}
-
-.animate-pulse-button {
-  animation: pulse-button 2s ease-in-out infinite;
-}
-
-.animate-glow-underline {
-  animation: glow-underline 2s ease-in-out infinite;
-}
-
-.animate-eagle-float {
-  animation: eagle-float 3s ease-in-out infinite;
-}
-
-/* Ripple Effect */
-@keyframes ripple {
-  to {
-    transform: scale(4);
+    left: 100%;
     opacity: 0;
   }
 }
 
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(0, 229, 255, 0.6);
-  animation: ripple 0.6s ease-out;
-  pointer-events: none;
+.animate-robotic-scan {
+  animation: robotic-scan 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards;
+}
+
+/* Stage 4: Eagle logo activates (2-2.8s) */
+@keyframes eagle-activate {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+    filter: drop-shadow(0 0 0px rgba(0, 229, 255, 0));
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 25px rgba(0, 229, 255, 0.5));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px rgba(0, 229, 255, 0.9)) drop-shadow(0 0 4px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
+  }
+}
+
+.animate-eagle-activate {
+  animation: eagle-activate 0.8s cubic-bezier(0.4, 0, 0.2, 1) 2s forwards;
+}
+
+/* Stage 5: Breathing glow effect (continuous after activation) */
+@keyframes breathing-glow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-breathing-glow {
+  animation: breathing-glow 3s ease-in-out infinite;
+}
+
+/* Stage 6: Pulse stabilization (continuous soft pulse) */
+@keyframes pulse-stabilize {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-stabilize {
+  animation: pulse-stabilize 2s ease-in-out infinite;
+}
+
+/* Eagle Click Animation Keyframes */
+@keyframes neon-pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 229, 255, 1), 0 0 60px rgba(0, 229, 255, 0.6), inset 0 0 20px rgba(0, 229, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.1);
+  }
+}
+
+@keyframes draw-stroke {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes wing-expand-left {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(0) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-16px) scale(1);
+  }
+}
+
+@keyframes wing-expand-right {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(0) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(16px) scale(1);
+  }
+}
+
+@keyframes particle-burst {
+  0% {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes light-streak {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 96px;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Network Animation */
+@keyframes network-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 /* Responsive optimizations */
 @media (max-width: 768px) {
-  .particle {
-    width: 2px;
-    height: 2px;
+  .neon-button {
+    @apply px-4 py-2 text-xs;
   }
 
-  .grid-background {
-    background-size: 30px 30px;
-  }
-
-  /* Reduce animation complexity on mobile */
-  @keyframes robotic-eagle-reveal {
-    0% {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes neon-line-activate {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  @keyframes energy-scan-sweep {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.3;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  .animate-eagle-float {
-    animation: none;
+  .neon-button-primary {
+    @apply px-6 py-3 text-sm;
   }
 }
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .animate-eagle-float {
-    animation: none !important;
+@media (max-width: 640px) {
+  .glass-card {
+    @apply p-4;
   }
 }

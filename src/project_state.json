@@ -1,53 +1,16 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "AI automation brand website with futuristic robotic eagle logo and premium animations",
-  "architectural_notes": [
-    "Futuristic AI automation brand identity with neon cyan + dark theme",
-    "Robotic eagle logo as primary brand element with cybernetic design language",
-    "Premium cinematic animations for tech startup positioning"
-  ],
+  "summary": "New project",
+  "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- High-detail futuristic robotic eagle head with metallic structure, AI machine-style face panels, mechanical feather segments, sharp aggressive beak, glowing neon cyan energy lines, subtle circuit patterns, futuristic armor plating, symmetrical professional design, premium startup branding quality, dark background (robotic-eagle-logo.dim_512x512.png)",
   "existing_features": [
     {
-      "id": "feature-generate-a-high-detail-futuristic-robotic-eagle-head-image-with-metallic-robotic-structure-ai-machine-style-face-panels-mechanical-feather-segments-sharp-aggressive-beak-design-glowing-neon-cyan-energy-lines-subtle-circuit-patterns-or-tech-engravings-futuristic-armor-plating-look-symmetrical-professional-design-and-premium-startup-branding-quality-that-conveys-ai-automation-power-intelligence",
-      "title": "Generate a high-detail futuristic robotic eagle head image with metallic robotic structure, AI machine-style face panels, mechanical feather segments, sharp aggressive beak design, glowing neon cyan energy lines, subtle circuit patterns or tech engravings, futuristic armor plating look, symmetrical professional design, and premium startup branding quality that conveys AI + Automation + Power + Intelligence",
+      "id": "feature-increase-the-font-size-and-overall-dimensions-of-the-gmail-contact-card-xpath-html-1-body-1-div-1-main-1-section-9-div-1-div-2-a-4-div-1-div-1-div-2-div-2-in-the-contactsection-component-while-ensuring-the-email-address-fits-on-one-line-without-wrapping-or-overflow",
+      "title": "Increase the font size and overall dimensions of the Gmail contact card (XPath: /html[1]/body[1]/div[1]/main[1]/section[9]/div[1]/div[2]/a[4]/div[1]/div[1]/div[2]/div[2]) in the ContactSection component while ensuring the email address fits on one line without wrapping or overflow",
       "reqIds": [
         "REQ-1"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-replace-the-current-eagle-logo-image-in-eaglelogo-tsx-component-with-the-newly-generated-futuristic-robotic-eagle-head-ensuring-it-integrates-with-existing-neon-glow-effects-and-hover-animations-while-maintaining-strong-visibility-on-dark-background",
-      "title": "Replace the current eagle logo image in EagleLogo.tsx component with the newly generated futuristic robotic eagle head, ensuring it integrates with existing neon glow effects and hover animations while maintaining strong visibility on dark background",
-      "reqIds": [
-        "REQ-2"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-cinematic-robotic-activation-animation-sequence-2-4-seconds-to-the-eagle-logo-with-the-following-stages-eagle-head-appears-from-dark-background-neon-lines-activate-gradually-eyes-glow-on-like-ai-boot-sequence-soft-energy-scan-passes-across-logo-and-final-subtle-glow-pulse-after-reveal-using-smooth-cinematic-easing-without-sudden-pop-in-for-a-professional-tech-brand-feel",
-      "title": "Add a cinematic robotic activation animation sequence (2-4 seconds) to the eagle logo with the following stages: eagle head appears from dark background, neon lines activate gradually, eyes glow ON like AI boot sequence, soft energy scan passes across logo, and final subtle glow pulse after reveal, using smooth cinematic easing without sudden pop-in for a professional tech-brand feel",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-implement-hover-interaction-animation-on-the-eagle-logo-that-increases-glow-intensity-slightly-and-adds-a-very-small-floating-motion-while-maintaining-clean-professional-appearance",
-      "title": "Implement hover interaction animation on the eagle logo that increases glow intensity slightly and adds a very small floating motion while maintaining clean professional appearance",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-optimize-eagle-logo-animations-for-mobile-devices-by-automatically-reducing-animation-weight-while-maintaining-logo-sharpness-ensuring-smooth-performance-on-phone-screens-and-keeping-the-logo-centered-across-all-device-sizes",
-      "title": "Optimize eagle logo animations for mobile devices by automatically reducing animation weight while maintaining logo sharpness, ensuring smooth performance on phone screens and keeping the logo centered across all device sizes",
-      "reqIds": [
-        "REQ-5"
       ],
       "version": 1
     }
@@ -55,37 +18,12 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Replace eagle logo with high-detail futuristic robotic eagle head featuring metallic structure, glowing cyan energy lines, and circuit patterns",
+      "summary": "Increase Gmail size while keeping it on one line",
       "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "Add cinematic robotic activation animation (2-4s) with neon lines activating, eyes glowing on, energy scan, and subtle pulse",
-      "reqIds": [
-        "AR-1"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "Add hover interaction with glow intensity increase and subtle floating motion",
-      "reqIds": [
-        "AR-1"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-4",
-      "summary": "Optimize logo animations for mobile with reduced animation weight while maintaining sharpness",
-      "reqIds": [
-        "AR-1",
-        "AR-2"
-      ],
       "status": "pending"
     }
   ],
-  "projectName": "Replace eagle logo with high-detail futuristic robotic eagle head and premium animations",
+  "projectName": "Increase Gmail contact card size while maintaining single-line layout",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

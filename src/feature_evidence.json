@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-generate-a-high-detail-futuristic-robotic-eagle-head-image-with-metallic-robotic-structure-ai-machine-style-face-panels-mechanical-feather-segments-sharp-aggressive-beak-design-glowing-neon-cyan-energy-lines-subtle-circuit-patterns-or-tech-engravings-futuristic-armor-plating-look-symmetrical-professional-design-and-premium-startup-branding-quality-that-conveys-ai-automation-power-intelligence",
-      "featureTitle": "Generate a high-detail futuristic robotic eagle head image with metallic robotic structure, AI machine-style face panels, mechanical feather segments, sharp aggressive beak design, glowing neon cyan energy lines, subtle circuit patterns or tech engravings, futuristic armor plating look, symmetrical professional design, and premium startup branding quality that conveys AI + Automation + Power + Intelligence",
+      "featureId": "feature-increase-the-font-size-and-overall-dimensions-of-the-gmail-contact-card-xpath-html-1-body-1-div-1-main-1-section-9-div-1-div-2-a-4-div-1-div-1-div-2-div-2-in-the-contactsection-component-while-ensuring-the-email-address-fits-on-one-line-without-wrapping-or-overflow",
+      "featureTitle": "Increase the font size and overall dimensions of the Gmail contact card (XPath: /html[1]/body[1]/div[1]/main[1]/section[9]/div[1]/div[2]/a[4]/div[1]/div[1]/div[2]/div[2]) in the ContactSection component while ensuring the email address fits on one line without wrapping or overflow",
       "files": [
-        "frontend/src/components/EagleLogo.tsx"
+        "frontend/src/components/ContactSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -16,81 +16,6 @@
       ],
       "testIds": [
         "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-replace-the-current-eagle-logo-image-in-eaglelogo-tsx-component-with-the-newly-generated-futuristic-robotic-eagle-head-ensuring-it-integrates-with-existing-neon-glow-effects-and-hover-animations-while-maintaining-strong-visibility-on-dark-background",
-      "featureTitle": "Replace the current eagle logo image in EagleLogo.tsx component with the newly generated futuristic robotic eagle head, ensuring it integrates with existing neon glow effects and hover animations while maintaining strong visibility on dark background",
-      "files": [
-        "frontend/src/components/EagleLogo.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-cinematic-robotic-activation-animation-sequence-2-4-seconds-to-the-eagle-logo-with-the-following-stages-eagle-head-appears-from-dark-background-neon-lines-activate-gradually-eyes-glow-on-like-ai-boot-sequence-soft-energy-scan-passes-across-logo-and-final-subtle-glow-pulse-after-reveal-using-smooth-cinematic-easing-without-sudden-pop-in-for-a-professional-tech-brand-feel",
-      "featureTitle": "Add a cinematic robotic activation animation sequence (2-4 seconds) to the eagle logo with the following stages: eagle head appears from dark background, neon lines activate gradually, eyes glow ON like AI boot sequence, soft energy scan passes across logo, and final subtle glow pulse after reveal, using smooth cinematic easing without sudden pop-in for a professional tech-brand feel",
-      "files": [
-        "frontend/src/components/EagleLogo.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-hover-interaction-animation-on-the-eagle-logo-that-increases-glow-intensity-slightly-and-adds-a-very-small-floating-motion-while-maintaining-clean-professional-appearance",
-      "featureTitle": "Implement hover interaction animation on the eagle logo that increases glow intensity slightly and adds a very small floating motion while maintaining clean professional appearance",
-      "files": [
-        "frontend/src/components/EagleLogo.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-optimize-eagle-logo-animations-for-mobile-devices-by-automatically-reducing-animation-weight-while-maintaining-logo-sharpness-ensuring-smooth-performance-on-phone-screens-and-keeping-the-logo-centered-across-all-device-sizes",
-      "featureTitle": "Optimize eagle logo animations for mobile devices by automatically reducing animation weight while maintaining logo sharpness, ensuring smooth performance on phone screens and keeping the logo centered across all device sizes",
-      "files": [
-        "frontend/src/components/EagleLogo.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
       ],
       "confidence": "high"
     }
