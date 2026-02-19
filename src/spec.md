@@ -1,13 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Replace the SwiftOps logo with a premium futuristic eagle head design, add smooth entrance animation, and fix header alignment issues across all devices.
+**Goal:** Replace the Client and Pricing sections with Elite Client Profiles and AI Performance Intelligence sections featuring premium profile cards, animated performance metrics, and a connected workflow visualization.
 
 **Planned changes:**
-- Replace existing logo with new geometric eagle head logo featuring neon cyan glow and sharp angular design
-- Add 2-4 second entrance animation with fade-in, scale-in, and glow pulse effects on page load
-- Fix contact email alignment to display in single line without wrapping on all screen sizes
-- Optimize header layout for responsive design with consistent spacing across mobile, tablet, and desktop
-- Compress logo asset and optimize animation performance to maintain fast loading and smooth navigation
+- Remove TestimonialsSection component and all references
+- Create EliteClientProfilesSection with 3 premium profile cards showing executive profiles with circular photos, names, positions, company types, and testimonials with neon glow and hover animations
+- Remove PricingSection component and all references
+- Create AIPerformanceSection with animated performance metrics (87% automation, 6.4x speed, 98.7% accuracy, -72% manual intervention), authority testimonial quote, and connected workflow visualization with animated effects
+- Integrate both new sections in place of removed sections while maintaining smooth scroll and spacing
 
-**User-visible outcome:** Users will see a premium futuristic eagle head logo with smooth entrance animation when the website loads, and the header will display properly aligned with the contact email on a single line across all devices.
+**User-visible outcome:** Users see a modern, executive-focused presentation with premium client profiles featuring professional headshots and testimonials, followed by animated AI performance metrics with a futuristic connected workflow visualization, replacing the previous client testimonials and pricing sections.

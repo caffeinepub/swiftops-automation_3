@@ -1,159 +1,176 @@
 {
   "kind": "build_request",
-  "title": "Premium Eagle Logo Replacement, Animation, and Header Alignment Fixes",
+  "title": "Replace Client and Pricing sections with Elite Client Profiles and AI Performance Intelligence",
   "projectName": "SwiftOps Automation",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Replace the existing SwiftOps logo with a new premium futuristic eagle head logo featuring minimalistic geometric design, sharp angular edges and wings, aggressive but clean tech aesthetic, neon cyan glow matching the website theme, high-contrast white with neon cyan accents, avoiding any cartoon or mascot style",
+      "text": "Remove the entire TestimonialsSection component and all its references from App.tsx, including the import statement and the component render call",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-9"
+          "msg-4"
         ],
         "quotes": [
-          "Replace Logo with Premium Eagle Head",
-          "Minimalistic geometric eagle head",
-          "Sharp edges and strong angular wings",
-          "Aggressive but clean tech look",
-          "Neon cyan glow matching website theme",
-          "High-contrast white + neon accent version",
-          "No cartoon or mascot style"
+          "Completely remove the full \"Client\" section. Remove all associated: Headings, Logos, Testimonials (if inside that section), Containers, Background elements"
         ]
       },
       "acceptanceCriteria": [
-        "Old logo is completely removed from all components",
-        "New eagle head logo has geometric, angular design with sharp edges",
-        "Logo features neon cyan glow effects matching the website's color scheme",
-        "Logo uses high-contrast white with neon cyan accent colors",
-        "Design is aggressive yet clean, avoiding cartoon/mascot aesthetics",
-        "Logo is rendered in SVG format for scalability"
+        "TestimonialsSection component is no longer imported or rendered in App.tsx",
+        "No empty gaps or broken spacing remains after removal",
+        "Smooth scroll flow is maintained between adjacent sections"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Add a smooth 2-4 second entrance animation to the eagle logo when the website loads, featuring fade-in and scale-in effects with a slight glow pulse, using smooth easing for a premium feel, ensuring the animation runs only once on page load and the logo appears instantly without delay after animation completes, optimized for both desktop and mobile performance",
+      "text": "Create a new EliteClientProfilesSection component with section title 'Elite Client Profiles', featuring 3 premium profile cards in a horizontal layout on desktop and stacked on mobile. Each card must include: circular professional profile picture, full name, position, company type (e.g., FinTech, SaaS, Enterprise AI), and 2-3 line testimonial. Apply subtle neon border glow, glassmorphism or soft gradient dark card background, smooth hover animation with lift and glow increase effects, and maintain clean spacing and equal alignment across all cards",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-9"
+          "msg-4"
         ],
         "quotes": [
-          "Add a smooth 2–4 second entrance animation when the website loads",
-          "Fade + scale-in effect",
-          "Slight glow pulse on appearance",
-          "Smooth easing (premium feel)",
-          "Ensure animation runs only once on page load",
-          "Logo must appear instantly without delay after animation finishes",
-          "Optimize animation for desktop + mobile performance"
+          "Create a new premium section in place of the removed client section. Section Title: Elite Client Profiles"
         ]
       },
       "acceptanceCriteria": [
-        "Logo animation duration is between 2-4 seconds",
-        "Animation includes fade-in, scale-in, and glow pulse effects",
-        "Animation uses smooth easing functions for premium feel",
-        "Animation triggers automatically on page load",
-        "Animation runs only once per session/page load",
-        "Logo remains visible immediately after animation completes",
-        "Animation performs smoothly on both desktop and mobile devices",
-        "No janky frames or performance issues during animation"
+        "Section displays 3 profile cards horizontally on desktop",
+        "Cards stack vertically on mobile devices",
+        "Each card contains all required elements: circular photo, name, position, company type, testimonial",
+        "Cards have neon border glow matching the existing cyan neon theme",
+        "Hover animations include lift effect and increased glow intensity",
+        "Glassmorphism or gradient dark background is applied to cards",
+        "Professional, executive-level visual style is maintained"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Fix the header alignment of the contact email (zeeshan.automation06@gmail.com) to display fully in a single line without text wrapping or breaking on smaller screens, with proper vertical alignment relative to navbar items, and maintaining equal spacing between logo, menu items, and contact details across mobile, tablet, and desktop viewports",
+      "text": "Remove the entire PricingSection component and all its references from App.tsx, including the import statement and the component render call. Ensure no layout shift occurs and spacing consistency is maintained",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-9"
+          "msg-4"
         ],
         "quotes": [
-          "Fix alignment of contact email: zeeshan.automation06@gmail.com",
-          "Email must appear fully in one single line",
-          "Prevent text wrapping or breaking on smaller screens",
-          "Proper vertical alignment with navbar items",
-          "Maintain equal spacing between logo, menu, and contact details",
-          "Ensure responsiveness for: Mobile, Tablet, Desktop"
+          "Remove the full Pricing section. Delete all pricing cards, toggles, buttons, and scripts. Maintain spacing consistency. No layout shift."
         ]
       },
       "acceptanceCriteria": [
-        "Email address displays on a single line on all screen sizes",
-        "No text wrapping or line breaks occur on mobile, tablet, or desktop",
-        "Email is vertically aligned with other navbar items",
-        "Consistent spacing maintained between logo, navigation menu, and email",
-        "Layout remains functional and readable on mobile (320px+), tablet (768px+), and desktop (1024px+) viewports",
-        "Email text does not overflow or get cut off"
+        "PricingSection component is no longer imported or rendered in App.tsx",
+        "No pricing cards, toggles, or buttons remain",
+        "Adjacent sections maintain proper spacing",
+        "No visual layout shift occurs after removal"
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Optimize the header layout for responsive design ensuring perfect alignment across all devices with no overlapping elements, consistent padding and spacing, and maintaining the professional SaaS/AI startup appearance on mobile, tablet, and desktop screens",
+      "text": "Create a new AIPerformanceSection component with heading 'AI-Driven Performance Intelligence' and subtitle 'Real-time automation metrics powered by intelligent systems.' Implement a 2-column grid layout on desktop (stacked on mobile) displaying 4 animated metric counters with neon highlight accents and supporting labels: 'Workflow Automation Rate: 87% Tasks Automated', 'Operational Processing Speed: 6.4x Faster Execution', 'AI Decision Accuracy: 98.7% Model Precision', 'Manual Intervention Reduced: -72% Human Dependency'. Counters must animate upward smoothly on scroll with fade and count effects using the existing useCounterAnimation hook",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-9"
+          "msg-4"
         ],
         "quotes": [
-          "Responsive Optimization",
-          "Header layout should remain perfectly aligned across all devices",
-          "No overlapping elements",
-          "Maintain consistent padding and spacing",
-          "Keep professional SaaS / AI startup appearance"
+          "Create a powerful performance metrics section replacing Pricing. Section Heading: AI-Driven Performance Intelligence",
+          "Counters should animate upward smoothly on scroll (fade + count effect)."
         ]
       },
       "acceptanceCriteria": [
-        "Header elements do not overlap on any screen size",
-        "Padding and spacing remain consistent across breakpoints",
-        "Layout adapts gracefully from mobile to desktop",
-        "Visual hierarchy is maintained on all devices",
-        "Professional appearance is preserved across all viewports",
-        "Touch targets are appropriately sized for mobile interaction"
+        "Section displays heading and subtitle as specified",
+        "4 metrics are displayed in a 2-column grid on desktop",
+        "Metrics stack vertically on mobile devices",
+        "Each metric shows large animated number with neon accent and label underneath",
+        "Counter animation triggers on scroll using existing animation patterns",
+        "All metric values and labels match the exact specifications provided"
       ]
     },
     {
       "id": "REQ-5",
-      "text": "Optimize performance by compressing the logo asset for fast loading, ensuring the logo animation does not delay page rendering, and maintaining smooth scrolling and navigation speed throughout the website",
+      "text": "Add an authority testimonial block within the AIPerformanceSection component, positioned below the metrics grid. Display the quote: 'SwiftOps AI automation reduced operational delays by 43% within 90 days.' with attribution '— Operations Director, FinTech Company'. Apply center alignment, slight italic styling, soft neon glow accent line, and maintain professional corporate tone matching the existing design system",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-9"
+          "msg-4"
         ],
         "quotes": [
-          "Performance Optimization",
-          "Compress logo asset for fast loading",
-          "Ensure animation does not delay page rendering",
-          "Maintain smooth scrolling and navigation speed"
+          "Below metrics, add a premium quote block: \"SwiftOps AI automation reduced operational delays by 43% within 90 days.\" — Operations Director, FinTech Company"
         ]
       },
       "acceptanceCriteria": [
-        "Logo file size is optimized (compressed without quality loss)",
-        "Logo animation does not block initial page render",
-        "Page loads quickly with optimized logo asset",
-        "Smooth scrolling performance is maintained",
-        "Navigation interactions remain responsive",
-        "No frame drops or stuttering during scrolling or navigation",
-        "Core Web Vitals (LCP, FID, CLS) remain healthy"
+        "Testimonial block appears below the metrics grid",
+        "Quote and attribution text match exactly as specified",
+        "Text is center-aligned with italic styling",
+        "Neon glow accent line is applied to the block",
+        "Styling maintains professional corporate tone consistent with existing design"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Integrate the generated Connected Workflow image (workflow-connected.dim_1200x600.png) into the AIPerformanceSection with subtle animations including flowing light lines, pulse nodes, and soft moving gradient effects. Ensure the image is fully responsive, appears below metrics on mobile, matches the dark neon brand aesthetic, and does not impact performance negatively",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Add a high-quality futuristic \"Connected Workflow\" visual. Theme: glowing network nodes, automation pipelines, AI data flow. Add subtle animation: Flowing light lines, Pulse nodes, Soft moving gradient"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated workflow image is rendered as a static asset from frontend/public/assets/generated",
+        "Image includes CSS animations for flowing light effects and pulsing nodes",
+        "Gradient overlay animation is applied without performance degradation",
+        "Image is fully responsive across all screen sizes",
+        "On mobile, image appears below the metrics grid",
+        "Visual style matches the existing dark neon theme"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Render the EliteClientProfilesSection component in App.tsx at the position previously occupied by TestimonialsSection, and render the AIPerformanceSection component at the position previously occupied by PricingSection. Maintain the existing section order and ensure smooth scroll navigation remains functional",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Create a new premium section in place of the removed client section",
+          "Create a powerful performance metrics section replacing Pricing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "EliteClientProfilesSection replaces TestimonialsSection in the component tree",
+        "AIPerformanceSection replaces PricingSection in the component tree",
+        "Section order and scroll flow remain consistent with existing layout",
+        "Navigation links and scroll behavior continue to work correctly"
       ]
     }
   ],
   "constraints": [
-    "Maintain the existing neon cyan color scheme and futuristic dark theme",
-    "Do not modify the backend or any Motoko files",
-    "Preserve all existing EagleLogo.tsx and EagleClickAnimation.tsx functionality",
-    "Keep the Navbar.tsx structure intact while fixing alignment issues",
-    "Ensure animations use CSS transforms and opacity for optimal performance"
+    "Do NOT change hero section styling or content",
+    "Do NOT modify theme colors or neon cyan design system",
+    "Do NOT alter header or footer components",
+    "Do NOT adjust global typography styles",
+    "Maintain existing animation smoothness and performance optimization",
+    "Preserve SEO structure and meta information",
+    "Do NOT introduce layout breaking changes",
+    "Only modify the specifically requested sections"
   ],
   "nonGoals": [
-    "Changing the overall website color scheme or branding beyond the logo",
-    "Modifying other sections beyond the header/navbar",
-    "Adding new navigation items or menu structure changes",
-    "Implementing backend changes or data model modifications",
-    "Redesigning the hero section layout or other page sections"
+    "Redesigning the overall website visual style",
+    "Changing the color scheme or brand identity",
+    "Modifying existing sections beyond the specified Client and Pricing sections",
+    "Adding new navigation menu items",
+    "Changing font families or typography hierarchy",
+    "Implementing new backend functionality"
   ],
   "imageRequirements": {
     "required": [
-      "Modern futuristic eagle head logo with minimalistic geometric design, sharp angular edges and strong wings, aggressive but clean tech aesthetic, neon cyan glow effects, high-contrast white with neon cyan accents, no cartoon style, suitable for tech/AI brand (eagle-logo.dim_512x512.png)"
+      "Futuristic connected workflow visualization with glowing network nodes, automation pipelines, and AI data flow in dark theme with cyan neon accents matching brand aesthetic (workflow-connected.dim_1200x600.png)",
+      "Executive male professional headshot with corporate attire, neutral background, studio lighting for FinTech executive profile (profile-executive-1.dim_200x200.png)",
+      "Executive female professional headshot with corporate attire, neutral background, studio lighting for SaaS executive profile (profile-executive-2.dim_200x200.png)",
+      "Executive male professional headshot with corporate attire, neutral background, studio lighting for Enterprise AI executive profile (profile-executive-3.dim_200x200.png)"
     ],
     "edits": []
   }
