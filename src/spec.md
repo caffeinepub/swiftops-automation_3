@@ -1,13 +1,16 @@
 # Specification
 
 ## Summary
-**Goal:** Replace the Client and Pricing sections with Elite Client Profiles and AI Performance Intelligence sections featuring premium profile cards, animated performance metrics, and a connected workflow visualization.
+**Goal:** Convert the eagle logo to a circular design with futuristic animation effects and remove the email address from the header navigation.
 
 **Planned changes:**
-- Remove TestimonialsSection component and all references
-- Create EliteClientProfilesSection with 3 premium profile cards showing executive profiles with circular photos, names, positions, company types, and testimonials with neon glow and hover animations
-- Remove PricingSection component and all references
-- Create AIPerformanceSection with animated performance metrics (87% automation, 6.4x speed, 98.7% accuracy, -72% manual intervention), authority testimonial quote, and connected workflow visualization with animated effects
-- Integrate both new sections in place of removed sections while maintaining smooth scroll and spacing
+- Transform eagle logo background from square to perfect circle with neon cyan glow and futuristic styling
+- Add soft neon ring glow with optional rotating/breathing animation around the circular logo
+- Update logo animation to circular sequence: energy ring forms, neon outline draws, robotic scan, eagle activates, eyes power on, pulse stabilization
+- Ensure circular logo remains perfectly round and proportionally scaled across all screen sizes
+- Remove Gmail address (zeeshan.automation06@gmail.com) and email icon from header navigation
+- Automatically realign header elements (logo, navigation menu, contact buttons) after email removal
+- Fix header alignment for desktop, tablet, and mobile views
+- Preserve existing neon styling, spacing, and professional futuristic appearance
 
-**User-visible outcome:** Users see a modern, executive-focused presentation with premium client profiles featuring professional headshots and testimonials, followed by animated AI performance metrics with a futuristic connected workflow visualization, replacing the previous client testimonials and pricing sections.
+**User-visible outcome:** The eagle logo displays as a circular design with elegant neon glow and smooth futuristic animation effects. The header navigation is cleaner without the email address, with all remaining elements properly aligned and balanced across all devices.

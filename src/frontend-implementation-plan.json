@@ -1,131 +1,191 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Replace Client and Pricing sections with Elite Client Profiles and AI Performance Intelligence",
+  "title": "Convert Eagle Logo to Circular Design with Animation and Remove Email from Header",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Remove TestimonialsSection component and all references from App.tsx",
+      "summary": "Convert eagle logo background from square to perfect circular shape with symmetrical, clean smooth edges centered around the eagle head",
       "acceptanceCriteria": [
-        "TestimonialsSection component is no longer imported or rendered in App.tsx",
-        "No empty gaps or broken spacing remains after removal",
-        "Smooth scroll flow is maintained between adjacent sections"
+        "Logo background is a perfect circle with no square corners visible",
+        "Circle is fully symmetrical with clean smooth edges",
+        "Eagle head is centered perfectly within the circular background",
+        "No masking artifacts or distortions visible"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Remove the import statement for TestimonialsSection and remove the <TestimonialsSection /> component render call from the component tree. Ensure no extra whitespace or gaps remain after removal."
+          "description": "Update the logo container styling to use circular shape with aspect-ratio: 1/1, rounded-full class, and object-fit: cover on the image. Center the eagle image within the circular container using flexbox centering. Remove any square border or masking artifacts by ensuring the container clips content with overflow-hidden and applies border-radius: 50%."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Create EliteClientProfilesSection component with 3 premium profile cards featuring executive testimonials",
+      "summary": "Style circular logo background with dark base color, neon cyan glow, subtle futuristic gradient or glass effect maintaining SwiftOps premium branding",
       "acceptanceCriteria": [
-        "Section displays 3 profile cards horizontally on desktop",
-        "Cards stack vertically on mobile devices",
-        "Each card contains all required elements: circular photo, name, position, company type, testimonial",
-        "Cards have neon border glow matching the existing cyan neon theme",
-        "Hover animations include lift effect and increased glow intensity",
-        "Glassmorphism or gradient dark background is applied to cards",
-        "Professional, executive-level visual style is maintained"
+        "Dark circular base is applied",
+        "Neon cyan glow is visible and elegant",
+        "Gradient or glass effect is subtle and futuristic",
+        "Design matches SwiftOps premium branding aesthetic"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/EliteClientProfilesSection.tsx",
-          "operation": "create",
-          "description": "Create a new component with section title 'Elite Client Profiles'. Implement 3 profile cards with the following data: (1) FinTech executive with frontend/public/assets/generated/profile-executive-1.dim_200x200.png, (2) SaaS executive with frontend/public/assets/generated/profile-executive-2.dim_200x200.png, (3) Enterprise AI executive with frontend/public/assets/generated/profile-executive-3.dim_200x200.png. Each card includes circular profile image, full name, position, company type, and 2-3 line testimonial. Apply responsive grid layout (horizontal on desktop, stacked on mobile), neon cyan border glow matching existing theme, glassmorphism dark background, and hover animations with lift and increased glow effects. Use intersection observer for fade-in animations similar to existing sections."
+          "path": "frontend/src/components/EagleLogo.tsx",
+          "operation": "modify",
+          "description": "Add dark circular base background using bg-black or bg-gray-900. Apply neon cyan glow using box-shadow with cyan color values (e.g., 0 0 20px rgba(0, 255, 255, 0.6)). Implement subtle futuristic gradient or glassmorphism effect using background-gradient or backdrop-blur. Ensure styling aligns with existing neon cyan theme defined in tailwind.config.js and index.css."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Remove PricingSection component and all references from App.tsx",
+      "summary": "Add soft, elegant neon ring glow around circular logo with optional rotating or breathing light ring effect for futuristic feel",
       "acceptanceCriteria": [
-        "PricingSection component is no longer imported or rendered in App.tsx",
-        "No pricing cards, toggles, or buttons remain",
-        "Adjacent sections maintain proper spacing",
-        "No visual layout shift occurs after removal"
+        "Soft neon ring glow is visible around the circle",
+        "Glow intensity is elegant and not overly bright",
+        "Rotating or breathing animation is smooth and subtle",
+        "Effect enhances the futuristic aesthetic"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Remove the import statement for PricingSection and remove the <PricingSection /> component render call from the component tree. Maintain spacing consistency with adjacent sections to prevent layout shift."
+          "description": "Add an outer ring element wrapping the circular logo with ring glow using box-shadow with multiple layers for soft falloff. Implement optional CSS animation for rotating ring (using @keyframes spin) or breathing effect (using @keyframes pulse with opacity/scale changes). Set animation duration to 3-5 seconds with ease-in-out timing. Ensure glow intensity remains elegant by using lower opacity values (0.4-0.6) for cyan color."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add custom CSS keyframe animations for rotating-ring and breathing-glow effects if not already present. Define animation utilities for the neon ring glow that can be applied to the logo wrapper element. Use the existing neon cyan color variables for consistency."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Create AIPerformanceSection component with 4 animated metric counters in 2-column grid",
+      "summary": "Update eagle logo animation to match circular design with 2-4 second sequence: circular energy ring forms, neon outline draws circle, robotic scan passes, eagle activates, eyes/accents power on, final soft pulse stabilization",
       "acceptanceCriteria": [
-        "Section displays heading and subtitle as specified",
-        "4 metrics are displayed in a 2-column grid on desktop",
-        "Metrics stack vertically on mobile devices",
-        "Each metric shows large animated number with neon accent and label underneath",
-        "Counter animation triggers on scroll using existing animation patterns",
-        "All metric values and labels match the exact specifications provided"
+        "Animation sequence lasts 2-4 seconds",
+        "Circular energy ring forms first as the opening stage",
+        "Neon outline draws the circle smoothly without hard edges",
+        "Robotic scan effect passes across the circular area",
+        "Eagle logo activates inside the circle with eyes/accents powering on",
+        "Animation ends with soft pulse glow stabilization",
+        "No square reveal animations or sudden pop effects present"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/AIPerformanceSection.tsx",
-          "operation": "create",
-          "description": "Create a new component with heading 'AI-Driven Performance Intelligence' and subtitle 'Real-time automation metrics powered by intelligent systems.' Implement a 2-column grid layout (desktop) that stacks on mobile, displaying 4 animated metric counters: (1) 'Workflow Automation Rate: 87% Tasks Automated', (2) 'Operational Processing Speed: 6.4x Faster Execution', (3) 'AI Decision Accuracy: 98.7% Model Precision', (4) 'Manual Intervention Reduced: -72% Human Dependency'. Each metric displays a large animated number with neon cyan highlight accent and supporting label underneath. Use the existing useCounterAnimation hook for smooth upward counting animation triggered on scroll with fade effects, following the pattern used in StatsSection. Use intersection observer for visibility detection."
+          "path": "frontend/src/components/EagleLogo.tsx",
+          "operation": "modify",
+          "description": "Refactor the entrance animation to implement a 2-4 second circular-themed sequence. Stage 1 (0-0.5s): Create circular energy ring forming animation using scale transform from 0.8 to 1 with opacity fade-in. Stage 2 (0.5-1.2s): Implement neon circle outline drawing using SVG stroke-dasharray/stroke-dashoffset animation or CSS border animation with gradient. Stage 3 (1.2-2s): Add robotic scan effect using a linear-gradient overlay that translates across the circular area. Stage 4 (2-2.8s): Activate eagle logo with fade-in and subtle scale, add eye/accent glow using box-shadow pulse. Stage 5 (2.8-3.5s): Final soft pulse stabilization using opacity and scale keyframes. Remove any square reveal animations and avoid sudden pop effects by using ease-in-out timing functions throughout."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add CSS keyframe definitions for circular entrance animation stages: @keyframes circle-energy-form, @keyframes neon-circle-draw, @keyframes robotic-scan, @keyframes eagle-activate, @keyframes eye-glow, and @keyframes pulse-stabilize. Ensure all animations use smooth easing functions and circular-friendly properties (scale, opacity, rotate) rather than square-based transforms."
         }
       ]
     },
     {
       "id": "REQ-5",
-      "summary": "Add authority testimonial block within AIPerformanceSection below metrics grid",
+      "summary": "Ensure circular logo remains perfectly round on all screen sizes with proportional scaling and no stretching or oval distortion",
       "acceptanceCriteria": [
-        "Testimonial block appears below the metrics grid",
-        "Quote and attribution text match exactly as specified",
-        "Text is center-aligned with italic styling",
-        "Neon glow accent line is applied to the block",
-        "Styling maintains professional corporate tone consistent with existing design"
+        "Logo circle is perfectly round on desktop screens",
+        "Logo circle is perfectly round on tablet screens",
+        "Logo circle is perfectly round on mobile screens",
+        "Proportional scaling maintains circular shape across all breakpoints",
+        "No stretching or oval distortion occurs at any screen size"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/AIPerformanceSection.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Add a testimonial block positioned below the metrics grid within the same component. Display the quote: 'SwiftOps AI automation reduced operational delays by 43% within 90 days.' with attribution '— Operations Director, FinTech Company'. Apply center alignment, italic styling for the quote text, and a soft neon cyan glow accent line (top or bottom border) matching the existing design system. Maintain professional corporate tone with appropriate spacing and typography."
+          "description": "Implement responsive sizing using Tailwind responsive classes (w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24) ensuring width equals height at all breakpoints. Use aspect-ratio: 1/1 CSS property as fallback. Apply max-width constraints to prevent excessive growth on large screens. Verify circular shape is maintained by using rounded-full with equal width/height values across all screen sizes."
         }
       ]
     },
     {
       "id": "REQ-6",
-      "summary": "Integrate generated Connected Workflow image with subtle animations into AIPerformanceSection",
+      "summary": "Optimize logo animation performance to remain smooth and lightweight with fast loading on mobile and desktop",
       "acceptanceCriteria": [
-        "Generated workflow image is rendered as a static asset from frontend/public/assets/generated",
-        "Image includes CSS animations for flowing light effects and pulsing nodes",
-        "Gradient overlay animation is applied without performance degradation",
-        "Image is fully responsive across all screen sizes",
-        "On mobile, image appears below the metrics grid",
-        "Visual style matches the existing dark neon theme"
+        "Animation runs smoothly at 60fps on desktop",
+        "Animation runs smoothly on mobile devices",
+        "Logo loads quickly without blocking page render",
+        "Animation does not cause performance degradation"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/AIPerformanceSection.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Integrate the generated workflow image from frontend/public/assets/generated/workflow-connected.dim_1200x600.png as a static asset within the AIPerformanceSection component. Position it appropriately in the layout (below metrics on mobile, integrated visually on desktop). Apply CSS animations including flowing light lines (keyframe animation with translateX or opacity), pulsing node effects (scale + opacity pulse), and soft moving gradient overlay (background gradient with animation). Ensure the image is fully responsive using appropriate sizing and object-fit properties. Match the dark neon brand aesthetic with cyan accents. Optimize animations to avoid performance degradation using transform and opacity properties only."
+          "description": "Optimize animation performance by using CSS transform and opacity properties (GPU-accelerated) instead of layout-triggering properties. Apply will-change: transform, opacity to animated elements. Use requestAnimationFrame for any JavaScript-based animation timing. Lazy load or defer non-critical animation stages. Consider using CSS containment (contain: layout style paint) on the logo container. Ensure the eagle image asset frontend/public/assets/generated/robotic-eagle-logo.dim_512x512.png loads efficiently with appropriate compression."
         }
       ]
     },
     {
       "id": "REQ-7",
-      "summary": "Render new sections in App.tsx replacing the removed TestimonialsSection and PricingSection",
+      "summary": "Remove Gmail address 'zeeshan.automation06@gmail.com' completely from header navigation including email text and icon",
       "acceptanceCriteria": [
-        "EliteClientProfilesSection replaces TestimonialsSection in the component tree",
-        "AIPerformanceSection replaces PricingSection in the component tree",
-        "Section order and scroll flow remain consistent with existing layout",
-        "Navigation links and scroll behavior continue to work correctly"
+        "Gmail address text is not visible in header",
+        "Email icon is removed from header if present",
+        "No trace of the email address remains in the navigation bar"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/Navbar.tsx",
           "operation": "modify",
-          "description": "Import the new EliteClientProfilesSection and AIPerformanceSection components. Render <EliteClientProfilesSection /> at the position previously occupied by TestimonialsSection (after IntegrationsSection). Render <AIPerformanceSection /> at the position previously occupied by PricingSection (after StatsSection or HowItWorksSection). Maintain the existing section order and ensure smooth scroll navigation remains functional with proper section IDs if needed for navigation anchors."
+          "description": "Locate and remove any JSX elements or components rendering the email address 'zeeshan.automation06@gmail.com' from the navigation bar. Remove any associated email icon elements (Mail, Envelope icons) from the header. Search for email-related className references and clean up unused styles."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Automatically realign remaining header elements after email removal ensuring no empty spacing or gaps remain with balanced centered layout",
+      "acceptanceCriteria": [
+        "Logo position is properly aligned after email removal",
+        "Navigation menu spacing is balanced",
+        "Contact buttons are properly positioned",
+        "No empty gaps or awkward spacing in header",
+        "Header appears professionally balanced"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "modify",
+          "description": "Adjust flexbox layout and spacing utilities after removing email element. Update gap, space-x, or justify-between classes to redistribute remaining elements (logo, navigation menu, contact buttons) evenly across the header. Ensure logo, nav links, and CTA buttons maintain proper alignment using flex containers. Remove any conditional spacing logic that depended on the email element being present."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Fix header alignment for desktop, tablet, and mobile views after email removal ensuring navbar remains balanced and centered across all responsive breakpoints",
+      "acceptanceCriteria": [
+        "Header alignment is correct on desktop screens",
+        "Header alignment is correct on tablet screens",
+        "Header alignment is correct on mobile screens",
+        "Navbar maintains balanced appearance at all breakpoints",
+        "Elements remain properly centered responsively"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "modify",
+          "description": "Review and update responsive Tailwind classes for all breakpoints (sm:, md:, lg:, xl:) to ensure proper alignment after email removal. Test and adjust flexbox justify-content and align-items properties for each screen size. Verify mobile hamburger menu layout remains intact. Ensure desktop navigation menu, mobile menu, and contact buttons are properly centered and spaced at all viewport widths."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Preserve existing neon styling, spacing, professional futuristic appearance, and consistent header height after removing email address",
+      "acceptanceCriteria": [
+        "Neon styling is preserved throughout header",
+        "Spacing consistency is maintained",
+        "Header retains professional futuristic look",
+        "Header height remains the same as before changes",
+        "Visual design quality is not degraded"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "modify",
+          "description": "Preserve all existing neon glow effects, cyan color theming, and glassmorphism styles on remaining header elements. Maintain fixed header height by ensuring h-16 or h-20 class (or equivalent) remains applied to the nav container. Verify padding, text sizing, and icon styling remain consistent with the original design. Do not modify or remove any neon-themed className utilities or style properties that define the futuristic appearance."
         }
       ]
     }

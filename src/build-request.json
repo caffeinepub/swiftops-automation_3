@@ -1,177 +1,219 @@
 {
   "kind": "build_request",
-  "title": "Replace Client and Pricing sections with Elite Client Profiles and AI Performance Intelligence",
+  "title": "Convert Eagle Logo to Circular Design with Animation and Remove Email from Header",
   "projectName": "SwiftOps Automation",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Remove the entire TestimonialsSection component and all its references from App.tsx, including the import statement and the component render call",
+      "text": "Convert the eagle logo background from square to a perfect circular shape with fully symmetrical, clean smooth edges centered around the eagle head. Remove any visible square corners or masking artifacts.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-latest"
         ],
         "quotes": [
-          "Completely remove the full \"Client\" section. Remove all associated: Headings, Logos, Testimonials (if inside that section), Containers, Background elements"
+          "Remove the current square background behind the eagle logo. Convert the logo container into a perfect circular background."
         ]
       },
       "acceptanceCriteria": [
-        "TestimonialsSection component is no longer imported or rendered in App.tsx",
-        "No empty gaps or broken spacing remains after removal",
-        "Smooth scroll flow is maintained between adjacent sections"
+        "Logo background is a perfect circle with no square corners visible",
+        "Circle is fully symmetrical with clean smooth edges",
+        "Eagle head is centered perfectly within the circular background",
+        "No masking artifacts or distortions visible"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Create a new EliteClientProfilesSection component with section title 'Elite Client Profiles', featuring 3 premium profile cards in a horizontal layout on desktop and stacked on mobile. Each card must include: circular professional profile picture, full name, position, company type (e.g., FinTech, SaaS, Enterprise AI), and 2-3 line testimonial. Apply subtle neon border glow, glassmorphism or soft gradient dark card background, smooth hover animation with lift and glow increase effects, and maintain clean spacing and equal alignment across all cards",
+      "text": "Style the circular logo background with a dark base color, neon cyan glow, subtle futuristic gradient or glass effect, maintaining premium AI automation branding consistent with SwiftOps design.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-latest"
         ],
         "quotes": [
-          "Create a new premium section in place of the removed client section. Section Title: Elite Client Profiles"
+          "Dark circular base with neon cyan glow. Subtle futuristic gradient or glass effect. Maintain premium AI automation branding."
         ]
       },
       "acceptanceCriteria": [
-        "Section displays 3 profile cards horizontally on desktop",
-        "Cards stack vertically on mobile devices",
-        "Each card contains all required elements: circular photo, name, position, company type, testimonial",
-        "Cards have neon border glow matching the existing cyan neon theme",
-        "Hover animations include lift effect and increased glow intensity",
-        "Glassmorphism or gradient dark background is applied to cards",
-        "Professional, executive-level visual style is maintained"
+        "Dark circular base is applied",
+        "Neon cyan glow is visible and elegant",
+        "Gradient or glass effect is subtle and futuristic",
+        "Design matches SwiftOps premium branding aesthetic"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Remove the entire PricingSection component and all its references from App.tsx, including the import statement and the component render call. Ensure no layout shift occurs and spacing consistency is maintained",
+      "text": "Add a soft, elegant neon ring glow around the circular logo. Include an optional rotating or breathing light ring effect for a futuristic feel. The glow must not be overly bright.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-latest"
         ],
         "quotes": [
-          "Remove the full Pricing section. Delete all pricing cards, toggles, buttons, and scripts. Maintain spacing consistency. No layout shift."
+          "Add soft neon ring glow around the circle. Glow should be elegant, not overly bright. Optional rotating or breathing light ring for futuristic feel."
         ]
       },
       "acceptanceCriteria": [
-        "PricingSection component is no longer imported or rendered in App.tsx",
-        "No pricing cards, toggles, or buttons remain",
-        "Adjacent sections maintain proper spacing",
-        "No visual layout shift occurs after removal"
+        "Soft neon ring glow is visible around the circle",
+        "Glow intensity is elegant and not overly bright",
+        "Rotating or breathing animation is smooth and subtle",
+        "Effect enhances the futuristic aesthetic"
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Create a new AIPerformanceSection component with heading 'AI-Driven Performance Intelligence' and subtitle 'Real-time automation metrics powered by intelligent systems.' Implement a 2-column grid layout on desktop (stacked on mobile) displaying 4 animated metric counters with neon highlight accents and supporting labels: 'Workflow Automation Rate: 87% Tasks Automated', 'Operational Processing Speed: 6.4x Faster Execution', 'AI Decision Accuracy: 98.7% Model Precision', 'Manual Intervention Reduced: -72% Human Dependency'. Counters must animate upward smoothly on scroll with fade and count effects using the existing useCounterAnimation hook",
+      "text": "Update the eagle logo animation to match the circular design with a 2-4 second sequence: circular energy ring forms first, neon outline draws the circle smoothly, robotic scan passes across the circle, eagle logo activates inside, eyes or neon accents power on, and final soft pulse glow stabilization. Avoid square reveal animations, hard edge transitions, and sudden pop effects.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-latest"
         ],
         "quotes": [
-          "Create a powerful performance metrics section replacing Pricing. Section Heading: AI-Driven Performance Intelligence",
-          "Counters should animate upward smoothly on scroll (fade + count effect)."
+          "Circular energy ring forms first. Neon outline draws the circle smoothly. Robotic scan passes across the circle. Eagle logo activates inside the circle. Eyes or neon accents power ON. Final soft pulse glow stabilization."
         ]
       },
       "acceptanceCriteria": [
-        "Section displays heading and subtitle as specified",
-        "4 metrics are displayed in a 2-column grid on desktop",
-        "Metrics stack vertically on mobile devices",
-        "Each metric shows large animated number with neon accent and label underneath",
-        "Counter animation triggers on scroll using existing animation patterns",
-        "All metric values and labels match the exact specifications provided"
+        "Animation sequence lasts 2-4 seconds",
+        "Circular energy ring forms first as the opening stage",
+        "Neon outline draws the circle smoothly without hard edges",
+        "Robotic scan effect passes across the circular area",
+        "Eagle logo activates inside the circle with eyes/accents powering on",
+        "Animation ends with soft pulse glow stabilization",
+        "No square reveal animations or sudden pop effects present"
       ]
     },
     {
       "id": "REQ-5",
-      "text": "Add an authority testimonial block within the AIPerformanceSection component, positioned below the metrics grid. Display the quote: 'SwiftOps AI automation reduced operational delays by 43% within 90 days.' with attribution '— Operations Director, FinTech Company'. Apply center alignment, slight italic styling, soft neon glow accent line, and maintain professional corporate tone matching the existing design system",
+      "text": "Ensure the circular logo remains perfectly round on all screen sizes (desktop, tablet, mobile) with proportional scaling. Prevent any stretching or oval distortion.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-latest"
         ],
         "quotes": [
-          "Below metrics, add a premium quote block: \"SwiftOps AI automation reduced operational delays by 43% within 90 days.\" — Operations Director, FinTech Company"
+          "Circle remains perfectly round on all screen sizes. Maintain proportional scaling on mobile devices. Prevent stretching or oval distortion."
         ]
       },
       "acceptanceCriteria": [
-        "Testimonial block appears below the metrics grid",
-        "Quote and attribution text match exactly as specified",
-        "Text is center-aligned with italic styling",
-        "Neon glow accent line is applied to the block",
-        "Styling maintains professional corporate tone consistent with existing design"
+        "Logo circle is perfectly round on desktop screens",
+        "Logo circle is perfectly round on tablet screens",
+        "Logo circle is perfectly round on mobile screens",
+        "Proportional scaling maintains circular shape across all breakpoints",
+        "No stretching or oval distortion occurs at any screen size"
       ]
     },
     {
       "id": "REQ-6",
-      "text": "Integrate the generated Connected Workflow image (workflow-connected.dim_1200x600.png) into the AIPerformanceSection with subtle animations including flowing light lines, pulse nodes, and soft moving gradient effects. Ensure the image is fully responsive, appears below metrics on mobile, matches the dark neon brand aesthetic, and does not impact performance negatively",
+      "text": "Optimize logo animation performance to remain smooth and lightweight, ensuring fast loading on both mobile and desktop devices.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-latest"
         ],
         "quotes": [
-          "Add a high-quality futuristic \"Connected Workflow\" visual. Theme: glowing network nodes, automation pipelines, AI data flow. Add subtle animation: Flowing light lines, Pulse nodes, Soft moving gradient"
+          "Keep animation smooth and lightweight. Ensure fast loading on mobile and desktop."
         ]
       },
       "acceptanceCriteria": [
-        "Generated workflow image is rendered as a static asset from frontend/public/assets/generated",
-        "Image includes CSS animations for flowing light effects and pulsing nodes",
-        "Gradient overlay animation is applied without performance degradation",
-        "Image is fully responsive across all screen sizes",
-        "On mobile, image appears below the metrics grid",
-        "Visual style matches the existing dark neon theme"
+        "Animation runs smoothly at 60fps on desktop",
+        "Animation runs smoothly on mobile devices",
+        "Logo loads quickly without blocking page render",
+        "Animation does not cause performance degradation"
       ]
     },
     {
       "id": "REQ-7",
-      "text": "Render the EliteClientProfilesSection component in App.tsx at the position previously occupied by TestimonialsSection, and render the AIPerformanceSection component at the position previously occupied by PricingSection. Maintain the existing section order and ensure smooth scroll navigation remains functional",
+      "text": "Remove the Gmail address 'zeeshan.automation06@gmail.com' completely from the header navigation, including both email text and email icon if present.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-latest"
         ],
         "quotes": [
-          "Create a new premium section in place of the removed client section",
-          "Create a powerful performance metrics section replacing Pricing"
+          "Completely remove the Gmail address: zeeshan.automation06@gmail.com. Delete both: Email text, Email icon (if present)"
         ]
       },
       "acceptanceCriteria": [
-        "EliteClientProfilesSection replaces TestimonialsSection in the component tree",
-        "AIPerformanceSection replaces PricingSection in the component tree",
-        "Section order and scroll flow remain consistent with existing layout",
-        "Navigation links and scroll behavior continue to work correctly"
+        "Gmail address text is not visible in header",
+        "Email icon is removed from header if present",
+        "No trace of the email address remains in the navigation bar"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Automatically realign remaining header elements (logo, navigation menu, contact buttons) after email removal to ensure no empty spacing or gaps remain. Maintain balanced and centered layout.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Automatically realign remaining elements: Logo, Navigation menu, Contact buttons. Ensure no empty spacing or gaps remain after removal."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Logo position is properly aligned after email removal",
+        "Navigation menu spacing is balanced",
+        "Contact buttons are properly positioned",
+        "No empty gaps or awkward spacing in header",
+        "Header appears professionally balanced"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Fix header alignment for desktop, tablet, and mobile views after email removal. Ensure the navbar remains balanced and centered across all responsive breakpoints.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Fix alignment for: Desktop view, Tablet view, Mobile view. Navbar should remain balanced and centered."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header alignment is correct on desktop screens",
+        "Header alignment is correct on tablet screens",
+        "Header alignment is correct on mobile screens",
+        "Navbar maintains balanced appearance at all breakpoints",
+        "Elements remain properly centered responsively"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Preserve existing neon styling, spacing, professional futuristic appearance, and consistent header height after removing the email address from the navigation bar.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Preserve existing neon styling and spacing. Maintain professional futuristic appearance. Ensure header height remains consistent."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Neon styling is preserved throughout header",
+        "Spacing consistency is maintained",
+        "Header retains professional futuristic look",
+        "Header height remains the same as before changes",
+        "Visual design quality is not degraded"
       ]
     }
   ],
   "constraints": [
-    "Do NOT change hero section styling or content",
-    "Do NOT modify theme colors or neon cyan design system",
-    "Do NOT alter header or footer components",
-    "Do NOT adjust global typography styles",
-    "Maintain existing animation smoothness and performance optimization",
-    "Preserve SEO structure and meta information",
-    "Do NOT introduce layout breaking changes",
-    "Only modify the specifically requested sections"
+    "Keep logo placement unchanged in the header",
+    "Maintain SwiftOps Automation branding throughout changes",
+    "Do not modify frontend/src/hooks/useInternetIdentity.ts or frontend/src/components/ui components"
   ],
   "nonGoals": [
-    "Redesigning the overall website visual style",
-    "Changing the color scheme or brand identity",
-    "Modifying existing sections beyond the specified Client and Pricing sections",
-    "Adding new navigation menu items",
-    "Changing font families or typography hierarchy",
-    "Implementing new backend functionality"
+    "Changing the eagle logo image itself",
+    "Adding new header navigation items",
+    "Modifying footer contact information",
+    "Implementing new authentication features"
   ],
   "imageRequirements": {
-    "required": [
-      "Futuristic connected workflow visualization with glowing network nodes, automation pipelines, and AI data flow in dark theme with cyan neon accents matching brand aesthetic (workflow-connected.dim_1200x600.png)",
-      "Executive male professional headshot with corporate attire, neutral background, studio lighting for FinTech executive profile (profile-executive-1.dim_200x200.png)",
-      "Executive female professional headshot with corporate attire, neutral background, studio lighting for SaaS executive profile (profile-executive-2.dim_200x200.png)",
-      "Executive male professional headshot with corporate attire, neutral background, studio lighting for Enterprise AI executive profile (profile-executive-3.dim_200x200.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }
