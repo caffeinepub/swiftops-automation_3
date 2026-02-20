@@ -1,22 +1,171 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Increase Gmail contact card size while maintaining single-line layout",
+  "title": "Replace AI Performance section image with animated workflow visualization and add premium neon cursor",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Increase the font size and overall dimensions of the Gmail contact card while ensuring the email address fits on one line without wrapping or overflow",
+      "summary": "Replace static image in AIPerformanceSection with animated AI automation workflow visualization showing connected nodes with AI hub center, CRM→AI Agent→Chatbot→Email→Analytics→Apps flow, floating glassmorphism dashboard panels, neural network lines, and real-time performance indicators",
       "acceptanceCriteria": [
-        "The Gmail contact card displays with increased font size compared to current implementation",
-        "The email address remains on a single line without text wrapping",
-        "The card maintains proper spacing and alignment with other contact cards",
-        "Text does not overflow the card boundaries"
+        "Only the image area is replaced; text, progress bar, and spacing remain unchanged",
+        "Visualization shows connected workflow nodes with AI hub at center",
+        "Flow path clearly displays: CRM → AI Agent → Chatbot → Email → Analytics → Apps",
+        "Includes floating dashboard panels with glassmorphism effect",
+        "Neural network connection lines visible between nodes",
+        "Real-time performance indicators integrated into design"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/ContactSection.tsx",
+          "path": "frontend/src/components/animations/AIWorkflowVisualization.tsx",
+          "operation": "create",
+          "description": "Create canvas-based animation component displaying AI workflow hub with six connected nodes (CRM, AI Agent, Chatbot, Email, Analytics, Apps) arranged around a central AI processing hub. Include floating glassmorphism dashboard panels showing metrics, neural network connection lines between nodes, and real-time performance indicators. Use the generated image frontend/public/assets/generated/ai-workflow-hub.dim_1200x600.png as a reference for visual style. Implement using HTML Canvas API with responsive sizing to fill container width."
+        },
+        {
+          "path": "frontend/src/components/AIPerformanceSection.tsx",
           "operation": "modify",
-          "description": "Modify the Gmail contact card element (identified by XPath /html[1]/body[1]/div[1]/main[1]/section[9]/div[1]/div[2]/a[4]/div[1]/div[1]/div[2]/div[2]) to increase font size and card dimensions. Adjust the text sizing classes while maintaining single-line display using appropriate CSS properties (text-overflow: ellipsis, white-space: nowrap, overflow: hidden). Preserve existing glassmorphism styling, hover effects, and responsive behavior. Ensure the card remains aligned with other contact cards (Name, Phone, WhatsApp, Instagram) in the section."
+          "description": "Replace the existing static workflow visualization with the new AIWorkflowVisualization component. Remove the current image/visualization element while preserving all text content, progress bar component, layout structure, and spacing. Import and render the AIWorkflowVisualization component in the same container position where the old image was located."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add enterprise-grade animations to AI workflow visualization with animated data lines flowing between systems, soft pulsing connection paths, floating UI panels with slow motion, moving particles representing live data, subtle glow breathing effect, and continuous seamless loop",
+      "acceptanceCriteria": [
+        "Data lines animate flowing between connected nodes",
+        "Connection paths pulse softly and continuously",
+        "Dashboard panels float with slow, smooth motion",
+        "Particles move along paths representing live data flow",
+        "Glow effects breathe subtly on key elements",
+        "Animation loops seamlessly without jarring resets",
+        "Performance remains smooth during scrolling",
+        "Animation uses GPU acceleration where possible"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/animations/AIWorkflowVisualization.tsx",
+          "operation": "modify",
+          "description": "Implement animation system within the canvas: (1) Animated data flow particles traveling along connection lines between nodes using parametric path equations, (2) Soft pulsing effect on connection paths using sinusoidal opacity/width modulation, (3) Floating motion for dashboard panels using gentle sine-wave transforms, (4) Particle system with fade-in/fade-out lifecycle representing live data streams, (5) Breathing glow effect on AI hub and nodes using radial gradient animation, (6) Seamless loop with requestAnimationFrame ensuring smooth 60fps performance. Apply CSS transform: translateZ(0) for GPU acceleration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Style AI workflow visualization to match neon futuristic theme using Neon Blue, Electric Cyan, Soft Purple Glow, and Dark Gradient Background with ultra premium SaaS aesthetic, realistic lighting and depth, full container width, balanced with heading text, and depth parallax effect on scroll",
+      "acceptanceCriteria": [
+        "Color scheme uses Neon Blue, Electric Cyan, Soft Purple Glow, and Dark Gradient Background",
+        "Visual design has premium SaaS appearance with realistic lighting",
+        "Image spans full container width responsively",
+        "Layout balances properly with section heading text",
+        "Parallax depth effect activates during scroll",
+        "Design integrates naturally with existing page theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/animations/AIWorkflowVisualization.tsx",
+          "operation": "modify",
+          "description": "Apply neon futuristic color scheme: Neon Blue (#00D9FF) for primary elements, Electric Cyan (#00FFFF) for highlights, Soft Purple (#A78BFA) for glow accents, and dark gradient background (#0A0A0F to #1A1A2E). Implement realistic lighting using layered radial gradients, drop shadows, and blur effects. Add glassmorphism to dashboard panels with backdrop-filter blur, semi-transparent backgrounds, and border highlights. Ensure canvas scales to 100% container width with aspect ratio preservation. Integrate scroll-based parallax using transform: translateY() with useParallax hook for depth effect."
+        },
+        {
+          "path": "frontend/src/components/AIPerformanceSection.tsx",
+          "operation": "modify",
+          "description": "Ensure the AIWorkflowVisualization container spans full width of the section and balances properly with the heading text above. Apply the useParallax hook to the visualization wrapper for scroll-based depth parallax effect. Verify responsive behavior and spacing consistency with existing layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create custom neon cursor component for desktop with glowing neon blue circle, soft outer glow halo, smooth trailing light effect, slight lag-follow motion, inner bright core with outer blur glow, applied globally across entire website",
+      "acceptanceCriteria": [
+        "Custom neon blue circular cursor replaces default cursor on desktop",
+        "Cursor has visible outer glow halo effect",
+        "Light trail follows cursor smoothly with fade-out",
+        "Cursor has slight lag-follow motion creating premium feel",
+        "Inner bright core visible with outer blur glow",
+        "Cursor applies globally across all pages and sections"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/NeonCursor.tsx",
+          "operation": "modify",
+          "description": "Replace the existing basic neon cursor implementation with enhanced version featuring: (1) Neon blue circular cursor (16-20px) with inner bright core and layered outer blur glow using box-shadow, (2) Trailing light effect with array of delayed follower elements that fade out progressively, (3) Lag-follow motion using requestAnimationFrame with easing interpolation (lerp) between current and target positions, (4) Desktop-only detection using window.matchMedia('(pointer: fine)'), (5) Global cursor hiding with CSS: html { cursor: none !important; }. Ensure smooth 60fps performance with GPU acceleration via transform: translate3d()."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement hover interactions for desktop neon cursor: expand slightly on buttons/links, intensify glow on hover, smooth magnetic attraction toward clickable elements, soft pulse animation on service cards/CTA buttons, subtle flowing neon particle trail with fade-out, smooth easing and no harsh movements",
+      "acceptanceCriteria": [
+        "Cursor expands when hovering over buttons and links",
+        "Glow intensity increases on interactive element hover",
+        "Cursor shows magnetic attraction moving toward clickable elements",
+        "Pulse animation triggers on service cards and CTA buttons",
+        "Particle trail flows smoothly behind cursor movement",
+        "Trail fades out gradually with smooth easing",
+        "No jarring or harsh motion during transitions"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/NeonCursor.tsx",
+          "operation": "modify",
+          "description": "Add hover interaction system: (1) Query all interactive elements (a, button, [role=\"button\"]) and track on mousemove, (2) Expand cursor scale to 1.3-1.5x when hovering using CSS transform: scale() with transition, (3) Intensify glow by increasing box-shadow blur radius and spread, (4) Implement magnetic attraction by interpolating cursor position toward element center when within proximity threshold, (5) Add pulse animation (scale 1.0 to 1.1 loop) when hovering service cards or CTA buttons using CSS animation, (6) Enhance particle trail with increased spawn rate and longer fade duration on hover. Apply cubic-bezier easing for all transitions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Implement touch glow effects for mobile devices with neon ripple glow at tap points, circular pulse animation expanding from touch location, soft expanding neon ring fading within 600ms, and faint floating neon orb following finger movement during scrolling",
+      "acceptanceCriteria": [
+        "Touch events trigger neon ripple glow at tap location",
+        "Circular pulse expands outward from touch point",
+        "Expanding ring has soft, smooth animation",
+        "Glow effect completes fade-out within 600ms",
+        "Floating neon orb appears during scroll gestures",
+        "Orb follows finger movement briefly and subtly",
+        "Mobile effects don't interfere with scrolling or tapping"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TouchGlowEffect.tsx",
+          "operation": "create",
+          "description": "Create mobile touch effect component that: (1) Listens for touchstart events and creates ripple element at touch coordinates, (2) Renders circular neon ring with CSS animation expanding from 0 to 150px radius with opacity fade from 1 to 0 over 600ms, (3) Removes ripple DOM element after animation completes, (4) Detects scroll gestures (touchmove with velocity) and displays floating neon orb that follows touch position with lag-follow interpolation, (5) Applies mobile-only detection using window.matchMedia('(pointer: coarse)'), (6) Uses Neon Blue/Electric Cyan colors with radial-gradient and box-shadow glow. Ensure pointer-events: none to prevent interaction blocking."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the TouchGlowEffect component at the root level alongside the existing NeonCursor component to provide global touch feedback effects on mobile devices."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Style all cursor and touch effects to match futuristic AI theme using Neon Blue/Electric Cyan with glassmorphism lighting, ultra smooth 60fps motion with 0.3-0.6s easing, GPU acceleration, auto-disable on low-performance devices, reduce intensity in battery saver mode, never block interactions, and maintain fast loading",
+      "acceptanceCriteria": [
+        "Cursor and touch effects use Neon Blue/Electric Cyan color scheme",
+        "Visual style matches existing futuristic AI theme",
+        "Glassmorphism lighting effects applied consistently",
+        "Animations run at smooth 60fps",
+        "Transition durations between 0.3s and 0.6s with easing",
+        "GPU acceleration enabled for animation performance",
+        "Effects auto-disable on low-performance devices",
+        "Animation intensity reduces in battery saver mode",
+        "Effects never prevent or delay user interactions",
+        "Page loading speed remains fast with effects active"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/NeonCursor.tsx",
+          "operation": "modify",
+          "description": "Apply consistent styling and performance optimizations: (1) Use Neon Blue (#00D9FF) primary and Electric Cyan (#00FFFF) accents matching site theme, (2) Apply glassmorphism with backdrop-filter: blur() and semi-transparent backgrounds where appropriate, (3) Set all transitions to 0.3-0.6s duration with cubic-bezier(0.4, 0, 0.2, 1) easing, (4) Enable GPU acceleration with will-change: transform and transform: translate3d(), (5) Detect low-performance devices using navigator.hardwareConcurrency and disable effects if < 4 cores, (6) Monitor battery status using Battery API and reduce particle count/glow intensity when battery saver active, (7) Ensure pointer-events: none on all cursor elements to never block interactions."
+        },
+        {
+          "path": "frontend/src/components/TouchGlowEffect.tsx",
+          "operation": "modify",
+          "description": "Apply consistent styling and performance optimizations: (1) Use Neon Blue (#00D9FF) primary and Electric Cyan (#00FFFF) accents for ripples and orb, (2) Set animation duration to 600ms with cubic-bezier(0.4, 0, 0.2, 1) easing, (3) Enable GPU acceleration with will-change: transform, opacity and transform: translate3d(), (4) Detect low-performance devices and disable floating orb on devices with < 4 cores, (5) Reduce ripple size and orb opacity when battery saver mode detected, (6) Ensure pointer-events: none on all effect elements, (7) Lazy-load component to avoid blocking initial page load."
+        },
+        {
+          "path": "frontend/src/hooks/usePerformanceDetection.ts",
+          "operation": "create",
+          "description": "Create custom hook that detects device performance capabilities and battery status. Export { isLowPerformance: boolean, isBatterySaver: boolean } by checking navigator.hardwareConcurrency (< 4 cores = low perf) and Battery API status. Use this hook in NeonCursor and TouchGlowEffect components to conditionally reduce or disable animation features."
         }
       ]
     }

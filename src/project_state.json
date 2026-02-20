@@ -5,12 +5,61 @@
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Premium AI automation workflow visualization showing connected workflow nodes with AI processing hub at center, CRM to AI Agent to Chatbot to Email to Analytics to Apps flow, floating glassmorphism dashboard panels, neural network connection lines, and real-time performance indicators in Neon Blue, Electric Cyan, and Soft Purple colors on dark gradient background (ai-workflow-hub.dim_1200x600.png)",
   "existing_features": [
     {
-      "id": "feature-increase-the-font-size-and-overall-dimensions-of-the-gmail-contact-card-xpath-html-1-body-1-div-1-main-1-section-9-div-1-div-2-a-4-div-1-div-1-div-2-div-2-in-the-contactsection-component-while-ensuring-the-email-address-fits-on-one-line-without-wrapping-or-overflow",
-      "title": "Increase the font size and overall dimensions of the Gmail contact card (XPath: /html[1]/body[1]/div[1]/main[1]/section[9]/div[1]/div[2]/a[4]/div[1]/div[1]/div[2]/div[2]) in the ContactSection component while ensuring the email address fits on one line without wrapping or overflow",
+      "id": "feature-replace-the-static-image-in-the-ai-driven-performance-intelligence-section-aiperformancesection-tsx-with-a-new-animated-ai-automation-workflow-visualization-the-visualization-must-show-connected-workflow-nodes-with-an-ai-processing-hub-at-the-center-displaying-a-flow-crm-ai-agent-chatbot-email-analytics-apps-include-floating-dashboard-panels-with-glassmorphism-styling-neural-network-connection-lines-and-real-time-performance-indicators-preserve-all-existing-text-progress-bar-and-layout-unchanged",
+      "title": "Replace the static image in the AI-Driven Performance Intelligence section (AIPerformanceSection.tsx) with a new animated AI automation workflow visualization. The visualization must show connected workflow nodes with an AI processing hub at the center, displaying a flow: CRM → AI Agent → Chatbot → Email → Analytics → Apps. Include floating dashboard panels with glassmorphism styling, neural network connection lines, and real-time performance indicators. Preserve all existing text, progress bar, and layout unchanged.",
       "reqIds": [
         "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-enterprise-grade-animations-to-the-ai-workflow-visualization-animated-data-lines-flowing-between-systems-soft-pulsing-connection-paths-floating-ui-panels-with-slow-motion-moving-particles-representing-live-data-subtle-glow-breathing-effect-and-continuous-seamless-loop-animation-must-feel-intelligent-and-purposeful-not-decorative-keep-animation-lightweight-and-optimized-for-fast-loading-and-smooth-scrolling",
+      "title": "Add enterprise-grade animations to the AI workflow visualization: animated data lines flowing between systems, soft pulsing connection paths, floating UI panels with slow motion, moving particles representing live data, subtle glow breathing effect, and continuous seamless loop. Animation must feel intelligent and purposeful, not decorative. Keep animation lightweight and optimized for fast loading and smooth scrolling.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-style-the-ai-workflow-visualization-to-match-the-website-s-neon-futuristic-theme-using-neon-blue-electric-cyan-soft-purple-glow-and-dark-gradient-background-apply-ultra-premium-saas-aesthetic-with-realistic-lighting-and-depth-avoiding-stock-image-appearance-ensure-the-image-fills-the-full-container-width-balances-with-heading-text-and-includes-depth-parallax-effect-on-scroll",
+      "title": "Style the AI workflow visualization to match the website's neon futuristic theme using Neon Blue, Electric Cyan, Soft Purple Glow, and Dark Gradient Background. Apply ultra premium SaaS aesthetic with realistic lighting and depth, avoiding stock-image appearance. Ensure the image fills the full container width, balances with heading text, and includes depth parallax effect on scroll.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-custom-neon-cursor-component-for-desktop-devices-that-replaces-the-default-cursor-with-a-glowing-neon-blue-circle-featuring-a-soft-outer-glow-halo-smooth-trailing-light-effect-slight-lag-follow-motion-and-inner-bright-core-with-outer-blur-glow-apply-the-cursor-globally-across-the-entire-website",
+      "title": "Create a custom neon cursor component for desktop devices that replaces the default cursor with a glowing neon blue circle featuring a soft outer glow halo, smooth trailing light effect, slight lag-follow motion, and inner bright core with outer blur glow. Apply the cursor globally across the entire website.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-hover-interactions-for-the-desktop-neon-cursor-expand-cursor-slightly-on-buttons-and-links-intensify-neon-glow-on-hover-add-smooth-magnetic-attraction-toward-clickable-elements-and-apply-soft-pulse-animation-when-hovering-over-service-cards-or-cta-buttons-include-subtle-flowing-neon-particle-trail-with-fade-out-motion-smooth-easing-and-no-harsh-movements",
+      "title": "Implement hover interactions for the desktop neon cursor: expand cursor slightly on buttons and links, intensify neon glow on hover, add smooth magnetic attraction toward clickable elements, and apply soft pulse animation when hovering over service cards or CTA buttons. Include subtle flowing neon particle trail with fade-out motion, smooth easing, and no harsh movements.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-touch-glow-effects-for-mobile-devices-since-cursors-don-t-exist-on-touch-screens-show-neon-ripple-glow-at-tap-points-with-circular-pulse-animation-expanding-from-touch-location-create-soft-expanding-neon-ring-that-fades-smoothly-within-600ms-add-faint-floating-neon-orb-that-briefly-follows-finger-movement-during-scrolling-keeping-it-very-subtle-and-non-distracting",
+      "title": "Implement touch glow effects for mobile devices since cursors don't exist on touch screens: show neon ripple glow at tap points with circular pulse animation expanding from touch location, create soft expanding neon ring that fades smoothly within 600ms. Add faint floating neon orb that briefly follows finger movement during scrolling, keeping it very subtle and non-distracting.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-style-all-cursor-and-touch-effects-to-match-the-website-s-futuristic-ai-theme-using-neon-blue-electric-cyan-colors-with-glassmorphism-lighting-feel-and-clean-enterprise-saas-appearance-configure-animations-for-ultra-smooth-60fps-motion-with-0-3-0-6s-easing-duration-gpu-acceleration-and-lightweight-performance-optimization-implement-accessibility-features-automatically-disable-effects-on-low-performance-devices-reduce-animation-intensity-on-mobile-battery-saver-mode-never-block-clicks-or-scrolling-and-maintain-fast-loading-speed",
+      "title": "Style all cursor and touch effects to match the website's futuristic AI theme using Neon Blue/Electric Cyan colors with glassmorphism lighting feel and clean enterprise SaaS appearance. Configure animations for ultra smooth 60fps motion with 0.3-0.6s easing duration, GPU acceleration, and lightweight performance optimization. Implement accessibility features: automatically disable effects on low-performance devices, reduce animation intensity on mobile battery saver mode, never block clicks or scrolling, and maintain fast loading speed.",
+      "reqIds": [
+        "REQ-7"
       ],
       "version": 1
     }
@@ -18,12 +67,18 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Increase Gmail size while keeping it on one line",
+      "summary": "Replace AI-Driven Performance Intelligence section image with premium AI automation workflow visualization",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add premium custom neon cursor animation for desktop and mobile",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "Increase Gmail contact card size while maintaining single-line layout",
+  "projectName": "SwiftOps Automation",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

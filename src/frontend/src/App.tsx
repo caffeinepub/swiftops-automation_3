@@ -10,11 +10,13 @@ import { FinalCTASection } from './components/FinalCTASection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { NeonCursor } from './components/NeonCursor';
+import { TouchGlowEffect } from './components/TouchGlowEffect';
 
 function App() {
   return (
     <div className="min-h-screen bg-dark-bg text-white overflow-x-hidden">
       <NeonCursor />
+      <TouchGlowEffect />
       <Navbar />
       <main>
         <HeroSection />

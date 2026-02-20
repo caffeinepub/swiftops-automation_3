@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useCounterAnimation } from '../hooks/useCounterAnimation';
+import { AIWorkflowVisualization } from './animations/AIWorkflowVisualization';
 
 const metrics = [
   {
@@ -76,18 +77,8 @@ export function AIPerformanceSection() {
           style={{ animationDelay: '500ms' }}
         >
           <div className="relative rounded-2xl overflow-hidden border border-neon-blue/30 shadow-neon-glow">
-            <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 via-transparent to-neon-blue/5 animate-pulse-glow" />
-            <img
-              src="/assets/generated/workflow-connected.dim_1200x600.png"
-              alt="Connected Workflow Visualization"
-              className="relative w-full h-auto workflow-image"
-            />
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-neon-blue shadow-neon-glow animate-pulse-node" />
-              <div className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-neon-blue shadow-neon-glow animate-pulse-node" style={{ animationDelay: '0.5s' }} />
-              <div className="absolute bottom-1/3 left-1/2 w-3 h-3 rounded-full bg-neon-blue shadow-neon-glow animate-pulse-node" style={{ animationDelay: '1s' }} />
-              <div className="absolute top-1/2 right-1/4 w-3 h-3 rounded-full bg-neon-blue shadow-neon-glow animate-pulse-node" style={{ animationDelay: '1.5s' }} />
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 via-transparent to-neon-blue/5 pointer-events-none" />
+            <AIWorkflowVisualization />
           </div>
         </div>
       </div>
