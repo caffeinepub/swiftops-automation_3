@@ -74,18 +74,6 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Contact Info */}
-        <div className="border-t border-neon-blue/20 pt-8 mb-8">
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-white/60 font-inter text-sm">
-            <a href="mailto:zeeshan.automation06@gmail.com" className="hover:text-neon-blue transition-colors duration-300">
-              zeeshan.automation06@gmail.com
-            </a>
-            <a href="tel:+917666426388" className="hover:text-neon-blue transition-colors duration-300">
-              +91 76664 26388
-            </a>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-neon-blue/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/60 font-inter text-sm text-center md:text-left">

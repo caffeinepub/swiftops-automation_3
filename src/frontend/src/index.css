@@ -94,7 +94,7 @@
     border-color: #00e5ff;
   }
 
-  /* Neon Glowing Buttons */
+  /* Premium Button Animations - Enhanced for Smoothness */
   .neon-button {
     @apply px-6 py-3 rounded-xl font-inter font-semibold text-sm;
     background: rgba(11, 15, 26, 0.8);
@@ -102,8 +102,13 @@
     border: 2px solid #00e5ff;
     color: #00e5ff;
     box-shadow: 0 0 15px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease-out, 
+                box-shadow 0.3s ease-out,
+                filter 0.3s ease-out;
     position: relative;
+    will-change: transform;
+    touch-action: manipulation;
   }
 
   .neon-button::before {
@@ -113,135 +118,195 @@
     border-radius: 0.75rem;
     background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, transparent 50%);
     opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .neon-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.8), 0 0 50px rgba(0, 229, 255, 0.4), inset 0 0 15px rgba(0, 229, 255, 0.2);
-    border-color: #00e5ff;
+    transition: opacity 0.3s ease-out;
   }
 
   .neon-button:hover::before {
     opacity: 1;
   }
 
+  .neon-button:hover {
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.9), inset 0 0 20px rgba(0, 229, 255, 0.3);
+    transform: scale(1.05);
+    filter: brightness(1.15);
+  }
+
   .neon-button:active {
-    animation: neon-pulse 0.3s ease-out;
+    transform: scale(0.96);
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .neon-button-primary {
-    @apply px-8 py-4 rounded-xl font-inter font-semibold;
-    background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 100%);
+    @apply px-6 py-3 rounded-xl font-inter font-semibold text-sm;
+    background: linear-gradient(135deg, #00e5ff 0%, #007bff 100%);
     color: #0b0f1a;
-    border: 2px solid #00e5ff;
-    box-shadow: 0 0 25px rgba(0, 229, 255, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.2);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease-out, 
+                box-shadow 0.3s ease-out,
+                filter 0.3s ease-out;
     position: relative;
+    will-change: transform;
+    touch-action: manipulation;
   }
 
   .neon-button-primary:hover {
+    box-shadow: 0 0 35px rgba(0, 229, 255, 1), inset 0 0 20px rgba(255, 255, 255, 0.4);
     transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(0, 229, 255, 0.9), 0 0 60px rgba(0, 229, 255, 0.5);
-    background: linear-gradient(135deg, #00ffff 0%, #00d4e8 100%);
+    filter: brightness(1.2);
   }
 
   .neon-button-primary:active {
-    animation: neon-pulse 0.3s ease-out;
+    transform: scale(0.96);
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .neon-button-link {
-    @apply font-inter font-medium text-white/80 hover:text-neon-cyan transition-all duration-300 relative pb-1;
+    @apply text-white/80 hover:text-neon-cyan font-inter font-medium;
+    position: relative;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    touch-action: manipulation;
   }
 
   .neon-button-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #00e5ff, transparent);
-    transition: width 0.3s ease;
+    background: linear-gradient(90deg, #00e5ff, #007bff);
+    transition: width 0.3s ease-out;
   }
 
   .neon-button-link:hover::after {
     width: 100%;
   }
 
-  /* Neon Text Effects */
-  .neon-text {
-    text-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 20px rgba(0, 229, 255, 0.6), 0 0 30px rgba(0, 229, 255, 0.4);
+  .neon-button-link:hover {
+    transform: scale(1.05);
   }
 
-  .neon-underline {
-    position: relative;
+  .neon-button-link:active {
+    transform: scale(0.96);
   }
 
-  .neon-underline::after {
-    content: '';
+  /* Premium Brand Title Styling */
+  .brand-title-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .brand-automation-text {
+    background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5),
+                 0 0 40px rgba(0, 229, 255, 0.3),
+                 0 0 60px rgba(0, 229, 255, 0.2);
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.6))
+            drop-shadow(0 0 20px rgba(0, 229, 255, 0.4))
+            drop-shadow(0 0 30px rgba(0, 229, 255, 0.2));
+    animation: neon-pulse-breath 4s ease-in-out infinite;
+    will-change: filter;
+    letter-spacing: 0.15em;
+  }
+
+  .brand-automation-text-hover {
+    filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8))
+            drop-shadow(0 0 30px rgba(0, 229, 255, 0.6))
+            drop-shadow(0 0 45px rgba(0, 229, 255, 0.3));
+  }
+
+  /* Intro Animation Styles */
+  .intro-logo-glow {
+    filter: drop-shadow(0 0 30px rgba(0, 229, 255, 0.8))
+            drop-shadow(0 0 60px rgba(0, 229, 255, 0.5));
+    animation: intro-logo-pulse 2s ease-in-out infinite;
+  }
+
+  .intro-title-shadow {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .intro-automation-glow {
+    background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.8))
+            drop-shadow(0 0 40px rgba(0, 229, 255, 0.6))
+            drop-shadow(0 0 60px rgba(0, 229, 255, 0.4));
+    animation: intro-automation-pulse 2s ease-in-out infinite;
+  }
+
+  .light-sweep {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(0, 229, 255, 0.1) 45%, 
+      rgba(0, 229, 255, 0.3) 50%, 
+      rgba(0, 229, 255, 0.1) 55%, 
+      transparent 100%);
+    transform: translateX(-100%);
+  }
+
+  .intro-pulse-ring {
     position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #00e5ff, transparent);
-    box-shadow: 0 0 10px #00e5ff;
-  }
-
-  /* Heading Glow Effect */
-  .heading-glow {
-    text-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
-  }
-
-  /* Robot Image Enhancement */
-  .robot-enhanced {
-    filter: contrast(1.1) brightness(1.05) drop-shadow(0 0 50px rgba(0, 229, 255, 0.4));
-    position: relative;
-  }
-
-  /* Testimonial Avatar Styling */
-  .testimonial-avatar {
-    width: 64px;
-    height: 64px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(0, 229, 255, 0.5);
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #00e5ff;
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.6), 0 0 25px rgba(0, 229, 255, 0.3);
-    transition: all 0.3s ease;
+    animation: intro-pulse-expand 2s ease-out infinite;
   }
 
-  .testimonial-avatar:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.8), 0 0 35px rgba(0, 229, 255, 0.5);
-  }
-
-  /* Glassmorphism Card */
+  /* Glassmorphism */
   .glass-card {
     background: rgba(17, 24, 39, 0.6);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 229, 255, 0.2);
-    border-radius: 1rem;
+    border: 1px solid rgba(0, 229, 255, 0.15);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 229, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s ease-out,
+                border-color 0.3s ease-out;
+    will-change: transform;
   }
 
   .glass-card:hover {
-    border-color: rgba(0, 229, 255, 0.4);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 229, 255, 0.2);
+    border-color: rgba(0, 229, 255, 0.3);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 229, 255, 0.2);
   }
 
-  /* Shadow Effects */
+  /* Integration Card Enhancements */
+  .integration-card {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease-out,
+                box-shadow 0.3s ease-out,
+                border-color 0.3s ease-out;
+    will-change: transform, opacity;
+  }
+
+  .integration-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.5), 0 12px 48px rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 229, 255, 0.5);
+  }
+
+  /* Neon Text Effects */
+  .neon-text {
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 20px rgba(0, 229, 255, 0.6),
+      0 0 30px rgba(0, 229, 255, 0.4), 0 0 40px rgba(0, 229, 255, 0.2);
+  }
+
+  .heading-glow {
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.3));
+  }
+
   .shadow-neon-glow {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(0, 229, 255, 0.2);
   }
 
-  .shadow-neon-glow-strong {
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.5), 0 8px 24px rgba(0, 0, 0, 0.6);
-  }
-}
-
-@layer components {
   /* Grid Background */
   .grid-background {
     background-image: linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
@@ -250,7 +315,7 @@
     animation: grid-move 20s linear infinite;
   }
 
-  /* Particles Container */
+  /* Particles */
   .particles-container {
     pointer-events: none;
   }
@@ -261,12 +326,82 @@
     height: 2px;
     background: #00e5ff;
     border-radius: 50%;
-    box-shadow: 0 0 10px #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
     animation: float-particle linear infinite;
+  }
+
+  /* Robot Enhancement */
+  .robot-enhanced {
+    filter: drop-shadow(0 0 30px rgba(0, 229, 255, 0.3));
+  }
+
+  /* Network Lines */
+  .network-line {
+    animation: pulse-line 2s ease-in-out infinite;
   }
 }
 
 /* Keyframe Animations */
+@keyframes neon-pulse-breath {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.6))
+            drop-shadow(0 0 20px rgba(0, 229, 255, 0.4))
+            drop-shadow(0 0 30px rgba(0, 229, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8))
+            drop-shadow(0 0 30px rgba(0, 229, 255, 0.6))
+            drop-shadow(0 0 45px rgba(0, 229, 255, 0.3));
+  }
+}
+
+@keyframes intro-logo-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 30px rgba(0, 229, 255, 0.8))
+            drop-shadow(0 0 60px rgba(0, 229, 255, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(0, 229, 255, 1))
+            drop-shadow(0 0 80px rgba(0, 229, 255, 0.7));
+  }
+}
+
+@keyframes intro-automation-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.8))
+            drop-shadow(0 0 40px rgba(0, 229, 255, 0.6))
+            drop-shadow(0 0 60px rgba(0, 229, 255, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(0, 229, 255, 1))
+            drop-shadow(0 0 60px rgba(0, 229, 255, 0.8))
+            drop-shadow(0 0 90px rgba(0, 229, 255, 0.5));
+  }
+}
+
+@keyframes animate-light-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes intro-pulse-expand {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 @keyframes grid-move {
   0% {
     background-position: 0 0;
@@ -288,247 +423,130 @@
     opacity: 1;
   }
   100% {
-    transform: translateY(-100vh) translateX(calc(var(--random-x, 0) * 50px));
+    transform: translateY(-100vh) translateX(50px);
     opacity: 0;
   }
 }
 
-/* Icon Float Animation */
+@keyframes pulse-line {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-node {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.2);
+  }
+}
+
 @keyframes icon-float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
 }
 
-/* New Eagle Head Logo Animations */
-
-/* Smooth glow fade-in animation (0.5-1s) */
-@keyframes logo-glow-fade-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-    filter: drop-shadow(0 0 0px rgba(0, 229, 255, 0));
-  }
+/* Integration Section Animations */
+@keyframes integration-float {
+  0%,
   100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.6));
-  }
-}
-
-.animate-logo-glow-fade-in {
-  animation: logo-glow-fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Subtle pulse shimmer effect (continuous) */
-@keyframes logo-pulse-shimmer {
-  0%, 100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
-}
-
-.animate-logo-pulse-shimmer {
-  animation: logo-pulse-shimmer 3s ease-in-out infinite;
-}
-
-/* Legacy Circular Eagle Logo Animations - kept for backward compatibility */
-
-/* Stage 1: Circular energy ring forms (0-0.5s) */
-@keyframes circle-energy-form {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-    box-shadow: 0 0 0px rgba(0, 229, 255, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 35px rgba(0, 229, 255, 0.3), inset 0 0 15px rgba(0, 229, 255, 0.1);
-  }
-}
-
-.animate-circle-energy-form {
-  animation: circle-energy-form 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Stage 2: Circular ring glow forms (0-0.8s) */
-@keyframes circular-ring-form {
-  0% {
-    opacity: 0;
-    transform: scale(0.7) rotate(0deg);
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(180deg);
-  }
-}
-
-.animate-circular-ring-form {
-  animation: circular-ring-form 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Stage 3: Robotic scan passes across (1.2-2s) */
-@keyframes robotic-scan {
-  0% {
-    left: -30%;
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    left: 100%;
-    opacity: 0;
-  }
-}
-
-.animate-robotic-scan {
-  animation: robotic-scan 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards;
-}
-
-/* Stage 4: Eagle logo activates (2-2.8s) */
-@keyframes eagle-activate {
-  0% {
-    opacity: 0;
-    transform: scale(0.85);
-    filter: drop-shadow(0 0 0px rgba(0, 229, 255, 0));
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 25px rgba(0, 229, 255, 0.5));
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: drop-shadow(0 0 2px rgba(0, 229, 255, 0.9)) drop-shadow(0 0 4px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
-  }
-}
-
-.animate-eagle-activate {
-  animation: eagle-activate 0.8s cubic-bezier(0.4, 0, 0.2, 1) 2s forwards;
-}
-
-/* Stage 5: Breathing glow effect (continuous after activation) */
-@keyframes breathing-glow {
-  0%, 100% {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-
-.animate-breathing-glow {
-  animation: breathing-glow 3s ease-in-out infinite;
-}
-
-/* Stage 6: Pulse stabilization (continuous soft pulse) */
-@keyframes pulse-stabilization {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 35px rgba(0, 229, 255, 0.3), inset 0 0 15px rgba(0, 229, 255, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.8), 0 0 50px rgba(0, 229, 255, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.15);
-  }
-}
-
-.animate-pulse-stabilization {
-  animation: pulse-stabilization 2s ease-in-out infinite;
-}
-
-/* Neon Pulse Animation */
-@keyframes neon-pulse {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5), inset 0 0 10px rgba(0, 229, 255, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(0, 229, 255, 1), 0 0 60px rgba(0, 229, 255, 0.6), inset 0 0 20px rgba(0, 229, 255, 0.3);
-  }
-}
-
-/* Fade In Slide Animation */
-@keyframes fade-in-slide {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
     transform: translateY(0);
   }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.animate-fade-in-slide {
-  animation: fade-in-slide 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Pulse Glow Animation */
 @keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.5;
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
   }
   50% {
-    opacity: 1;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
   }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Utility Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-node {
+  animation: float-node 3s ease-in-out infinite;
+}
+
+.animate-icon-float {
+  animation: icon-float 3s ease-in-out infinite;
+}
+
+.animate-light-sweep {
+  animation: animate-light-sweep 2s ease-in-out;
+}
+
+.animate-integration-float {
+  animation: integration-float 5s ease-in-out infinite;
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow 3.5s ease-in-out infinite;
 }
 
-/* Pulse Node Animation */
-@keyframes pulse-node {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0.5;
-  }
+.animate-gradient-shift {
+  animation: gradient-shift 15s ease infinite;
 }
 
-.animate-pulse-node {
-  animation: pulse-node 2s ease-in-out infinite;
-}
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .neon-button:hover,
+  .neon-button-primary:hover,
+  .neon-button-link:hover {
+    transform: scale(1.02);
+  }
 
-/* Cursor Pulse Animation */
-@keyframes cursor-pulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
+  .integration-card:hover {
+    transform: translateY(-4px) scale(1.01);
   }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-}
 
-/* Touch Ripple Animation */
-@keyframes touch-ripple {
-  0% {
-    width: 20px;
-    height: 20px;
-    opacity: 1;
+  .animate-integration-float {
+    animation: none;
   }
-  100% {
-    width: 150px;
-    height: 150px;
-    opacity: 0;
+
+  .animate-pulse-glow {
+    animation: none;
   }
 }
