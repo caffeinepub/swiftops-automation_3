@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { Phone, MessageCircle, Instagram, Mail, User } from 'lucide-react';
 
@@ -44,9 +44,35 @@ const contactMethods = [
 export function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
+  const [isHighlighted, setIsHighlighted] = useState(false);
+
+  useEffect(() => {
+    const element = sectionRef.current;
+    if (!element) return;
+
+    const handleHighlight = () => {
+      setIsHighlighted(true);
+      // Reset highlight after animation completes
+      setTimeout(() => {
+        setIsHighlighted(false);
+      }, 2000);
+    };
+
+    element.addEventListener('scrollHighlight', handleHighlight);
+
+    return () => {
+      element.removeEventListener('scrollHighlight', handleHighlight);
+    };
+  }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 relative bg-dark-bg">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className={`py-24 relative bg-dark-bg transition-all duration-700 ${
+        isHighlighted ? 'contact-highlight' : ''
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-orbitron font-bold text-white mb-4">
@@ -57,7 +83,9 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto transition-all duration-700 ${
+          isHighlighted ? 'contact-cards-glow' : ''
+        }`}>
           {contactMethods.map((method, index) => {
             const Icon = method.icon;
             const isEmail = method.label === 'Email';

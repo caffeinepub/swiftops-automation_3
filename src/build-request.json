@@ -1,308 +1,258 @@
 {
   "kind": "build_request",
-  "title": "Enhance button animations and Integrations section with premium smooth interactions",
-  "projectName": "SwiftOps Automation",
+  "title": "Fix navigation menu, remove Projects button, and enhance eagle logo with neon glow animations",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Apply smooth transition animations to all buttons across the website with 'transition: all 0.3s ease-in-out' to eliminate instant or harsh movement",
+      "text": "Fix navigation menu section linking by connecting the About button to #about section ID and Contact button to #contact section ID with smooth scrolling enabled",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-fix-nav"
         ],
         "quotes": [
-          "Apply smooth transition animations to all buttons: transition: all 0.3s ease-in-out, No instant or harsh movement"
+          "The \"Contact\" and \"About\" buttons are not scrolling or linking correctly",
+          "Connect the \"About\" button to the About section using the correct section ID",
+          "Connect the \"Contact\" button to the Contact section using the correct section ID"
         ]
       },
       "acceptanceCriteria": [
-        "All buttons have transition: all 0.3s ease-in-out applied",
-        "No buttons exhibit instant state changes",
-        "Transition applies to hover, focus, and active states"
+        "About button navigates to #about section with smooth scroll",
+        "Contact button navigates to #contact section with smooth scroll",
+        "Navigation works on both desktop and mobile views"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Add hover animations to all buttons with slight scale effect (scale: 1.05), smooth neon glow increase, background brightness transition, and soft responsive cursor interaction",
+      "text": "Verify and ensure all sections have correct unique IDs: Home section (id=\"home\"), Services section (id=\"services\"), About section (id=\"about\"), Contact section (id=\"contact\")",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-fix-nav"
         ],
         "quotes": [
-          "Hover Animation: Slight scale effect (scale: 1.05), Smooth neon glow increase, Background brightness transition, Cursor interaction feels soft and responsive"
+          "Check that each section has proper unique IDs",
+          "Home section → id=\"home\"",
+          "Services section → id=\"services\"",
+          "About section → id=\"about\"",
+          "Contact section → id=\"contact\""
         ]
       },
       "acceptanceCriteria": [
-        "Buttons scale to 1.05 on hover with smooth transition",
-        "Neon glow intensity increases smoothly on hover",
-        "Background brightness transitions smoothly",
-        "Cursor interaction feels fluid without lag"
+        "All sections have the specified unique ID attributes",
+        "IDs match the navigation menu href targets"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Implement click interaction with subtle press effect that scales down to 0.96 on click and bounces back smoothly, preventing sudden jumps or lag",
+      "text": "Update Navbar component links to use correct hash anchors: Home → #home, Services → #services, About → #about, Contact → #contact",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-fix-nav"
         ],
         "quotes": [
-          "Click Interaction: Add subtle press effect: scale down to 0.96 on click, bounce back smoothly, Prevent sudden jump or lag"
+          "Update navbar links correctly",
+          "Home → #home",
+          "Services → #services",
+          "About → #about",
+          "Contact → #contact"
         ]
       },
       "acceptanceCriteria": [
-        "Buttons scale down to 0.96 when clicked or pressed",
-        "Scale returns smoothly to original size after release",
-        "No visual jumps or layout shifts occur",
-        "Press effect works on both mouse click and touch"
+        "All navigation links use correct hash anchors",
+        "Active section highlighting works correctly while scrolling"
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Optimize button motion quality using cubic-bezier or ease-out animation curves, enable GPU acceleration using only transform and opacity animations, and avoid layout shifting animations",
+      "text": "Remove the Projects button completely from desktop navigation, mobile menu, and any routing or navigation configuration in the Navbar component",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-fix-nav"
         ],
         "quotes": [
-          "Motion Quality: Use cubic-bezier or ease-out animation curves, Enable GPU acceleration using transform and opacity animations only, Avoid layout shifting animations"
+          "Remove the \"Projects\" button completely from: Desktop navigation, Mobile menu, Any routing or navigation configuration"
         ]
       },
       "acceptanceCriteria": [
-        "All button animations use cubic-bezier or ease-out timing functions",
-        "Animations only modify transform and opacity properties",
-        "No layout shifts occur during button animations",
-        "GPU acceleration is enabled via transform properties"
+        "Projects button is not visible in desktop navigation",
+        "Projects button is not visible in mobile menu",
+        "No Projects-related navigation code remains"
       ]
     },
     {
       "id": "REQ-5",
-      "text": "Optimize button glow effects so neon glow smoothly fades in and out without flickering or sharp changes",
+      "text": "Add electric blue neon glow effect to the eagle logo with soft outer glow and inner light emission that gently pulses continuously",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-enhance-logo"
         ],
         "quotes": [
-          "Glow Optimization: Neon glow should smoothly fade in/out, Remove flickering or sharp glow changes"
+          "Apply electric blue neon glow around the eagle outline",
+          "Use soft outer glow + inner light emission effect",
+          "Glow should gently pulse instead of staying static"
         ]
       },
       "acceptanceCriteria": [
-        "Glow effects fade in and out smoothly",
-        "No flickering or abrupt glow changes occur",
-        "Glow transitions match button transition timing"
+        "Eagle logo has electric blue neon glow around outline",
+        "Glow pulses smoothly and continuously",
+        "Glow is visible on dark or neon backgrounds"
       ]
     },
     {
       "id": "REQ-6",
-      "text": "Enable smooth scrolling across the entire website, implement smooth section transitions while navigating, and reduce animation jitter or frame drops",
+      "text": "Add smooth light shimmer animation moving across the eagle logo with subtle energy pulse every 3-4 seconds, creating a futuristic AI/automation themed effect",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-enhance-logo"
         ],
         "quotes": [
-          "Website Global Smoothness: Enable smooth scrolling across entire website, Smooth section transitions while navigating, Reduce animation jitter or frame drops"
+          "Add smooth light shimmer moving across the eagle logo",
+          "Create a subtle energy pulse every 3–4 seconds",
+          "Animation must feel futuristic and AI/automation themed"
         ]
       },
       "acceptanceCriteria": [
-        "Smooth scrolling is enabled globally on the website",
-        "Navigation between sections transitions smoothly",
-        "No visible jitter or frame drops during scrolling or transitions",
-        "Scroll behavior is consistent across all browsers"
+        "Light shimmer sweeps across eagle logo smoothly",
+        "Energy pulse occurs every 3-4 seconds",
+        "Animation feels futuristic and cyber-tech themed"
       ]
     },
     {
       "id": "REQ-7",
-      "text": "Optimize all button animations for 60fps performance, prevent heavy shadow or blur effects from causing lag, and ensure fast response on mobile devices",
+      "text": "Add hover interaction to eagle logo that increases glow intensity, adds smooth 1.05x scale-up effect, and spreads glow softly outward like energy activation",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-enhance-logo"
         ],
         "quotes": [
-          "Performance Optimization: Optimize animations for 60fps performance, Prevent heavy shadow or blur effects causing lag, Ensure fast response on mobile devices"
+          "On hover, increase glow intensity slightly",
+          "Add smooth scale-up effect (1.05x)",
+          "Glow spreads softly outward like energy activation"
         ]
       },
       "acceptanceCriteria": [
-        "All button animations run at consistent 60fps",
-        "Shadow and blur effects do not cause performance degradation",
-        "Button interactions respond instantly on mobile devices",
-        "Performance profiling shows no animation bottlenecks"
+        "Hovering increases glow intensity smoothly",
+        "Logo scales to 1.05x on hover",
+        "Glow spreads outward with energy activation effect"
       ]
     },
     {
       "id": "REQ-8",
-      "text": "Ensure buttons on mobile respond instantly to touch with no delay after tap and maintain smooth animation timing",
+      "text": "Optimize eagle logo neon glow animations using CSS animations or GPU-accelerated effects to ensure smooth performance on mobile devices without lag",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-enhance-logo"
         ],
         "quotes": [
-          "Mobile Experience: Buttons respond instantly to touch, No delay after tap, Maintain smooth animation timing"
+          "Use CSS animation or GPU-accelerated effects",
+          "Ensure animation runs smoothly on mobile devices",
+          "No lag or heavy particle effects"
         ]
       },
       "acceptanceCriteria": [
-        "Touch interactions trigger button animations immediately",
-        "No 300ms tap delay is present on mobile devices",
-        "Animation timing is consistent between desktop and mobile",
-        "Touch feedback feels responsive and premium"
+        "Animations use GPU-accelerated CSS transforms",
+        "No performance lag on mobile devices",
+        "No heavy particle effects that impact performance"
       ]
     },
     {
       "id": "REQ-9",
-      "text": "Add section entry animation to the Integrations section that fades in content smoothly with slight upward motion (translateY 30px to 0) over 0.6-0.8 seconds using smooth ease-out transition when the section enters viewport",
+      "text": "Implement eagle logo entry animation on page load with smooth fade and scale from 0.85 to normal size, with soft upward motion",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-entry-animation"
         ],
         "quotes": [
-          "Section Entry Animation: When the section enters viewport: Content fades in smoothly, Slight upward motion (translateY 30px → 0), Duration: 0.6–0.8 seconds, Smooth ease-out transition"
+          "When the page loads, the eagle logo should appear with a smooth fade + scale animation",
+          "Start from slightly smaller size (0.85 scale) and smoothly grow to normal size",
+          "Add soft upward motion while appearing"
         ]
       },
       "acceptanceCriteria": [
-        "Integrations section content fades in when entering viewport",
-        "Content moves upward from translateY(30px) to 0",
-        "Animation duration is between 0.6 and 0.8 seconds",
-        "Ease-out timing function is applied",
-        "Animation triggers only once when scrolling into view"
+        "Logo fades in smoothly on page load",
+        "Logo scales from 0.85 to 1.0",
+        "Soft upward motion accompanies the animation"
       ]
     },
     {
       "id": "REQ-10",
-      "text": "Make integration cards or elements in the Integrations section appear sequentially with stagger animation delay of 0.1s between items and add soft scale-in effect from 0.95 to 1",
+      "text": "Add neon glow activation effect on eagle logo entry where glow starts dim and gradually powers on within 1-1.5 seconds with energy spreading from center to edges",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-entry-animation"
         ],
         "quotes": [
-          "Integration Cards / Elements: Each integration item should appear sequentially, Stagger animation delay (0.1s between items), Add soft scale-in effect (0.95 → 1)"
+          "Glow should start dim when the logo appears",
+          "Neon blue light gradually powers on within 1–1.5 seconds",
+          "Create an energy activation effect where glow spreads from center to edges"
         ]
       },
       "acceptanceCriteria": [
-        "Integration items animate in sequentially, not all at once",
-        "Each subsequent item has 0.1s additional delay",
-        "Items scale from 0.95 to 1 during entrance",
-        "Scale animation is smooth and subtle"
+        "Glow starts dim on logo appearance",
+        "Glow powers on smoothly over 1-1.5 seconds",
+        "Energy activation spreads from center outward"
       ]
     },
     {
       "id": "REQ-11",
-      "text": "Add hover interaction to integration cards that slightly lifts them upward, adds neon border glow on hover, creates smooth shadow expansion, and scales to 1.03 for premium feel",
+      "text": "Enable continuous soft glow pulse on eagle logo after entry animation completes, pulsing slowly every 3-4 seconds with premium feel",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-entry-animation"
         ],
         "quotes": [
-          "Hover Interaction: Cards slightly lift upward, Add neon border glow on hover, Smooth shadow expansion, Scale: 1.03 for premium feel"
+          "After entry animation completes, enable continuous soft glow pulse",
+          "Pulse must be slow and premium (every 3–4 seconds)"
         ]
       },
       "acceptanceCriteria": [
-        "Cards translate upward on hover using transform",
-        "Neon border glow appears smoothly on hover",
-        "Shadow expands smoothly during hover transition",
-        "Cards scale to 1.03 on hover",
-        "All hover effects transition smoothly together"
+        "Pulse animation starts after entry animation finishes",
+        "Pulse occurs every 3-4 seconds",
+        "Animation has premium, slow, smooth quality"
       ]
     },
     {
       "id": "REQ-12",
-      "text": "Add subtle floating motion to integration icons with very slow up-down animation loop and glow intensity that slightly pulses",
+      "text": "Preserve the existing eagle logo shape and only enhance lighting, glow effects, and animation quality without changing the core design",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-user-enhance-logo"
         ],
         "quotes": [
-          "Icon Animation: Integration icons should have subtle floating motion, Very slow up-down animation loop, Glow intensity slightly pulses"
+          "Do not change eagle shape",
+          "Only enhance lighting, glow, and animation quality"
         ]
       },
       "acceptanceCriteria": [
-        "Integration icons move up and down in a continuous loop",
-        "Floating motion is subtle and slow",
-        "Glow intensity pulses gently in sync or independently",
-        "Animation loops indefinitely without jarring resets"
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "text": "Add soft animated gradient or moving neon light effect to the Integrations section background, keeping motion minimal and elegant",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Background Enhancement: Add soft animated gradient or moving neon light effect, Keep motion minimal and elegant"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Background has subtle animated gradient or moving light effect",
-        "Motion is minimal and does not distract from content",
-        "Animation is elegant and matches the futuristic theme",
-        "Background animation performs smoothly at 60fps"
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "text": "Ensure all Integrations section animations use only transform and opacity properties, avoid layout shifts, and maintain 60fps performance",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Smooth Transition Rules: Use transform and opacity animations only, Avoid layout shifts, Maintain 60fps performance"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All animations modify only transform and opacity",
-        "No layout shifts occur during any animation",
-        "Animations run consistently at 60fps",
-        "GPU acceleration is leveraged via transform usage"
-      ]
-    },
-    {
-      "id": "REQ-15",
-      "text": "Reduce animation intensity on mobile devices for the Integrations section while maintaining smooth appearance without lag",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Mobile Optimization: Reduce animation intensity on phones, Maintain smooth appearance without lag"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Animation effects are less intense on mobile viewports",
-        "Animations remain smooth on mobile devices",
-        "No performance lag occurs on phones",
-        "User experience remains premium on all devices"
+        "Eagle logo shape remains unchanged",
+        "Only lighting and glow effects are modified",
+        "Animation enhancements do not alter core design"
       ]
     }
   ],
   "constraints": [
-    "Do not change button design or visual styling",
-    "Do not change Integrations section content or layout",
-    "Only use transform and opacity for animations to ensure GPU acceleration",
-    "Maintain 60fps performance for all animations",
-    "Avoid layout shifting animations"
+    "Do not change the eagle logo shape or core design",
+    "Use GPU-accelerated CSS transforms for all animations",
+    "Ensure all animations work smoothly on mobile devices",
+    "Navigation must work on both desktop and mobile views"
   ],
   "nonGoals": [
-    "Redesigning button appearance or colors",
-    "Changing button functionality or click handlers",
-    "Modifying Integrations section content or structure",
-    "Adding new features or functionality",
-    "Changing other sections beyond buttons and Integrations"
+    "Adding new navigation menu items beyond the existing structure",
+    "Changing the color scheme beyond the electric blue neon glow",
+    "Adding heavy particle effects or complex animations that impact performance",
+    "Modifying backend functionality"
   ],
   "imageRequirements": {
     "required": [],

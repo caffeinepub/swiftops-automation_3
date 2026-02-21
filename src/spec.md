@@ -1,17 +1,18 @@
 # Specification
 
 ## Summary
-**Goal:** Enhance all buttons and the Integrations section with premium smooth animations and interactions for a polished, responsive user experience.
+**Goal:** Fix navigation menu linking, remove Projects button, and enhance the eagle logo with electric blue neon glow animations and smooth entry effects.
 
 **Planned changes:**
-- Apply smooth transition animations to all buttons with scale, glow, and press effects
-- Implement global smooth scrolling and optimize performance for 60fps on all devices
-- Add section entry animations to Integrations with fade-in and upward motion
-- Create sequential stagger animations for integration cards with scale-in effects
-- Add hover interactions to integration cards with lift, glow, and shadow effects
-- Implement subtle floating motion and glow pulse to integration icons
-- Add animated gradient or moving neon light effect to Integrations background
-- Optimize all animations using transform and opacity properties only
-- Ensure instant touch response and reduced animation intensity on mobile devices
+- Fix About and Contact navigation buttons to scroll correctly to their respective sections with smooth scrolling
+- Verify all sections have correct unique IDs (home, services, about, contact)
+- Update Navbar component links to use correct hash anchors
+- Remove Projects button completely from desktop navigation, mobile menu, and all routing configuration
+- Add electric blue neon glow effect to eagle logo with continuous gentle pulse animation
+- Add smooth light shimmer animation moving across the eagle logo every 3-4 seconds
+- Add hover interaction that increases glow intensity, scales logo to 1.05x, and spreads glow outward
+- Implement smooth entry animation on page load with fade, scale from 0.85 to normal, and soft upward motion
+- Add neon glow activation effect where glow powers on gradually over 1-1.5 seconds, spreading from center to edges
+- Optimize all animations using GPU-accelerated CSS for smooth mobile performance
 
-**User-visible outcome:** Users experience buttery-smooth button interactions with subtle scale, glow, and press effects across the entire website. The Integrations section comes alive with elegant entrance animations, sequentially appearing cards, floating icons, and interactive hover effects, all optimized for premium 60fps performance on desktop and mobile.
+**User-visible outcome:** Navigation menu buttons work correctly to scroll to their sections, the Projects button is removed, and the eagle logo displays premium electric blue neon glow effects with smooth pulsing, shimmer animations, hover interactions, and an impressive entry animation on page load.

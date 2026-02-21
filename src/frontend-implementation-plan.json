@@ -1,285 +1,240 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Enhance button animations and Integrations section with premium smooth interactions",
+  "title": "Fix navigation menu, remove Projects button, and enhance eagle logo with neon glow animations",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Apply smooth transition animations to all buttons across the website with 'transition: all 0.3s ease-in-out' to eliminate instant or harsh movement",
+      "summary": "Fix navigation menu section linking by connecting About and Contact buttons to their respective section IDs with smooth scrolling enabled",
       "acceptanceCriteria": [
-        "All buttons have transition: all 0.3s ease-in-out applied",
-        "No buttons exhibit instant state changes",
-        "Transition applies to hover, focus, and active states"
+        "About button navigates to #about section with smooth scroll",
+        "Contact button navigates to #contact section with smooth scroll",
+        "Navigation works on both desktop and mobile views"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/components/Navbar.tsx",
           "operation": "modify",
-          "description": "Add global button transition styles by modifying the existing .premium-btn class to include 'transition: all 0.3s ease-in-out' and ensure all button selectors inherit this smooth transition property for hover, focus, and active states"
+          "description": "Update the navigation links to use correct hash anchors (#about, #contact) and ensure smooth scroll behavior is enabled for section navigation. Verify the scrollHelpers utility is properly invoked for smooth scrolling with offset compensation."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Add hover animations to all buttons with slight scale effect (scale: 1.05), smooth neon glow increase, background brightness transition, and soft responsive cursor interaction",
+      "summary": "Verify and ensure all sections have correct unique IDs for proper navigation targeting",
       "acceptanceCriteria": [
-        "Buttons scale to 1.05 on hover with smooth transition",
-        "Neon glow intensity increases smoothly on hover",
-        "Background brightness transitions smoothly",
-        "Cursor interaction feels fluid without lag"
+        "All sections have the specified unique ID attributes",
+        "IDs match the navigation menu href targets"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/components/AboutUsSection.tsx",
           "operation": "modify",
-          "description": "Enhance hover state styles for all button classes by adding 'transform: scale(1.05)', increasing box-shadow intensity for neon glow, and applying filter brightness adjustments to create a premium hover experience"
+          "description": "Add or verify the section container has id=\"about\" attribute to enable navigation targeting from the Navbar."
+        },
+        {
+          "path": "frontend/src/components/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Add or verify the section container has id=\"contact\" attribute to enable navigation targeting from the Navbar."
+        },
+        {
+          "path": "frontend/src/components/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Add or verify the section container has id=\"home\" attribute to enable navigation targeting from the Navbar."
+        },
+        {
+          "path": "frontend/src/components/ServicesSection.tsx",
+          "operation": "modify",
+          "description": "Add or verify the section container has id=\"services\" attribute to enable navigation targeting from the Navbar."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Implement click interaction with subtle press effect that scales down to 0.96 on click and bounces back smoothly, preventing sudden jumps or lag",
+      "summary": "Update Navbar component links to use correct hash anchors for all navigation items",
       "acceptanceCriteria": [
-        "Buttons scale down to 0.96 when clicked or pressed",
-        "Scale returns smoothly to original size after release",
-        "No visual jumps or layout shifts occur",
-        "Press effect works on both mouse click and touch"
+        "All navigation links use correct hash anchors",
+        "Active section highlighting works correctly while scrolling"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/components/Navbar.tsx",
           "operation": "modify",
-          "description": "Add active state styles for all button classes with 'transform: scale(0.96)' to create a press-down effect that smoothly bounces back, ensuring the transition property handles the return animation"
+          "description": "Update all navigation menu items (desktop and mobile) to use the correct hash anchors: Home → #home, Services → #services, About → #about, Contact → #contact. Ensure the useActiveSection hook correctly tracks these section IDs for active state highlighting."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Optimize button motion quality using cubic-bezier or ease-out animation curves, enable GPU acceleration using only transform and opacity animations, and avoid layout shifting animations",
+      "summary": "Remove the Projects button completely from desktop navigation, mobile menu, and any routing configuration",
       "acceptanceCriteria": [
-        "All button animations use cubic-bezier or ease-out timing functions",
-        "Animations only modify transform and opacity properties",
-        "No layout shifts occur during button animations",
-        "GPU acceleration is enabled via transform properties"
+        "Projects button is not visible in desktop navigation",
+        "Projects button is not visible in mobile menu",
+        "No Projects-related navigation code remains"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/components/Navbar.tsx",
           "operation": "modify",
-          "description": "Replace existing button transition timing with 'transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out, box-shadow 0.3s ease-out' to optimize for GPU acceleration and prevent layout shifts, ensuring only transform and opacity are animated for button interactions"
+          "description": "Remove the Projects navigation item from both the desktop navigation menu and the mobile Sheet menu. Remove any associated click handlers, route configurations, or state related to Projects navigation."
         }
       ]
     },
     {
       "id": "REQ-5",
-      "summary": "Optimize button glow effects so neon glow smoothly fades in and out without flickering or sharp changes",
+      "summary": "Add electric blue neon glow effect to the eagle logo with soft outer glow and inner light emission that gently pulses continuously",
       "acceptanceCriteria": [
-        "Glow effects fade in and out smoothly",
-        "No flickering or abrupt glow changes occur",
-        "Glow transitions match button transition timing"
+        "Eagle logo has electric blue neon glow around outline",
+        "Glow pulses smoothly and continuously",
+        "Glow is visible on dark or neon backgrounds"
       ],
       "file_operations": [
         {
+          "path": "frontend/src/components/EagleLogo.tsx",
+          "operation": "modify",
+          "description": "Add electric blue neon glow effect using CSS box-shadow and drop-shadow filters on the eagle logo image. Implement continuous pulse animation using GPU-accelerated CSS keyframes that modulate the glow intensity. Apply filters to create both outer glow and inner light emission effects. Reference the eagle logo image at frontend/public/assets/generated/eagle-head-logo.dim_400x400.png."
+        },
+        {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Update box-shadow transitions for all button glow effects to use 'box-shadow 0.3s ease-out' timing to ensure smooth fade in/out without flickering, matching the overall button transition duration"
+          "description": "Add CSS keyframe animations for the eagle logo neon glow pulse effect. Define animation for continuous smooth pulsing that modulates shadow intensity and blur radius. Use GPU-accelerated properties (transform, opacity, filter) for optimal mobile performance."
         }
       ]
     },
     {
       "id": "REQ-6",
-      "summary": "Enable smooth scrolling across the entire website, implement smooth section transitions while navigating, and reduce animation jitter or frame drops",
+      "summary": "Add smooth light shimmer animation moving across the eagle logo with subtle energy pulse every 3-4 seconds",
       "acceptanceCriteria": [
-        "Smooth scrolling is enabled globally on the website",
-        "Navigation between sections transitions smoothly",
-        "No visible jitter or frame drops during scrolling or transitions",
-        "Scroll behavior is consistent across all browsers"
+        "Light shimmer sweeps across eagle logo smoothly",
+        "Energy pulse occurs every 3-4 seconds",
+        "Animation feels futuristic and cyber-tech themed"
       ],
       "file_operations": [
         {
+          "path": "frontend/src/components/EagleLogo.tsx",
+          "operation": "modify",
+          "description": "Add shimmer overlay element that sweeps across the eagle logo using CSS linear-gradient animation. Implement energy pulse effect with radial gradient that expands from center every 3-4 seconds. Use GPU-accelerated transforms for smooth performance."
+        },
+        {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Add global smooth scrolling by including 'html { scroll-behavior: smooth; }' and ensure all scroll-linked animations use 'will-change: transform' for GPU acceleration to reduce jitter and frame drops"
+          "description": "Define CSS keyframe animations for light shimmer sweep (translateX movement) and energy pulse (scale and opacity changes). Set animation timing to create 3-4 second intervals with smooth easing functions. Ensure animations are GPU-accelerated using transform and opacity properties."
         }
       ]
     },
     {
       "id": "REQ-7",
-      "summary": "Optimize all button animations for 60fps performance, prevent heavy shadow or blur effects from causing lag, and ensure fast response on mobile devices",
+      "summary": "Add hover interaction to eagle logo that increases glow intensity, adds smooth 1.05x scale-up effect, and spreads glow softly outward",
       "acceptanceCriteria": [
-        "All button animations run at consistent 60fps",
-        "Shadow and blur effects do not cause performance degradation",
-        "Button interactions respond instantly on mobile devices",
-        "Performance profiling shows no animation bottlenecks"
+        "Hovering increases glow intensity smoothly",
+        "Logo scales to 1.05x on hover",
+        "Glow spreads outward with energy activation effect"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Optimize button shadow effects by limiting blur radius and spread, add 'will-change: transform' to button classes to hint browser for GPU acceleration, and ensure all animated properties are compositor-friendly (transform, opacity) for 60fps performance"
+          "description": "Add hover state styles that increase neon glow box-shadow intensity and spread, apply transform: scale(1.05) with smooth transition, and enhance the glow radius to create an energy activation spreading effect. Use CSS transitions for smooth state changes."
         }
       ]
     },
     {
       "id": "REQ-8",
-      "summary": "Ensure buttons on mobile respond instantly to touch with no delay after tap and maintain smooth animation timing",
+      "summary": "Optimize eagle logo neon glow animations using CSS animations and GPU-accelerated effects for smooth mobile performance",
       "acceptanceCriteria": [
-        "Touch interactions trigger button animations immediately",
-        "No 300ms tap delay is present on mobile devices",
-        "Animation timing is consistent between desktop and mobile",
-        "Touch feedback feels responsive and premium"
+        "Animations use GPU-accelerated CSS transforms",
+        "No performance lag on mobile devices",
+        "No heavy particle effects that impact performance"
       ],
       "file_operations": [
         {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Add 'touch-action: manipulation' to all button classes to eliminate 300ms tap delay on mobile devices, ensuring instant touch response while maintaining smooth animation timing"
+          "description": "Optimize all eagle logo animation keyframes to use GPU-accelerated properties only (transform, opacity, filter). Add will-change hints where appropriate for mobile optimization. Ensure no heavy particle effects or complex calculations in animations."
         },
         {
-          "path": "frontend/index.html",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Add viewport meta tag with 'user-scalable=no' or ensure touch-action is properly configured to eliminate mobile tap delays for button interactions"
+          "description": "Review and optimize animation implementation to use CSS-only animations with GPU-accelerated properties. Remove any JavaScript-based animation loops if present. Apply will-change CSS property strategically for mobile performance."
         }
       ]
     },
     {
       "id": "REQ-9",
-      "summary": "Add section entry animation to the Integrations section that fades in content smoothly with slight upward motion (translateY 30px to 0) over 0.6-0.8 seconds using smooth ease-out transition when the section enters viewport",
+      "summary": "Implement eagle logo entry animation on page load with smooth fade and scale from 0.85 to normal size with soft upward motion",
       "acceptanceCriteria": [
-        "Integrations section content fades in when entering viewport",
-        "Content moves upward from translateY(30px) to 0",
-        "Animation duration is between 0.6 and 0.8 seconds",
-        "Ease-out timing function is applied",
-        "Animation triggers only once when scrolling into view"
+        "Logo fades in smoothly on page load",
+        "Logo scales from 0.85 to 1.0",
+        "Soft upward motion accompanies the animation"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/IntegrationsSection.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Add intersection observer using the useIntersectionObserver hook to detect when the section enters viewport, apply initial styles 'opacity: 0; transform: translateY(30px)' and transition to 'opacity: 1; transform: translateY(0)' with 0.7s ease-out timing when visible"
+          "description": "Replace or enhance the existing sessionStorage-based fade-in animation with a combined entry animation that includes opacity fade (0 to 1), scale transform (0.85 to 1.0), and translateY upward motion. Use CSS animation with appropriate duration and easing for smooth entry effect on initial page load."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define CSS keyframe animation for eagle logo entry sequence combining opacity, scale, and translateY transforms. Set duration to approximately 1-1.5 seconds with smooth easing curve for premium feel."
         }
       ]
     },
     {
       "id": "REQ-10",
-      "summary": "Make integration cards or elements in the Integrations section appear sequentially with stagger animation delay of 0.1s between items and add soft scale-in effect from 0.95 to 1",
+      "summary": "Add neon glow activation effect on eagle logo entry where glow starts dim and gradually powers on within 1-1.5 seconds",
       "acceptanceCriteria": [
-        "Integration items animate in sequentially, not all at once",
-        "Each subsequent item has 0.1s additional delay",
-        "Items scale from 0.95 to 1 during entrance",
-        "Scale animation is smooth and subtle"
+        "Glow starts dim on logo appearance",
+        "Glow powers on smoothly over 1-1.5 seconds",
+        "Energy activation spreads from center outward"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/IntegrationsSection.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Apply staggered animation delays to each integration logo/card by calculating delay as (index * 0.1s), set initial state 'opacity: 0; transform: scale(0.95)' and animate to 'opacity: 1; transform: scale(1)' when section is visible"
+          "description": "Add glow activation animation to the entry sequence where box-shadow and filter effects start with minimal values and animate to full intensity over 1-1.5 seconds. Implement radial spreading effect using animated shadow radius that expands from center outward."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define CSS keyframe animation for neon glow activation that gradually increases shadow intensity, blur radius, and spread over 1-1.5 seconds. Coordinate timing with the entry animation sequence for cohesive effect."
         }
       ]
     },
     {
       "id": "REQ-11",
-      "summary": "Add hover interaction to integration cards that slightly lifts them upward, adds neon border glow on hover, creates smooth shadow expansion, and scales to 1.03 for premium feel",
+      "summary": "Enable continuous soft glow pulse on eagle logo after entry animation completes, pulsing slowly every 3-4 seconds",
       "acceptanceCriteria": [
-        "Cards translate upward on hover using transform",
-        "Neon border glow appears smoothly on hover",
-        "Shadow expands smoothly during hover transition",
-        "Cards scale to 1.03 on hover",
-        "All hover effects transition smoothly together"
+        "Pulse animation starts after entry animation finishes",
+        "Pulse occurs every 3-4 seconds",
+        "Animation has premium, slow, smooth quality"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/IntegrationsSection.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Add hover styles to integration items with 'transform: translateY(-8px) scale(1.03)', enhanced box-shadow for neon glow, and border color transition, ensuring all properties use smooth 0.3s ease-out transitions"
+          "description": "Ensure the continuous glow pulse animation (from REQ-5) is configured to begin after the entry animation sequence completes. Use animation-delay or sequential CSS animations to chain the entry animation followed by the infinite pulse loop with 3-4 second cycle timing."
         },
         {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Add integration card hover styles to support the IntegrationsSection component with neon glow utilities and shadow expansion effects"
+          "description": "Configure the pulse animation keyframes with slow, premium timing (3-4 second duration) and smooth easing function. Ensure the animation is set to infinite iteration after the one-time entry animation completes."
         }
       ]
     },
     {
       "id": "REQ-12",
-      "summary": "Add subtle floating motion to integration icons with very slow up-down animation loop and glow intensity that slightly pulses",
+      "summary": "Preserve the existing eagle logo shape and only enhance lighting, glow effects, and animation quality",
       "acceptanceCriteria": [
-        "Integration icons move up and down in a continuous loop",
-        "Floating motion is subtle and slow",
-        "Glow intensity pulses gently in sync or independently",
-        "Animation loops indefinitely without jarring resets"
+        "Eagle logo shape remains unchanged",
+        "Only lighting and glow effects are modified",
+        "Animation enhancements do not alter core design"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Create keyframe animations 'float' with translateY oscillating between -10px and 10px over 4-6 seconds, and 'pulse-glow' with box-shadow intensity varying over 3-4 seconds, both using ease-in-out timing"
-        },
-        {
-          "path": "frontend/src/components/IntegrationsSection.tsx",
-          "operation": "modify",
-          "description": "Apply 'animation: float 5s ease-in-out infinite, pulse-glow 3.5s ease-in-out infinite' to integration icon elements with staggered animation delays to create organic, non-synchronized motion"
-        }
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "summary": "Add soft animated gradient or moving neon light effect to the Integrations section background, keeping motion minimal and elegant",
-      "acceptanceCriteria": [
-        "Background has subtle animated gradient or moving light effect",
-        "Motion is minimal and does not distract from content",
-        "Animation is elegant and matches the futuristic theme",
-        "Background animation performs smoothly at 60fps"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Create keyframe animation 'gradient-shift' that smoothly transitions background-position over 15-20 seconds for a subtle moving gradient effect, using only transform and opacity for GPU acceleration"
-        },
-        {
-          "path": "frontend/src/components/IntegrationsSection.tsx",
-          "operation": "modify",
-          "description": "Add animated gradient background to the section container using linear-gradient with multiple color stops and 'background-size: 200% 200%', applying the 'gradient-shift' animation for elegant motion"
-        }
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "summary": "Ensure all Integrations section animations use only transform and opacity properties, avoid layout shifts, and maintain 60fps performance",
-      "acceptanceCriteria": [
-        "All animations modify only transform and opacity",
-        "No layout shifts occur during any animation",
-        "Animations run consistently at 60fps",
-        "GPU acceleration is leveraged via transform usage"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/IntegrationsSection.tsx",
-          "operation": "modify",
-          "description": "Audit all animation styles in the component to ensure only transform and opacity properties are animated, add 'will-change: transform, opacity' to animated elements, and verify no width/height/margin animations cause layout shifts"
-        }
-      ]
-    },
-    {
-      "id": "REQ-15",
-      "summary": "Reduce animation intensity on mobile devices for the Integrations section while maintaining smooth appearance without lag",
-      "acceptanceCriteria": [
-        "Animation effects are less intense on mobile viewports",
-        "Animations remain smooth on mobile devices",
-        "No performance lag occurs on phones",
-        "User experience remains premium on all devices"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add media query for mobile viewports (@media (max-width: 768px)) that reduces animation durations, scales, and removes computationally expensive effects like complex shadows and multiple animations for integration elements"
-        },
-        {
-          "path": "frontend/src/components/IntegrationsSection.tsx",
-          "operation": "modify",
-          "description": "Add conditional logic or CSS classes that reduce hover scale from 1.03 to 1.01, disable floating animations, and simplify glow effects on mobile devices using Tailwind responsive utilities"
+          "description": "Verify all modifications preserve the existing eagle logo image (frontend/public/assets/generated/eagle-head-logo.dim_400x400.png) without altering its core design. Apply only CSS effects (shadows, filters, transforms) as overlays and animations without changing the source image or its fundamental appearance."
         }
       ]
     }

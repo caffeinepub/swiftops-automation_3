@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-apply-smooth-transition-animations-to-all-buttons-across-the-website-with-transition-all-0-3s-ease-in-out-to-eliminate-instant-or-harsh-movement",
-      "featureTitle": "Apply smooth transition animations to all buttons across the website with 'transition: all 0.3s ease-in-out' to eliminate instant or harsh movement",
+      "featureId": "feature-fix-navigation-menu-section-linking-by-connecting-the-about-button-to-about-section-id-and-contact-button-to-contact-section-id-with-smooth-scrolling-enabled",
+      "featureTitle": "Fix navigation menu section linking by connecting the About button to #about section ID and Contact button to #contact section ID with smooth scrolling enabled",
       "files": [
-        "frontend/src/index.css"
+        "frontend/src/components/Navbar.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -20,10 +20,11 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-hover-animations-to-all-buttons-with-slight-scale-effect-scale-1-05-smooth-neon-glow-increase-background-brightness-transition-and-soft-responsive-cursor-interaction",
-      "featureTitle": "Add hover animations to all buttons with slight scale effect (scale: 1.05), smooth neon glow increase, background brightness transition, and soft responsive cursor interaction",
+      "featureId": "feature-verify-and-ensure-all-sections-have-correct-unique-ids-home-section-id-home-services-section-id-services-about-section-id-about-contact-section-id-contact",
+      "featureTitle": "Verify and ensure all sections have correct unique IDs: Home section (id=\"home\"), Services section (id=\"services\"), About section (id=\"about\"), Contact section (id=\"contact\")",
       "files": [
-        "frontend/src/index.css"
+        "frontend/src/components/ContactSection.tsx",
+        "frontend/src/components/HeroSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -38,10 +39,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-implement-click-interaction-with-subtle-press-effect-that-scales-down-to-0-96-on-click-and-bounces-back-smoothly-preventing-sudden-jumps-or-lag",
-      "featureTitle": "Implement click interaction with subtle press effect that scales down to 0.96 on click and bounces back smoothly, preventing sudden jumps or lag",
+      "featureId": "feature-update-navbar-component-links-to-use-correct-hash-anchors-home-home-services-services-about-about-contact-contact",
+      "featureTitle": "Update Navbar component links to use correct hash anchors: Home → #home, Services → #services, About → #about, Contact → #contact",
       "files": [
-        "frontend/src/index.css"
+        "frontend/src/components/Navbar.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -56,10 +57,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-optimize-button-motion-quality-using-cubic-bezier-or-ease-out-animation-curves-enable-gpu-acceleration-using-only-transform-and-opacity-animations-and-avoid-layout-shifting-animations",
-      "featureTitle": "Optimize button motion quality using cubic-bezier or ease-out animation curves, enable GPU acceleration using only transform and opacity animations, and avoid layout shifting animations",
+      "featureId": "feature-remove-the-projects-button-completely-from-desktop-navigation-mobile-menu-and-any-routing-or-navigation-configuration-in-the-navbar-component",
+      "featureTitle": "Remove the Projects button completely from desktop navigation, mobile menu, and any routing or navigation configuration in the Navbar component",
       "files": [
-        "frontend/src/index.css"
+        "frontend/src/components/Navbar.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -74,9 +75,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-optimize-button-glow-effects-so-neon-glow-smoothly-fades-in-and-out-without-flickering-or-sharp-changes",
-      "featureTitle": "Optimize button glow effects so neon glow smoothly fades in and out without flickering or sharp changes",
+      "featureId": "feature-add-electric-blue-neon-glow-effect-to-the-eagle-logo-with-soft-outer-glow-and-inner-light-emission-that-gently-pulses-continuously",
+      "featureTitle": "Add electric blue neon glow effect to the eagle logo with soft outer glow and inner light emission that gently pulses continuously",
       "files": [
+        "frontend/src/components/EagleLogo.tsx",
         "frontend/src/index.css"
       ],
       "components": [
@@ -92,9 +94,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-enable-smooth-scrolling-across-the-entire-website-implement-smooth-section-transitions-while-navigating-and-reduce-animation-jitter-or-frame-drops",
-      "featureTitle": "Enable smooth scrolling across the entire website, implement smooth section transitions while navigating, and reduce animation jitter or frame drops",
+      "featureId": "feature-add-smooth-light-shimmer-animation-moving-across-the-eagle-logo-with-subtle-energy-pulse-every-3-4-seconds-creating-a-futuristic-ai-automation-themed-effect",
+      "featureTitle": "Add smooth light shimmer animation moving across the eagle logo with subtle energy pulse every 3-4 seconds, creating a futuristic AI/automation themed effect",
       "files": [
+        "frontend/src/components/EagleLogo.tsx",
         "frontend/src/index.css"
       ],
       "components": [
@@ -110,10 +113,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-optimize-all-button-animations-for-60fps-performance-prevent-heavy-shadow-or-blur-effects-from-causing-lag-and-ensure-fast-response-on-mobile-devices",
-      "featureTitle": "Optimize all button animations for 60fps performance, prevent heavy shadow or blur effects from causing lag, and ensure fast response on mobile devices",
+      "featureId": "feature-add-hover-interaction-to-eagle-logo-that-increases-glow-intensity-adds-smooth-1-05x-scale-up-effect-and-spreads-glow-softly-outward-like-energy-activation",
+      "featureTitle": "Add hover interaction to eagle logo that increases glow intensity, adds smooth 1.05x scale-up effect, and spreads glow softly outward like energy activation",
       "files": [
-        "frontend/src/index.css"
+        "frontend/src/components/EagleLogo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -128,10 +131,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-ensure-buttons-on-mobile-respond-instantly-to-touch-with-no-delay-after-tap-and-maintain-smooth-animation-timing",
-      "featureTitle": "Ensure buttons on mobile respond instantly to touch with no delay after tap and maintain smooth animation timing",
+      "featureId": "feature-optimize-eagle-logo-neon-glow-animations-using-css-animations-or-gpu-accelerated-effects-to-ensure-smooth-performance-on-mobile-devices-without-lag",
+      "featureTitle": "Optimize eagle logo neon glow animations using CSS animations or GPU-accelerated effects to ensure smooth performance on mobile devices without lag",
       "files": [
-        "frontend/index.html",
+        "frontend/src/components/EagleLogo.tsx",
         "frontend/src/index.css"
       ],
       "components": [
@@ -147,10 +150,11 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-section-entry-animation-to-the-integrations-section-that-fades-in-content-smoothly-with-slight-upward-motion-translatey-30px-to-0-over-0-6-0-8-seconds-using-smooth-ease-out-transition-when-the-section-enters-viewport",
-      "featureTitle": "Add section entry animation to the Integrations section that fades in content smoothly with slight upward motion (translateY 30px to 0) over 0.6-0.8 seconds using smooth ease-out transition when the section enters viewport",
+      "featureId": "feature-implement-eagle-logo-entry-animation-on-page-load-with-smooth-fade-and-scale-from-0-85-to-normal-size-with-soft-upward-motion",
+      "featureTitle": "Implement eagle logo entry animation on page load with smooth fade and scale from 0.85 to normal size, with soft upward motion",
       "files": [
-        "frontend/src/components/IntegrationsSection.tsx"
+        "frontend/src/components/EagleLogo.tsx",
+        "frontend/src/index.css"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -165,10 +169,11 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-make-integration-cards-or-elements-in-the-integrations-section-appear-sequentially-with-stagger-animation-delay-of-0-1s-between-items-and-add-soft-scale-in-effect-from-0-95-to-1",
-      "featureTitle": "Make integration cards or elements in the Integrations section appear sequentially with stagger animation delay of 0.1s between items and add soft scale-in effect from 0.95 to 1",
+      "featureId": "feature-add-neon-glow-activation-effect-on-eagle-logo-entry-where-glow-starts-dim-and-gradually-powers-on-within-1-1-5-seconds-with-energy-spreading-from-center-to-edges",
+      "featureTitle": "Add neon glow activation effect on eagle logo entry where glow starts dim and gradually powers on within 1-1.5 seconds with energy spreading from center to edges",
       "files": [
-        "frontend/src/components/IntegrationsSection.tsx"
+        "frontend/src/components/EagleLogo.tsx",
+        "frontend/src/index.css"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -183,10 +188,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-hover-interaction-to-integration-cards-that-slightly-lifts-them-upward-adds-neon-border-glow-on-hover-creates-smooth-shadow-expansion-and-scales-to-1-03-for-premium-feel",
-      "featureTitle": "Add hover interaction to integration cards that slightly lifts them upward, adds neon border glow on hover, creates smooth shadow expansion, and scales to 1.03 for premium feel",
+      "featureId": "feature-enable-continuous-soft-glow-pulse-on-eagle-logo-after-entry-animation-completes-pulsing-slowly-every-3-4-seconds-with-premium-feel",
+      "featureTitle": "Enable continuous soft glow pulse on eagle logo after entry animation completes, pulsing slowly every 3-4 seconds with premium feel",
       "files": [
-        "frontend/src/components/IntegrationsSection.tsx",
+        "frontend/src/components/EagleLogo.tsx",
         "frontend/src/index.css"
       ],
       "components": [
@@ -202,11 +207,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-subtle-floating-motion-to-integration-icons-with-very-slow-up-down-animation-loop-and-glow-intensity-that-slightly-pulses",
-      "featureTitle": "Add subtle floating motion to integration icons with very slow up-down animation loop and glow intensity that slightly pulses",
+      "featureId": "feature-preserve-the-existing-eagle-logo-shape-and-only-enhance-lighting-glow-effects-and-animation-quality-without-changing-the-core-design",
+      "featureTitle": "Preserve the existing eagle logo shape and only enhance lighting, glow effects, and animation quality without changing the core design",
       "files": [
-        "frontend/src/components/IntegrationsSection.tsx",
-        "frontend/src/index.css"
+        "frontend/src/components/EagleLogo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -217,62 +221,6 @@
       ],
       "testIds": [
         "REQ-12"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-soft-animated-gradient-or-moving-neon-light-effect-to-the-integrations-section-background-keeping-motion-minimal-and-elegant",
-      "featureTitle": "Add soft animated gradient or moving neon light effect to the Integrations section background, keeping motion minimal and elegant",
-      "files": [
-        "frontend/src/components/IntegrationsSection.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-13"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-ensure-all-integrations-section-animations-use-only-transform-and-opacity-properties-avoid-layout-shifts-and-maintain-60fps-performance",
-      "featureTitle": "Ensure all Integrations section animations use only transform and opacity properties, avoid layout shifts, and maintain 60fps performance",
-      "files": [
-        "frontend/src/components/IntegrationsSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-14"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-reduce-animation-intensity-on-mobile-devices-for-the-integrations-section-while-maintaining-smooth-appearance-without-lag",
-      "featureTitle": "Reduce animation intensity on mobile devices for the Integrations section while maintaining smooth appearance without lag",
-      "files": [
-        "frontend/src/components/IntegrationsSection.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-15"
       ],
       "confidence": "high"
     }

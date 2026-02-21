@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { X } from 'lucide-react';
 import { ServiceData } from '../data/servicesData';
 import { NeuralNetworkAnimation } from './animations/NeuralNetworkAnimation';
@@ -6,6 +7,7 @@ import { EmailPipelineAnimation } from './animations/EmailPipelineAnimation';
 import { WorkflowNodesAnimation } from './animations/WorkflowNodesAnimation';
 import { WebsiteAssemblyAnimation } from './animations/WebsiteAssemblyAnimation';
 import { MobileDeviceAnimation } from './animations/MobileDeviceAnimation';
+import { smoothScrollToElement, triggerHighlightEffect } from '../utils/scrollHelpers';
 
 interface ServiceDetailPanelProps {
   service: ServiceData | null;
@@ -14,6 +16,8 @@ interface ServiceDetailPanelProps {
 }
 
 export function ServiceDetailPanel({ service, isOpen, onClose }: ServiceDetailPanelProps) {
+  const [isPressed, setIsPressed] = useState(false);
+
   if (!service) return null;
 
   const renderAnimation = () => {
@@ -33,6 +37,26 @@ export function ServiceDetailPanel({ service, isOpen, onClose }: ServiceDetailPa
       default:
         return null;
     }
+  };
+
+  const handleGetStartedClick = () => {
+    // Add press animation
+    setIsPressed(true);
+
+    // Wait for press animation to complete before scrolling
+    setTimeout(() => {
+      setIsPressed(false);
+      onClose(); // Close the panel first
+      
+      // Small delay to ensure panel closes before scrolling
+      setTimeout(() => {
+        smoothScrollToElement('contact-section', 80);
+        // Trigger highlight effect after scroll
+        setTimeout(() => {
+          triggerHighlightEffect('contact-section');
+        }, 800);
+      }, 100);
+    }, 150);
   };
 
   const Icon = service.icon;
@@ -117,7 +141,12 @@ export function ServiceDetailPanel({ service, isOpen, onClose }: ServiceDetailPa
               </div>
 
               {/* CTA Button */}
-              <button className="neon-button-primary w-full mt-6">
+              <button
+                onClick={handleGetStartedClick}
+                className={`neon-button-primary w-full mt-6 transition-transform duration-150 ${
+                  isPressed ? 'scale-95' : ''
+                }`}
+              >
                 Get Started
               </button>
             </div>
