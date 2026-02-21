@@ -67,7 +67,7 @@ export function ContactSection() {
 
   return (
     <section
-      id="contact"
+      id="contact-section"
       ref={sectionRef}
       className={`py-24 relative bg-dark-bg transition-all duration-700 ${
         isHighlighted ? 'contact-highlight' : ''

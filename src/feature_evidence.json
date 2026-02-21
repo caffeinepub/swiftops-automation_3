@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-fix-navigation-menu-section-linking-by-connecting-the-about-button-to-about-section-id-and-contact-button-to-contact-section-id-with-smooth-scrolling-enabled",
-      "featureTitle": "Fix navigation menu section linking by connecting the About button to #about section ID and Contact button to #contact section ID with smooth scrolling enabled",
+      "featureId": "feature-implement-head-first-power-on-animation-for-the-eagle-logo-where-neon-energy-originates-from-the-eagle-head-and-instantly-spreads-across-the-full-logo-during-entry",
+      "featureTitle": "Implement head-first power-on animation for the eagle logo where neon energy originates from the eagle head and instantly spreads across the full logo during entry",
       "files": [
-        "frontend/src/components/Navbar.tsx"
+        "frontend/src/components/EagleLogo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -20,11 +20,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-verify-and-ensure-all-sections-have-correct-unique-ids-home-section-id-home-services-section-id-services-about-section-id-about-contact-section-id-contact",
-      "featureTitle": "Verify and ensure all sections have correct unique IDs: Home section (id=\"home\"), Services section (id=\"services\"), About section (id=\"about\"), Contact section (id=\"contact\")",
+      "featureId": "feature-apply-strongest-electric-blue-neon-glow-on-the-eagle-head-and-eyes-that-is-visible-from-the-first-frame-and-creates-the-visual-impression-of-an-energy-source",
+      "featureTitle": "Apply strongest electric blue neon glow on the eagle head and eyes that is visible from the first frame and creates the visual impression of an energy source",
       "files": [
-        "frontend/src/components/ContactSection.tsx",
-        "frontend/src/components/HeroSection.tsx"
+        "frontend/src/components/EagleLogo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -39,10 +38,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-update-navbar-component-links-to-use-correct-hash-anchors-home-home-services-services-about-about-contact-contact",
-      "featureTitle": "Update Navbar component links to use correct hash anchors: Home → #home, Services → #services, About → #about, Contact → #contact",
+      "featureId": "feature-create-smooth-energy-spread-effect-that-flows-from-head-to-wings-to-full-body-over-0-4-0-6-seconds-with-subtle-light-propagation-avoiding-flashing-or-harsh-transitions",
+      "featureTitle": "Create smooth energy spread effect that flows from head to wings to full body over 0.4-0.6 seconds with subtle light propagation, avoiding flashing or harsh transitions",
       "files": [
-        "frontend/src/components/Navbar.tsx"
+        "frontend/src/components/EagleLogo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -57,10 +56,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-remove-the-projects-button-completely-from-desktop-navigation-mobile-menu-and-any-routing-or-navigation-configuration-in-the-navbar-component",
-      "featureTitle": "Remove the Projects button completely from desktop navigation, mobile menu, and any routing or navigation configuration in the Navbar component",
+      "featureId": "feature-implement-three-layer-neon-glow-system-consisting-of-inner-illumination-inside-eagle-head-medium-glow-around-outline-and-soft-outer-ambient-aura-behind-head",
+      "featureTitle": "Implement three-layer neon glow system consisting of inner illumination inside eagle head, medium glow around outline, and soft outer ambient aura behind head",
       "files": [
-        "frontend/src/components/Navbar.tsx"
+        "frontend/src/components/EagleLogo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -75,11 +74,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-electric-blue-neon-glow-effect-to-the-eagle-logo-with-soft-outer-glow-and-inner-light-emission-that-gently-pulses-continuously",
-      "featureTitle": "Add electric blue neon glow effect to the eagle logo with soft outer glow and inner light emission that gently pulses continuously",
+      "featureId": "feature-add-cinematic-light-bloom-burst-at-the-eagle-head-when-animation-starts-with-optional-subtle-shimmer-sweep-across-wings-once",
+      "featureTitle": "Add cinematic light bloom burst at the eagle head when animation starts, with optional subtle shimmer sweep across wings once",
       "files": [
-        "frontend/src/components/EagleLogo.tsx",
-        "frontend/src/index.css"
+        "frontend/src/components/EagleLogo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -94,11 +92,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-smooth-light-shimmer-animation-moving-across-the-eagle-logo-with-subtle-energy-pulse-every-3-4-seconds-creating-a-futuristic-ai-automation-themed-effect",
-      "featureTitle": "Add smooth light shimmer animation moving across the eagle logo with subtle energy pulse every 3-4 seconds, creating a futuristic AI/automation themed effect",
+      "featureId": "feature-after-entry-animation-completes-stabilize-glow-into-continuous-soft-breathing-pulse-with-the-head-remaining-slightly-brighter-than-the-rest-of-the-eagle",
+      "featureTitle": "After entry animation completes, stabilize glow into continuous soft breathing pulse with the head remaining slightly brighter than the rest of the eagle",
       "files": [
-        "frontend/src/components/EagleLogo.tsx",
-        "frontend/src/index.css"
+        "frontend/src/components/EagleLogo.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -113,8 +110,8 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-hover-interaction-to-eagle-logo-that-increases-glow-intensity-adds-smooth-1-05x-scale-up-effect-and-spreads-glow-softly-outward-like-energy-activation",
-      "featureTitle": "Add hover interaction to eagle logo that increases glow intensity, adds smooth 1.05x scale-up effect, and spreads glow softly outward like energy activation",
+      "featureId": "feature-use-gpu-accelerated-transform-animations-only-do-not-animate-glow-opacity-from-zero-and-ensure-glow-exists-before-animation-begins-for-optimal-performance",
+      "featureTitle": "Use GPU-accelerated transform animations only, do not animate glow opacity from zero, and ensure glow exists before animation begins for optimal performance",
       "files": [
         "frontend/src/components/EagleLogo.tsx"
       ],
@@ -127,100 +124,6 @@
       ],
       "testIds": [
         "REQ-7"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-optimize-eagle-logo-neon-glow-animations-using-css-animations-or-gpu-accelerated-effects-to-ensure-smooth-performance-on-mobile-devices-without-lag",
-      "featureTitle": "Optimize eagle logo neon glow animations using CSS animations or GPU-accelerated effects to ensure smooth performance on mobile devices without lag",
-      "files": [
-        "frontend/src/components/EagleLogo.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-8"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-eagle-logo-entry-animation-on-page-load-with-smooth-fade-and-scale-from-0-85-to-normal-size-with-soft-upward-motion",
-      "featureTitle": "Implement eagle logo entry animation on page load with smooth fade and scale from 0.85 to normal size, with soft upward motion",
-      "files": [
-        "frontend/src/components/EagleLogo.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-9"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-neon-glow-activation-effect-on-eagle-logo-entry-where-glow-starts-dim-and-gradually-powers-on-within-1-1-5-seconds-with-energy-spreading-from-center-to-edges",
-      "featureTitle": "Add neon glow activation effect on eagle logo entry where glow starts dim and gradually powers on within 1-1.5 seconds with energy spreading from center to edges",
-      "files": [
-        "frontend/src/components/EagleLogo.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-10"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-enable-continuous-soft-glow-pulse-on-eagle-logo-after-entry-animation-completes-pulsing-slowly-every-3-4-seconds-with-premium-feel",
-      "featureTitle": "Enable continuous soft glow pulse on eagle logo after entry animation completes, pulsing slowly every 3-4 seconds with premium feel",
-      "files": [
-        "frontend/src/components/EagleLogo.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-11"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-preserve-the-existing-eagle-logo-shape-and-only-enhance-lighting-glow-effects-and-animation-quality-without-changing-the-core-design",
-      "featureTitle": "Preserve the existing eagle logo shape and only enhance lighting, glow effects, and animation quality without changing the core design",
-      "files": [
-        "frontend/src/components/EagleLogo.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-12"
       ],
       "confidence": "high"
     }

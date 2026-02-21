@@ -1,240 +1,118 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Fix navigation menu, remove Projects button, and enhance eagle logo with neon glow animations",
+  "title": "Enhance eagle logo entry animation with head-activated neon glow",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Fix navigation menu section linking by connecting About and Contact buttons to their respective section IDs with smooth scrolling enabled",
+      "summary": "Implement head-first power-on animation for the eagle logo where neon energy originates from the eagle head and instantly spreads across the full logo during entry",
       "acceptanceCriteria": [
-        "About button navigates to #about section with smooth scroll",
-        "Contact button navigates to #contact section with smooth scroll",
-        "Navigation works on both desktop and mobile views"
+        "Eagle logo animates with parent container transforms: opacity 0→1, scale 0.85→1, translateY 25px→0, duration 1-1.2s ease-out",
+        "Neon glow is visible from the first frame of animation",
+        "Glow originates from eagle head area and flows to wings and body"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Navbar.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Update the navigation links to use correct hash anchors (#about, #contact) and ensure smooth scroll behavior is enabled for section navigation. Verify the scrollHelpers utility is properly invoked for smooth scrolling with offset compensation."
+          "description": "Replace existing fade-in animation with head-first power-on animation. Add parent container transform keyframes for opacity 0→1, scale 0.85→1, translateY 25px→0 over 1-1.2s with ease-out timing. Ensure the animation maintains the existing sessionStorage tracking for one-time playback. Keep the circular container structure and hover interactions intact while integrating the new entry animation sequence."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Verify and ensure all sections have correct unique IDs for proper navigation targeting",
+      "summary": "Apply strongest electric blue neon glow on the eagle head and eyes that is visible from the first frame and creates the visual impression of an energy source",
       "acceptanceCriteria": [
-        "All sections have the specified unique ID attributes",
-        "IDs match the navigation menu href targets"
+        "Head and eyes have brightest neon glow intensity",
+        "Glow exists before animation begins (not animated from zero opacity)",
+        "Visual hierarchy establishes head as the power source"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/AboutUsSection.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Add or verify the section container has id=\"about\" attribute to enable navigation targeting from the Navbar."
-        },
-        {
-          "path": "frontend/src/components/ContactSection.tsx",
-          "operation": "modify",
-          "description": "Add or verify the section container has id=\"contact\" attribute to enable navigation targeting from the Navbar."
-        },
-        {
-          "path": "frontend/src/components/HeroSection.tsx",
-          "operation": "modify",
-          "description": "Add or verify the section container has id=\"home\" attribute to enable navigation targeting from the Navbar."
-        },
-        {
-          "path": "frontend/src/components/ServicesSection.tsx",
-          "operation": "modify",
-          "description": "Add or verify the section container has id=\"services\" attribute to enable navigation targeting from the Navbar."
+          "description": "Add pre-rendered neon glow effect to the eagle head and eyes region using CSS filters and box-shadow with electric blue color. Apply the strongest glow intensity to establish the head as the energy source. Ensure glow is visible immediately when the component mounts (before animation starts) by applying static styles rather than animating from zero opacity. Layer the glow effects to create visual hierarchy with the head being the brightest region."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Update Navbar component links to use correct hash anchors for all navigation items",
+      "summary": "Create smooth energy spread effect that flows from head to wings to full body over 0.4-0.6 seconds with subtle light propagation, avoiding flashing or harsh transitions",
       "acceptanceCriteria": [
-        "All navigation links use correct hash anchors",
-        "Active section highlighting works correctly while scrolling"
+        "Glow propagation animation duration is 0.4-0.6 seconds",
+        "Smooth transition from head→wings→body without sudden changes",
+        "No flickering or harsh intensity jumps"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Navbar.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Update all navigation menu items (desktop and mobile) to use the correct hash anchors: Home → #home, Services → #services, About → #about, Contact → #contact. Ensure the useActiveSection hook correctly tracks these section IDs for active state highlighting."
+          "description": "Implement energy spread animation using CSS keyframes that creates a flowing glow effect from head→wings→body over 0.4-0.6 seconds. Use gradient masks or pseudo-elements with animation-delay to create sequential light propagation. Apply easing functions that ensure smooth transitions without harsh intensity changes or flickering. Coordinate the energy spread timing to occur during the parent container entry animation."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Remove the Projects button completely from desktop navigation, mobile menu, and any routing configuration",
+      "summary": "Implement three-layer neon glow system consisting of inner illumination inside eagle head, medium glow around outline, and soft outer ambient aura behind head",
       "acceptanceCriteria": [
-        "Projects button is not visible in desktop navigation",
-        "Projects button is not visible in mobile menu",
-        "No Projects-related navigation code remains"
+        "Three distinct glow layers are visible",
+        "Inner layer illuminates head interior",
+        "Medium layer outlines the eagle shape",
+        "Outer layer creates ambient aura effect"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Navbar.tsx",
+          "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Remove the Projects navigation item from both the desktop navigation menu and the mobile Sheet menu. Remove any associated click handlers, route configurations, or state related to Projects navigation."
+          "description": "Create a three-layer glow system using multiple CSS box-shadow declarations and pseudo-elements. Layer 1: Inner illumination using inset shadow or filter brightness on the head region. Layer 2: Medium glow around the eagle outline using standard box-shadow with moderate spread. Layer 3: Soft outer ambient aura using large blur radius box-shadow or backdrop blur positioned behind the head. Stack the layers with appropriate z-index and opacity values to achieve depth."
         }
       ]
     },
     {
       "id": "REQ-5",
-      "summary": "Add electric blue neon glow effect to the eagle logo with soft outer glow and inner light emission that gently pulses continuously",
+      "summary": "Add cinematic light bloom burst at the eagle head when animation starts, with optional subtle shimmer sweep across wings once",
       "acceptanceCriteria": [
-        "Eagle logo has electric blue neon glow around outline",
-        "Glow pulses smoothly and continuously",
-        "Glow is visible on dark or neon backgrounds"
+        "Light bloom effect appears at head at animation start",
+        "Bloom is short and non-intrusive",
+        "Optional shimmer sweep executes once across wings"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Add electric blue neon glow effect using CSS box-shadow and drop-shadow filters on the eagle logo image. Implement continuous pulse animation using GPU-accelerated CSS keyframes that modulate the glow intensity. Apply filters to create both outer glow and inner light emission effects. Reference the eagle logo image at frontend/public/assets/generated/eagle-head-logo.dim_400x400.png."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add CSS keyframe animations for the eagle logo neon glow pulse effect. Define animation for continuous smooth pulsing that modulates shadow intensity and blur radius. Use GPU-accelerated properties (transform, opacity, filter) for optimal mobile performance."
+          "description": "Add a short-duration light bloom burst effect at the eagle head using a CSS animation with scale and opacity transforms. Position a pseudo-element at the head region that expands and fades out over 0.3-0.5 seconds at animation start. Optionally add a shimmer sweep animation using a linear gradient that moves across the wings once with animation-iteration-count set to 1. Ensure bloom and shimmer use GPU-accelerated properties only."
         }
       ]
     },
     {
       "id": "REQ-6",
-      "summary": "Add smooth light shimmer animation moving across the eagle logo with subtle energy pulse every 3-4 seconds",
+      "summary": "After entry animation completes, stabilize glow into continuous soft breathing pulse with the head remaining slightly brighter than the rest of the eagle",
       "acceptanceCriteria": [
-        "Light shimmer sweeps across eagle logo smoothly",
-        "Energy pulse occurs every 3-4 seconds",
-        "Animation feels futuristic and cyber-tech themed"
+        "Continuous breathing pulse animation after entry completes",
+        "Head maintains higher brightness than wings and body",
+        "Pulse is subtle and does not distract"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Add shimmer overlay element that sweeps across the eagle logo using CSS linear-gradient animation. Implement energy pulse effect with radial gradient that expands from center every 3-4 seconds. Use GPU-accelerated transforms for smooth performance."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Define CSS keyframe animations for light shimmer sweep (translateX movement) and energy pulse (scale and opacity changes). Set animation timing to create 3-4 second intervals with smooth easing functions. Ensure animations are GPU-accelerated using transform and opacity properties."
+          "description": "Implement a continuous breathing pulse animation using CSS keyframes that modulates glow intensity with a gentle ease-in-out rhythm. Set animation to loop infinitely with animation-iteration-count: infinite and a duration of 2-3 seconds. Maintain differential brightness by applying stronger base glow to the head region and weaker glow to wings/body. Use animation-delay to coordinate pulse start after entry animation completes. Keep pulse amplitude subtle to avoid distraction."
         }
       ]
     },
     {
       "id": "REQ-7",
-      "summary": "Add hover interaction to eagle logo that increases glow intensity, adds smooth 1.05x scale-up effect, and spreads glow softly outward",
+      "summary": "Use GPU-accelerated transform animations only, do not animate glow opacity from zero, and ensure glow exists before animation begins for optimal performance",
       "acceptanceCriteria": [
-        "Hovering increases glow intensity smoothly",
-        "Logo scales to 1.05x on hover",
-        "Glow spreads outward with energy activation effect"
+        "All animations use CSS transform properties",
+        "Glow is pre-rendered before animation starts",
+        "No opacity animations starting from zero for glow effects"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/EagleLogo.tsx",
           "operation": "modify",
-          "description": "Add hover state styles that increase neon glow box-shadow intensity and spread, apply transform: scale(1.05) with smooth transition, and enhance the glow radius to create an energy activation spreading effect. Use CSS transitions for smooth state changes."
-        }
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "summary": "Optimize eagle logo neon glow animations using CSS animations and GPU-accelerated effects for smooth mobile performance",
-      "acceptanceCriteria": [
-        "Animations use GPU-accelerated CSS transforms",
-        "No performance lag on mobile devices",
-        "No heavy particle effects that impact performance"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Optimize all eagle logo animation keyframes to use GPU-accelerated properties only (transform, opacity, filter). Add will-change hints where appropriate for mobile optimization. Ensure no heavy particle effects or complex calculations in animations."
-        },
-        {
-          "path": "frontend/src/components/EagleLogo.tsx",
-          "operation": "modify",
-          "description": "Review and optimize animation implementation to use CSS-only animations with GPU-accelerated properties. Remove any JavaScript-based animation loops if present. Apply will-change CSS property strategically for mobile performance."
-        }
-      ]
-    },
-    {
-      "id": "REQ-9",
-      "summary": "Implement eagle logo entry animation on page load with smooth fade and scale from 0.85 to normal size with soft upward motion",
-      "acceptanceCriteria": [
-        "Logo fades in smoothly on page load",
-        "Logo scales from 0.85 to 1.0",
-        "Soft upward motion accompanies the animation"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/EagleLogo.tsx",
-          "operation": "modify",
-          "description": "Replace or enhance the existing sessionStorage-based fade-in animation with a combined entry animation that includes opacity fade (0 to 1), scale transform (0.85 to 1.0), and translateY upward motion. Use CSS animation with appropriate duration and easing for smooth entry effect on initial page load."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Define CSS keyframe animation for eagle logo entry sequence combining opacity, scale, and translateY transforms. Set duration to approximately 1-1.5 seconds with smooth easing curve for premium feel."
-        }
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "summary": "Add neon glow activation effect on eagle logo entry where glow starts dim and gradually powers on within 1-1.5 seconds",
-      "acceptanceCriteria": [
-        "Glow starts dim on logo appearance",
-        "Glow powers on smoothly over 1-1.5 seconds",
-        "Energy activation spreads from center outward"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/EagleLogo.tsx",
-          "operation": "modify",
-          "description": "Add glow activation animation to the entry sequence where box-shadow and filter effects start with minimal values and animate to full intensity over 1-1.5 seconds. Implement radial spreading effect using animated shadow radius that expands from center outward."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Define CSS keyframe animation for neon glow activation that gradually increases shadow intensity, blur radius, and spread over 1-1.5 seconds. Coordinate timing with the entry animation sequence for cohesive effect."
-        }
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "summary": "Enable continuous soft glow pulse on eagle logo after entry animation completes, pulsing slowly every 3-4 seconds",
-      "acceptanceCriteria": [
-        "Pulse animation starts after entry animation finishes",
-        "Pulse occurs every 3-4 seconds",
-        "Animation has premium, slow, smooth quality"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/EagleLogo.tsx",
-          "operation": "modify",
-          "description": "Ensure the continuous glow pulse animation (from REQ-5) is configured to begin after the entry animation sequence completes. Use animation-delay or sequential CSS animations to chain the entry animation followed by the infinite pulse loop with 3-4 second cycle timing."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Configure the pulse animation keyframes with slow, premium timing (3-4 second duration) and smooth easing function. Ensure the animation is set to infinite iteration after the one-time entry animation completes."
-        }
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "summary": "Preserve the existing eagle logo shape and only enhance lighting, glow effects, and animation quality",
-      "acceptanceCriteria": [
-        "Eagle logo shape remains unchanged",
-        "Only lighting and glow effects are modified",
-        "Animation enhancements do not alter core design"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/EagleLogo.tsx",
-          "operation": "modify",
-          "description": "Verify all modifications preserve the existing eagle logo image (frontend/public/assets/generated/eagle-head-logo.dim_400x400.png) without altering its core design. Apply only CSS effects (shadows, filters, transforms) as overlays and animations without changing the source image or its fundamental appearance."
+          "description": "Audit all animation implementations to ensure exclusive use of GPU-accelerated properties (transform, opacity on parent containers only, will-change hints). Apply glow effects as static styles that are present from the first render, avoiding any opacity: 0 → 1 animations on glow layers. Use transform-based animations (scale, translate) for motion effects. Add will-change: transform to animated elements to optimize rendering performance. Ensure all glow layers have initial opacity > 0."
         }
       ]
     }

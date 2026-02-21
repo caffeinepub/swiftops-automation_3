@@ -4,7 +4,6 @@ import { EagleLogo } from './EagleLogo';
 import { EagleClickAnimation } from './EagleClickAnimation';
 import { useRippleEffect } from '../hooks/useRippleEffect';
 import { useActiveSection } from '../hooks/useActiveSection';
-import { scrollToSection } from '../utils/scrollHelpers';
 import {
   Sheet,
   SheetContent,
@@ -19,7 +18,7 @@ export function Navbar() {
   const [targetSection, setTargetSection] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const createRipple = useRippleEffect();
-  const activeSection = useActiveSection(['home', 'services', 'about', 'contact']);
+  const activeSection = useActiveSection(['#hero', '#services', '#pricing', '#contact']);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,10 +29,10 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, section: string) => {
     e.preventDefault();
     createRipple(e);
-    setTargetSection(sectionId);
+    setTargetSection(section);
     setShowAnimation(true);
     setIsMobileMenuOpen(false);
   };
@@ -41,23 +40,27 @@ export function Navbar() {
   const handleAnimationComplete = () => {
     setShowAnimation(false);
     if (targetSection) {
-      scrollToSection(targetSection);
+      const element = document.querySelector(targetSection);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
     setTargetSection(null);
   };
 
   const handleGetStartedClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     createRipple(e);
-    setTargetSection('contact');
+    setTargetSection('#contact');
     setShowAnimation(true);
     setIsMobileMenuOpen(false);
   };
 
   const navigationLinks = [
-    { href: '#home', sectionId: 'home', label: 'Home' },
-    { href: '#services', sectionId: 'services', label: 'Services' },
-    { href: '#about', sectionId: 'about', label: 'About' },
-    { href: '#contact', sectionId: 'contact', label: 'Contact' },
+    { href: '#hero', label: 'Home' },
+    { href: '#services', label: 'Services' },
+    { href: '#pricing', label: 'About' },
+    { href: '#pricing', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
   ];
 
   return (
@@ -86,18 +89,51 @@ export function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
-              {navigationLinks.map((link) => (
-                <a
-                  key={link.sectionId}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.sectionId)}
-                  className={`neon-button-link whitespace-nowrap text-sm lg:text-base ${
-                    activeSection === link.sectionId ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
-                  }`}
-                >
-                  {link.label}
-                </a>
-              ))}
+              <a
+                href="#hero"
+                onClick={(e) => handleNavClick(e, '#hero')}
+                className={`neon-button-link whitespace-nowrap text-sm lg:text-base ${
+                  activeSection === '#hero' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
+                }`}
+              >
+                Home
+              </a>
+              <a
+                href="#services"
+                onClick={(e) => handleNavClick(e, '#services')}
+                className={`neon-button-link whitespace-nowrap text-sm lg:text-base ${
+                  activeSection === '#services' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
+                }`}
+              >
+                Services
+              </a>
+              <a
+                href="#pricing"
+                onClick={(e) => handleNavClick(e, '#pricing')}
+                className={`neon-button-link whitespace-nowrap text-sm lg:text-base ${
+                  activeSection === '#pricing' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
+                }`}
+              >
+                About
+              </a>
+              <a
+                href="#pricing"
+                onClick={(e) => handleNavClick(e, '#pricing')}
+                className={`neon-button-link whitespace-nowrap text-sm lg:text-base ${
+                  activeSection === '#pricing' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
+                }`}
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, '#contact')}
+                className={`neon-button-link whitespace-nowrap text-sm lg:text-base ${
+                  activeSection === '#contact' ? 'text-cyan-400 border-b-2 border-cyan-400' : ''
+                }`}
+              >
+                Contact
+              </a>
             </div>
 
             {/* Desktop Get Started CTA Button */}
@@ -147,11 +183,11 @@ export function Navbar() {
           <nav className="flex flex-col gap-2">
             {navigationLinks.map((link) => (
               <a
-                key={link.sectionId}
+                key={link.label}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.sectionId)}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`flex items-center px-4 py-3 rounded-lg font-orbitron text-base transition-all duration-300 ${
-                  activeSection === link.sectionId
+                  activeSection === link.href
                     ? 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/40 shadow-neon-glow'
                     : 'text-white/80 hover:text-neon-cyan hover:bg-neon-cyan/10 border border-transparent hover:border-neon-cyan/20'
                 }`}
