@@ -1,9 +1,9 @@
 /**
  * Smoothly scrolls to a target element with offset to account for sticky header
  * @param targetId - The ID of the target element (with or without #)
- * @param offset - Additional offset in pixels (default: 80 for navbar height)
+ * @param offset - Additional offset in pixels (default: 100 for navbar height + padding)
  */
-export function smoothScrollToElement(targetId: string, offset: number = 80): void {
+export function smoothScrollToElement(targetId: string, offset: number = 100): void {
   const id = targetId.startsWith('#') ? targetId.slice(1) : targetId;
   const element = document.getElementById(id);
   
@@ -44,10 +44,10 @@ export function triggerHighlightEffect(targetId: string): void {
  * @param highlight - Whether to trigger highlight effect (default: true)
  */
 export function scrollToSection(sectionId: string, highlight: boolean = true): void {
-  smoothScrollToElement(sectionId);
+  smoothScrollToElement(sectionId, 100);
   if (highlight) {
     setTimeout(() => {
       triggerHighlightEffect(sectionId);
-    }, 500);
+    }, 700);
   }
 }

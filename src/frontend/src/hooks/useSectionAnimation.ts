@@ -8,10 +8,10 @@ interface UseSectionAnimationOptions {
 
 /**
  * Custom hook that uses IntersectionObserver to detect when sections enter the viewport
- * and applies fade-in and translateY animations
+ * and applies fade-in and translateY animations with GPU acceleration
  */
 export function useSectionAnimation(options: UseSectionAnimationOptions = {}) {
-  const { threshold = 0.1, rootMargin = '0px', animationDelay = 0 } = options;
+  const { threshold = 0.15, rootMargin = '0px 0px -50px 0px', animationDelay = 0 } = options;
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 

@@ -1,66 +1,67 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Landing page for SwiftOps automation platform with animated eagle logo and hero section",
+  "summary": "AI branding website with futuristic eagle logo, neon glow animations, and smooth service navigation",
   "architectural_notes": [
-    "Eagle logo uses GPU-accelerated transform animations for performance",
-    "Neon glow effects applied via multi-layer approach (inner illumination, outline glow, outer aura)",
-    "Logo animation follows head-first energy spread pattern (head → wings → full body)"
+    "Eagle logo uses GPU-accelerated animations with neon glow layers (inner, medium, outer)",
+    "Smooth scroll navigation with offset compensation for sticky header",
+    "Global 0.6s ease transitions with cubic-bezier easing for buttons",
+    "Sections use fade + translateY on scroll for smooth appearance"
   ],
   "known_issues": [],
   "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-implement-head-first-power-on-animation-for-the-eagle-logo-where-neon-energy-originates-from-the-eagle-head-and-instantly-spreads-across-the-full-logo-during-entry",
-      "title": "Implement head-first power-on animation for the eagle logo where neon energy originates from the eagle head and instantly spreads across the full logo during entry",
+      "id": "feature-enhance-the-eagle-logo-entry-animation-so-neon-glow-activates-from-the-eagle-head-first-apply-strongest-electric-blue-neon-glow-on-eagle-head-and-eyes-visible-from-first-frame-head-area-must-feel-like-energy-source-with-inner-illumination-medium-outline-glow-and-soft-outer-ambient-aura",
+      "title": "Enhance the eagle logo entry animation so neon glow activates from the eagle head first. Apply strongest electric blue neon glow on eagle head and eyes visible from first frame. Head area must feel like energy source with inner illumination, medium outline glow, and soft outer ambient aura.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-apply-strongest-electric-blue-neon-glow-on-the-eagle-head-and-eyes-that-is-visible-from-the-first-frame-and-creates-the-visual-impression-of-an-energy-source",
-      "title": "Apply strongest electric blue neon glow on the eagle head and eyes that is visible from the first frame and creates the visual impression of an energy source",
+      "id": "feature-create-energy-spread-effect-during-eagle-logo-entry-where-glow-flows-smoothly-from-head-wings-full-body-with-subtle-light-propagation-effect-lasting-0-4-0-6s-no-flashing-or-harsh-transitions-add-short-light-bloom-burst-at-head-when-animation-starts-and-optional-subtle-shimmer-sweep-once-across-wings",
+      "title": "Create energy spread effect during eagle logo entry where glow flows smoothly from head → wings → full body with subtle light propagation effect lasting 0.4–0.6s. No flashing or harsh transitions. Add short light bloom burst at head when animation starts and optional subtle shimmer sweep once across wings.",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
     },
     {
-      "id": "feature-create-smooth-energy-spread-effect-that-flows-from-head-to-wings-to-full-body-over-0-4-0-6-seconds-with-subtle-light-propagation-avoiding-flashing-or-harsh-transitions",
-      "title": "Create smooth energy spread effect that flows from head to wings to full body over 0.4-0.6 seconds with subtle light propagation, avoiding flashing or harsh transitions",
+      "id": "feature-animate-eagle-logo-parent-container-during-entry-with-opacity-0-1-scale-0-85-1-translatey-25px-0-duration-1-1-2s-ease-out-use-gpu-accelerated-transform-animations-only-after-entry-glow-stabilizes-into-continuous-soft-breathing-pulse-with-head-remaining-slightly-brighter-than-rest-of-eagle",
+      "title": "Animate eagle logo parent container during entry with opacity 0 → 1, scale 0.85 → 1, translateY 25px → 0, duration 1–1.2s ease-out. Use GPU-accelerated transform animations only. After entry, glow stabilizes into continuous soft breathing pulse with head remaining slightly brighter than rest of eagle.",
       "reqIds": [
         "REQ-3"
       ],
       "version": 1
     },
     {
-      "id": "feature-implement-three-layer-neon-glow-system-consisting-of-inner-illumination-inside-eagle-head-medium-glow-around-outline-and-soft-outer-ambient-aura-behind-head",
-      "title": "Implement three-layer neon glow system consisting of inner illumination inside eagle head, medium glow around outline, and soft outer ambient aura behind head",
+      "id": "feature-link-all-get-started-buttons-in-service-details-ai-agents-ai-chatbots-automation-services-etc-to-smoothly-scroll-to-the-get-in-touch-section-with-animated-scrolling-not-instant-jump-add-small-press-animation-on-button-click-before-scrolling-starts-ensure-scrolling-offset-accounts-for-sticky-header-so-section-is-fully-visible",
+      "title": "Link all 'Get Started' buttons in service details (AI Agents, AI Chatbots, Automation Services, etc.) to smoothly scroll to the Get In Touch section with animated scrolling (not instant jump). Add small press animation on button click before scrolling starts. Ensure scrolling offset accounts for sticky header so section is fully visible.",
       "reqIds": [
         "REQ-4"
       ],
       "version": 1
     },
     {
-      "id": "feature-add-cinematic-light-bloom-burst-at-the-eagle-head-when-animation-starts-with-optional-subtle-shimmer-sweep-across-wings-once",
-      "title": "Add cinematic light bloom burst at the eagle head when animation starts, with optional subtle shimmer sweep across wings once",
+      "id": "feature-add-slight-highlight-effect-when-get-in-touch-section-appears-after-scrolling-from-service-detail-buttons-soft-fade-in-and-subtle-glow-activation-around-contact-form-to-draw-user-attention",
+      "title": "Add slight highlight effect when Get In Touch section appears after scrolling from service detail buttons: soft fade-in and subtle glow activation around contact form to draw user attention.",
       "reqIds": [
         "REQ-5"
       ],
       "version": 1
     },
     {
-      "id": "feature-after-entry-animation-completes-stabilize-glow-into-continuous-soft-breathing-pulse-with-the-head-remaining-slightly-brighter-than-the-rest-of-the-eagle",
-      "title": "After entry animation completes, stabilize glow into continuous soft breathing pulse with the head remaining slightly brighter than the rest of the eagle",
+      "id": "feature-enable-smooth-scroll-behavior-globally-across-the-entire-website-add-0-6s-ease-transitions-globally-for-interactive-elements-buttons-must-use-cubic-bezier-easing-for-smoother-interaction-feel",
+      "title": "Enable smooth scroll behavior globally across the entire website. Add 0.6s ease transitions globally for interactive elements. Buttons must use cubic-bezier easing for smoother interaction feel.",
       "reqIds": [
         "REQ-6"
       ],
       "version": 1
     },
     {
-      "id": "feature-use-gpu-accelerated-transform-animations-only-do-not-animate-glow-opacity-from-zero-and-ensure-glow-exists-before-animation-begins-for-optimal-performance",
-      "title": "Use GPU-accelerated transform animations only, do not animate glow opacity from zero, and ensure glow exists before animation begins for optimal performance",
+      "id": "feature-add-fade-translatey-animations-to-sections-on-scroll-reduce-sudden-animation-jumps-enable-gpu-acceleration-for-all-animations-to-improve-performance-and-smoothness",
+      "title": "Add fade + translateY animations to sections on scroll. Reduce sudden animation jumps. Enable GPU acceleration for all animations to improve performance and smoothness.",
       "reqIds": [
         "REQ-7"
       ],
@@ -70,12 +71,24 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Cinematic eagle logo entry animation with neon glow activating from head",
+      "summary": "Enhanced eagle logo entry animation with neon glow activation from head",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Service section Get Started buttons scroll to Get In Touch section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Global website smoothness improvements with transitions and animations",
       "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "SwiftOps",
+  "projectName": "SwiftOps Automation",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

@@ -7,7 +7,7 @@ import { EmailPipelineAnimation } from './animations/EmailPipelineAnimation';
 import { WorkflowNodesAnimation } from './animations/WorkflowNodesAnimation';
 import { WebsiteAssemblyAnimation } from './animations/WebsiteAssemblyAnimation';
 import { MobileDeviceAnimation } from './animations/MobileDeviceAnimation';
-import { smoothScrollToElement, triggerHighlightEffect } from '../utils/scrollHelpers';
+import { scrollToSection } from '../utils/scrollHelpers';
 
 interface ServiceDetailPanelProps {
   service: ServiceData | null;
@@ -50,11 +50,7 @@ export function ServiceDetailPanel({ service, isOpen, onClose }: ServiceDetailPa
       
       // Small delay to ensure panel closes before scrolling
       setTimeout(() => {
-        smoothScrollToElement('contact-section', 80);
-        // Trigger highlight effect after scroll
-        setTimeout(() => {
-          triggerHighlightEffect('contact-section');
-        }, 800);
+        scrollToSection('contact-section', true);
       }, 100);
     }, 150);
   };
@@ -143,9 +139,12 @@ export function ServiceDetailPanel({ service, isOpen, onClose }: ServiceDetailPa
               {/* CTA Button */}
               <button
                 onClick={handleGetStartedClick}
-                className={`neon-button-primary w-full mt-6 transition-transform duration-150 ${
+                className={`neon-button-primary w-full mt-6 transition-all duration-150 ${
                   isPressed ? 'scale-95' : ''
                 }`}
+                style={{
+                  transition: 'transform 0.15s cubic-bezier(0.4, 0, 0.2, 1)',
+                }}
               >
                 Get Started
               </button>

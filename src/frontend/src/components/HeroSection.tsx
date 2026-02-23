@@ -3,6 +3,7 @@ import { useParallax } from '../hooks/useParallax';
 import { EagleLogo } from './EagleLogo';
 import { EagleClickAnimation } from './EagleClickAnimation';
 import { useRippleEffect } from '../hooks/useRippleEffect';
+import { scrollToSection } from '../utils/scrollHelpers';
 
 export function HeroSection() {
   const parallaxY = useParallax(0.3);
@@ -10,26 +11,23 @@ export function HeroSection() {
   const [targetSection, setTargetSection] = useState<string | null>(null);
   const createRipple = useRippleEffect();
 
-  const handleCTAClick = (e: React.MouseEvent<HTMLButtonElement>, section: string) => {
+  const handleCTAClick = (e: React.MouseEvent<HTMLButtonElement>, sectionId: string) => {
     createRipple(e);
-    setTargetSection(section);
+    setTargetSection(sectionId);
     setShowAnimation(true);
   };
 
   const handleAnimationComplete = () => {
     setShowAnimation(false);
     if (targetSection) {
-      const element = document.querySelector(targetSection);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToSection(targetSection);
     }
     setTargetSection(null);
   };
 
   return (
     <>
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Animated Neural Network Grid Background */}
         <div
           className="absolute inset-0 opacity-20"
@@ -88,13 +86,13 @@ export function HeroSection() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
-                  onClick={(e) => handleCTAClick(e, '#contact')}
+                  onClick={(e) => handleCTAClick(e, 'contact')}
                   className="neon-button-primary relative overflow-hidden"
                 >
                   Get Started
                 </button>
                 <button
-                  onClick={(e) => handleCTAClick(e, '#contact')}
+                  onClick={(e) => handleCTAClick(e, 'contact')}
                   className="neon-button relative overflow-hidden"
                 >
                   Book a Strategy Call
@@ -142,10 +140,10 @@ export function HeroSection() {
               {[...Array(6)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute w-3 h-3 bg-neon-cyan rounded-full shadow-neon-glow animate-float-node"
+                  className="absolute w-3 h-3 bg-neon-cyan rounded-full animate-float-node"
                   style={{
-                    left: `${20 + (i % 3) * 30}%`,
-                    top: `${20 + Math.floor(i / 3) * 40}%`,
+                    top: `${20 + Math.random() * 60}%`,
+                    left: `${10 + Math.random() * 80}%`,
                     animationDelay: `${i * 0.5}s`,
                   }}
                 />
